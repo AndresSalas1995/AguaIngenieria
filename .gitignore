@@ -1,0 +1,51 @@
+## === Archivos y carpetas de Visual Studio === ##
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## === Compilados y salida de build === ##
+bin/
+obj/
+[Bb]uild/
+[Bb]uilds/
+
+## === Archivos de publicación === ##
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+*.dll
+*.exe
+*.log
+*.pdb
+
+## === Archivos de paquetes NuGet === ##
+*.nupkg
+*.snupkg
+packages/
+*.nuspec
+*.psmdcp
+
+## === Archivos de caché === ##
+*.cache
+*.dbmdl
+
+## === Archivos de configuración local === ##
+appsettings.Development.json
+appsettings.Local.json
+
+## === Otros === ##
+*.tmp
+*.bak
+*.old
+*.orig
+*.swp
+*.scc
+*.vssscc
+
+## === Archivos de Rider o VS Code (si usas) === ##
+.idea/
+*.code-workspace
+.vscode/

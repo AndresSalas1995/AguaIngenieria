@@ -5,22 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
+    <link href="~/CSS/Custom/Layout.css" rel="stylesheet" />
     @Scripts.Render("~/bundles/modernizr")
+
 </head>
 <body>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
         <div class="container">
-            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <div class="d-flex align-items-center">
+                <a href="@Url.Action("Index", "Principal")">
+                    <img src="~/Content/Imagenes/f42f83c1-8f2b-4426-a8ce-505e30c7b5bf.jpg" class="navbar-logo" alt="Logo Empresa" />
+                </a>
+            </div>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                     @*Página Principal*@ 
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navPaginaPrincipal" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Página Principal
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navPaginaPrincipal">
+                            <li><a class="dropdown-item" href="@Url.Action("Index", "Principal")">Inicio</a></li>
+                            <li><a class="dropdown-item" href="@Url.Action("Novedades", "Home")">Novedades</a></li>
+                        </ul>
+                    </li>
+
+                     @*Servicios*@ 
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navServicios" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Servicios
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navServicios">
+                            <li><a class="dropdown-item" href="@Url.Action("Consultoria", "Servicios")">Consultoría</a></li>
+                            <li><a class="dropdown-item" href="@Url.Action("Mantenimiento", "Servicios")">Mantenimiento</a></li>
+                            <li><a class="dropdown-item" href="@Url.Action("Instalacion", "Servicios")">Instalación</a></li>
+                        </ul>
+                    </li>
+
+                     @*Proyectos*@ 
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navProyectos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Proyectos
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navProyectos">
+                            <li><a class="dropdown-item" href="@Url.Action("EnCurso", "Proyectos")">En curso</a></li>
+                            <li><a class="dropdown-item" href="@Url.Action("Finalizados", "Proyectos")">Finalizados</a></li>
+                        </ul>
+                    </li>
+
+                     @*Contáctenos*@ 
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navContactenos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Contáctenos
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navContactenos">
+                            <li><a class="dropdown-item" href="@Url.Action("Formulario", "Contacto")">Formulario</a></li>
+                            <li><a class="dropdown-item" href="@Url.Action("Ubicacion", "Contacto")">Ubicación</a></li>
+                            <li><a class="dropdown-item" href="@Url.Action("Telefonos", "Contacto")">Teléfonos</a></li>
+                        </ul>
+                    </li>
                 </ul>
+
             </div>
         </div>
     </nav>
@@ -31,7 +80,6 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
