@@ -65,6 +65,61 @@
     display: none !important;
 }
 
+/* Inicio de footer */
+
+/* Footer base */
+.footer-custom {
+    background-color: #ffffff;
+    border-top: 1px solid #e0e0e0;
+    padding: 20px 40px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Texto */
+.footer-text {
+    flex: 1;
+}
+
+/* Estilos de iconos */
+.footer-icons a {
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+    /* Íconos: tamaño, color base, transiciones */
+    .footer-icons a i {
+        font-size: 30px;
+        color: #444 !important;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Hover: animación general */
+    .footer-icons a:hover i {
+        transform: scale(1.2);
+    }
+
+    /* Hover con color por red social (usar más especificidad) */
+    .footer-icons a[aria-label="Instagram"]:hover i {
+        color: #E1306C !important;
+    }
+
+    .footer-icons a[aria-label="Facebook"]:hover i {
+        color: #1877F2 !important;
+    }
+
+    .footer-icons a[aria-label="WhatsApp"]:hover i {
+        color: #25D366 !important;
+    }
+
+    .footer-icons a[aria-label="TikTok"]:hover i {
+        color: #000000 !important;
+    }
+
 
 
 

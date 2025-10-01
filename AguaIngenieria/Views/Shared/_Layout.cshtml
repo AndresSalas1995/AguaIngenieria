@@ -6,6 +6,7 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     <link href="~/CSS/Custom/Layout.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
@@ -72,8 +73,25 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        <footer class="footer-custom d-flex justify-content-between align-items-center">
+            <div class="footer-text">
+                Copyright &copy; @DateTime.Now.Year - Agua Ingeniería Costa Rica. Todos los derechos reservados.
+            </div>
+            <div class="footer-icons">
+                <a href="https://www.instagram.com/andres_sq_/" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram fa-2x"></i>
+                </a>
+                <a href="https://www.facebook.com/andres.salas.370" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook-f fa-2x"></i>
+                </a>
+                <a href="https://wa.me/50671889591" target="_blank" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp fa-2x"></i>
+                </a>
+                <a href="@("https://www.tiktok.com/@andrespruebasprog?is_from_webapp=1&sender_device=pc")" target="_blank" aria-label="TikTok">
+                    <i class="fab fa-tiktok fa-2x"></i>
+                </a>
+
+            </div>
         </footer>
     </div>
     @Scripts.Render("~/bundles/jquery")
