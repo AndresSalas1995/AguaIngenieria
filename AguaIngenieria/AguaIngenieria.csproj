@@ -144,8 +144,14 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Imagenes\1-5.jpg" />
+    <Content Include="Content\Imagenes\1_jSOsZ_5aDLAsd7s0dTVtVA.jpg" />
+    <Content Include="Content\Imagenes\AguaNaturaleza.jpg" />
+    <Content Include="Content\Imagenes\drop-3698073_640.jpg" />
     <Content Include="Content\Imagenes\f42f83c1-8f2b-4426-a8ce-505e30c7b5bf.jpg" />
+    <Content Include="Content\Imagenes\pexels-pixabay-45229-scaled-e1692914150546.jpg" />
     <Content Include="CSS\Custom\Layout.css" />
+    <Content Include="CSS\Custom\Principal.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />

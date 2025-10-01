@@ -1,7 +1,66 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<link href="@Url.Content("~/CSS/Custom/Principal.css")" rel="stylesheet" />
+<h2>Principal</h2>
 
+<div class="slider-container">
+    <button class="slider-arrow left" id="prevBtn">&#8592;</button>
+    <img id="slider" src="@Url.Content("~/Content/Imagenes/1-5.jpg")" alt="Slider" />
+    <div class="slider-message fade-in">
+        <div class="line1">Bienvenidos a Agua Ingenieria Costa Rica.</div>
+        <div class="line2">Ingenieria y Asesoria.</div>
+        <div class="line3">Gestión en recurso hídrico y ambiente</div>
+    </div>
+    <button class="slider-arrow right" id="nextBtn">&#8594;</button>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        var images = [
+            '@Url.Content("~/Content/Imagenes/1-5.jpg")',
+            '@Url.Content("~/Content/Imagenes/1_jSOsZ_5aDLAsd7s0dTVtVA.jpg")',
+            '@Url.Content("~/Content/Imagenes/AguaNaturaleza.jpg")',
+            '@Url.Content("~/Content/Imagenes/drop-3698073_640.jpg")',
+            '@Url.Content("~/Content/Imagenes/pexels-pixabay-45229-scaled-e1692914150546.jpg")',
+        ];
+        var currentIndex = 0;
+        var slider = document.getElementById('slider');
+        var intervalId;
+
+        function showImage(index) {
+            slider.src = images[index];
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
+
+        document.getElementById('nextBtn').addEventListener('click', function () {
+            nextImage();
+            resetInterval();
+        });
+
+        document.getElementById('prevBtn').addEventListener('click', function () {
+            prevImage();
+            resetInterval();
+        });
+
+        function startInterval() {
+            intervalId = setInterval(nextImage, 5000);
+        }
+
+        function resetInterval() {
+            clearInterval(intervalId);
+            startInterval();
+        }
+        startInterval();
+    </script>
+}
