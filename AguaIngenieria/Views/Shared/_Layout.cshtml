@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Agua Ingenieria Costa Rica</title>
     @Styles.Render("~/Content/css")
     <link href="~/CSS/Custom/Layout.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
@@ -24,7 +24,7 @@
             </button>
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
-                     @*Página Principal*@ 
+                    @*Página Principal*@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navPaginaPrincipal" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Página Principal
@@ -34,7 +34,7 @@
                             <li><a class="dropdown-item" href="@Url.Action("Novedades", "Home")">Novedades</a></li>
                         </ul>
                     </li>
-                     @*Servicios*@ 
+                    @*Servicios*@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navServicios" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Servicios
@@ -45,7 +45,7 @@
                             <li><a class="dropdown-item" href="@Url.Action("Instalacion", "Servicios")">Instalación</a></li>
                         </ul>
                     </li>
-                     @*Proyectos*@ 
+                    @*Proyectos*@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navProyectos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Proyectos
@@ -55,7 +55,7 @@
                             <li><a class="dropdown-item" href="@Url.Action("Finalizados", "Proyectos")">Finalizados</a></li>
                         </ul>
                     </li>
-                     @*Contáctenos*@ 
+                    @*Contáctenos*@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navContactenos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Contáctenos
@@ -70,7 +70,8 @@
             </div>
         </div>
     </nav>
-    <div class="container body-content">
+    @RenderSection("FullWidthContent", required: false)
+    <div class="container-fluid body-content">
         @RenderBody()
         <hr />
         <footer class="footer-custom d-flex justify-content-between align-items-center">

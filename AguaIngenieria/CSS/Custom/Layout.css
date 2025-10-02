@@ -1,4 +1,12 @@
-﻿/* Mostrar dropdown en hover (solo funciona en escritorio) */
+﻿.container-fluid.body-content {
+    max-width: 90%; /* para que ocupe más ancho */
+    padding-left: 40px;
+    padding-right: 40px;
+    margin: 0 auto;
+}
+
+
+/* Mostrar dropdown en hover (solo funciona en escritorio) */
 @media (min-width: 768px) {
     .navbar-nav .dropdown:hover .dropdown-menu {
         display: block;

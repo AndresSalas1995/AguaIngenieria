@@ -3,65 +3,66 @@
 }
 
 <link href="@Url.Content("~/CSS/Custom/Principal.css")" rel="stylesheet" />
-<div class="slider-container">
-    <button class="slider-arrow left" id="prevBtn">&#8592;</button>
-    <img id="slider" src="@Url.Content("~/Content/Imagenes/1-5.jpg")" alt="Slider" />
-    <div class="slider-message fade-in">
-        <div class="line1">Bienvenidos a Agua Ingenieria Costa Rica.</div>
-        <div class="line2">Ingenieria y Asesoria.</div>
-        <div class="line3">Gestión en recurso hídrico y ambiente</div>
+@section FullWidthContent {
+    <div class="slider-container">
+        <button class="slider-arrow left" id="prevBtn">&#8592;</button>
+        <img id="slider" src="@Url.Content("~/Content/Imagenes/1-5.jpg")" alt="Slider" />
+        <div class="slider-message fade-in">
+            <div class="line1">Bienvenidos a Agua Ingenieria Costa Rica.</div>
+            <div class="line2">Ingenieria y Asesoria.</div>
+            <div class="line3">Gestión en recurso hídrico y ambiente</div>
+        </div>
+        <button class="slider-arrow right" id="nextBtn">&#8594;</button>
     </div>
-    <button class="slider-arrow right" id="nextBtn">&#8594;</button>
-</div>
+    }
+    <div class="image-text-container">
+        <div class="text-content-right">
+            <h2>Bienvenido a Agua Ingeniería</h2>
+            <p>
+                Ofrecemos soluciones en gestión de recursos hídricos y medio ambiente.<br />
+                Nuestro equipo está listo para asesorarte.
+                Ofrecemos soluciones en gestión de recursos hídricos y medio ambiente.<br />
+                Nuestro equipo está listo para asesorarte.
+                Ofrecemos soluciones en gestión de recursos hídricos y medio ambiente.<br />
+                Nuestro equipo está listo para asesorarte.
+                Ofrecemos soluciones en gestión de recursos hídricos y medio ambiente.<br />
+                Nuestro equipo está listo para asesorarte.
+                Ofrecemos soluciones en gestión de recursos hídricos y medio ambiente.<br />
+                Nuestro equipo está listo para asesorarte.
+                Ofrecemos soluciones en gestión de recursos hídricos y medio ambiente.<br />
+                Nuestro equipo está listo para asesorarte.
+            </p>
+        </div>
+        <div class="image-content">
+            <img src="@Url.Content("~/Content/Imagenes/1-5.jpg")" alt="Imagen descriptiva" />
+        </div>
+    </div>
 
-<div class="image-text-container">
-    <div class="text-content-right">
-        <h2>Bienvenido a Agua Ingeniería</h2>
-        <p>
-            Ofrecemos soluciones en gestión de recursos hídricos y medio ambiente.<br />
-            Nuestro equipo está listo para asesorarte.
-            Ofrecemos soluciones en gestión de recursos hídricos y medio ambiente.<br />
-            Nuestro equipo está listo para asesorarte.
-            Ofrecemos soluciones en gestión de recursos hídricos y medio ambiente.<br />
-            Nuestro equipo está listo para asesorarte.
-            Ofrecemos soluciones en gestión de recursos hídricos y medio ambiente.<br />
-            Nuestro equipo está listo para asesorarte.
-            Ofrecemos soluciones en gestión de recursos hídricos y medio ambiente.<br />
-            Nuestro equipo está listo para asesorarte.
-            Ofrecemos soluciones en gestión de recursos hídricos y medio ambiente.<br />
-            Nuestro equipo está listo para asesorarte.
-        </p>
+    <div class="image-text-container">
+        <div class="image-content">
+            <img src="@Url.Content("~/Content/Imagenes/AguaNaturaleza.jpg")" alt="Imagen descriptiva" />
+        </div>
+        <div class="text-content-left">
+            <h2>Compromiso Ambiental</h2>
+            <p>
+                Trabajamos por un futuro sostenible.<br />
+                Nuestra experiencia garantiza soluciones responsables y eficientes.
+                Trabajamos por un futuro sostenible.<br />
+                Nuestra experiencia garantiza soluciones responsables y eficientes.
+                Trabajamos por un futuro sostenible.<br />
+                Nuestra experiencia garantiza soluciones responsables y eficientes.
+                Trabajamos por un futuro sostenible.<br />
+                Nuestra experiencia garantiza soluciones responsables y eficientes.
+                Trabajamos por un futuro sostenible.<br />
+                Nuestra experiencia garantiza soluciones responsables y eficientes.
+                Trabajamos por un futuro sostenible.<br />
+                Nuestra experiencia garantiza soluciones responsables y eficientes.
+            </p>
+        </div>
     </div>
-    <div class="image-content">
-        <img src="@Url.Content("~/Content/Imagenes/1-5.jpg")" alt="Imagen descriptiva" />
-    </div>
-</div>
 
-<div class="image-text-container">
-    <div class="image-content">
-        <img src="@Url.Content("~/Content/Imagenes/AguaNaturaleza.jpg")" alt="Imagen descriptiva" />
-    </div>
-    <div class="text-content-left">
-        <h2>Compromiso Ambiental</h2>
-        <p>
-            Trabajamos por un futuro sostenible.<br />
-            Nuestra experiencia garantiza soluciones responsables y eficientes.
-            Trabajamos por un futuro sostenible.<br />
-            Nuestra experiencia garantiza soluciones responsables y eficientes.
-            Trabajamos por un futuro sostenible.<br />
-            Nuestra experiencia garantiza soluciones responsables y eficientes.
-            Trabajamos por un futuro sostenible.<br />
-            Nuestra experiencia garantiza soluciones responsables y eficientes.
-            Trabajamos por un futuro sostenible.<br />
-            Nuestra experiencia garantiza soluciones responsables y eficientes.
-            Trabajamos por un futuro sostenible.<br />
-            Nuestra experiencia garantiza soluciones responsables y eficientes.
-        </p>
-    </div>
-</div>
-
-@section Scripts {
-    <script type="text/javascript">
+    @section Scripts {
+        <script type="text/javascript">
         var images = [
             '@Url.Content("~/Content/Imagenes/1-5.jpg")',
             '@Url.Content("~/Content/Imagenes/1_jSOsZ_5aDLAsd7s0dTVtVA.jpg")',
@@ -76,6 +77,16 @@
         function showImage(index) {
             slider.src = images[index];
         }
+
+        /*En caso que el cliente decida tener un tipo de fade para la transicion en las imagenes*/
+        //function showImage(index) {
+        //    slider.classList.add('fade-out');
+
+        //        setTimeout(function () {
+        //            slider.src = images[index]; 
+        //            slider.classList.remove('fade-out'); 
+        //        }, 1000); // Tiempo igual a la duración del transition (1s)
+        //}
 
         function nextImage() {
             currentIndex = (currentIndex + 1) % images.length;
@@ -106,5 +117,5 @@
             startInterval();
         }
         startInterval();
-    </script>
-}
+        </script>
+    }
