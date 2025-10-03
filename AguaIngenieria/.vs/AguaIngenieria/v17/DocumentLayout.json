@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|solutionrelative:views\\principal\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|d:\\visual studio 2022\\projects\\aguaingenieria\\aguaingenieria\\css\\custom\\principal.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\css\\custom\\principal.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|solutionrelative:css\\custom\\principal.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
@@ -52,7 +52,7 @@
               "RelativeDocumentMoniker": "Views\\Principal\\Index.cshtml",
               "ToolTip": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Views\\Principal\\Index.cshtml",
               "RelativeToolTip": "Views\\Principal\\Index.cshtml",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAADYAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-10-03T01:57:08.136Z",
               "EditorCaption": ""
@@ -65,7 +65,7 @@
               "RelativeDocumentMoniker": "CSS\\Custom\\Principal.css",
               "ToolTip": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\CSS\\Custom\\Principal.css",
               "RelativeToolTip": "CSS\\Custom\\Principal.css",
-              "ViewState": "AgIAADIBAAAAAAAAAAAAAEgBAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAABEBAAAAAAAAAAAAACIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-10-03T01:18:48.004Z",
               "EditorCaption": ""

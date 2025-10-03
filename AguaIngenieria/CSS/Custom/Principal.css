@@ -24,18 +24,18 @@
         object-fit: cover;
         display: block;
     }
-/*En caso que el cliente decida tener un tipo de fade para la transicion en las imagenes*/
+/* En caso que el cliente decida tener un tipo de fade para la transición en las imágenes */
 /*#slider {
     transition: opacity 1s ease-in-out;
     opacity: 1;
 }
 
-    #slider.fade-out {
-        opacity: 0;
-    }
+#slider.fade-out {
+    opacity: 0;
+}
 */
 
-/*Flechas array*/
+/* Flechas para navegar el slider */
 .slider-arrow {
     position: absolute;
     top: 50%;
@@ -57,26 +57,31 @@
     opacity: 0.9;
 }
 
-    .slider-arrow.left {
-        left: 24px;
-    }
+/* Flecha izquierda */
+.slider-arrow.left {
+    left: 24px;
+}
 
-    .slider-arrow.right {
-        right: 24px;
-    }
+/* Flecha derecha */
+.slider-arrow.right {
+    right: 24px;
+}
 
-    .slider-arrow:hover {
-        background: #f0f0f0 /*linear-gradient(135deg, #005fa3 60%, #0090c1 100%)*/;
-        transform: translateY(-50%) scale(1.05);
-        box-shadow: 0 6px 24px rgba(0,0,0,0.15);
-        opacity: 1;
-    }
+/* Efecto hover para las flechas */
+.slider-arrow:hover {
+    background: #f0f0f0 /*linear-gradient(135deg, #005fa3 60%, #0090c1 100%)*/;
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+    opacity: 1;
+}
 
-    .slider-arrow:active {
-        background: #e0e0e0;
-        transform: translateY(-50%) scale(0.98);
-    }
-/*Texto de las imagenes*/
+/* Efecto activo para las flechas */
+.slider-arrow:active {
+    background: #e0e0e0;
+    transform: translateY(-50%) scale(0.98);
+}
+
+/* Mensaje superpuesto en las imágenes del slider */
 .slider-message {
     position: absolute;
     top: 30%;
@@ -92,43 +97,50 @@
     z-index: 3;
     font-family: 'Segoe UI', Arial, sans-serif;
 }
-    /* Líneas con animaciones individuales */
-    .slider-message .line1,
-    .slider-message .line2,
-    .slider-message .line3 {
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeInUp 1s ease-out forwards;
-        text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-    }
-    /* Delays para que se animen en secuencia */
-    .slider-message .line2 {
-        animation-delay: 0.5s;
-    }
 
-    .slider-message .line3 {
-        animation-delay: 1s;
-    }
+/* Líneas animadas dentro del mensaje del slider */
+.slider-message .line1,
+.slider-message .line2,
+.slider-message .line3 {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
 
-    .slider-message .line1 {
-        font-size: 3.5rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-        text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-    }
+/* Retraso de animación para la línea 2 */
+.slider-message .line2 {
+    animation-delay: 0.5s;
+}
 
-    .slider-message .line2 {
-        font-size: 3rem;
-        margin-bottom: 0.8rem;
-        text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-    }
+/* Retraso de animación para la línea 3 */
+.slider-message .line3 {
+    animation-delay: 1s;
+}
 
-    .slider-message .line3 {
-        font-size: 2.5rem;
-        font-style: italic;
-        text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-    }
+/* Estilo para la primera línea del mensaje */
+.slider-message .line1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
 
+/* Estilo para la segunda línea del mensaje */
+.slider-message .line2 {
+    font-size: 3rem;
+    margin-bottom: 0.8rem;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+/* Estilo para la tercera línea del mensaje */
+.slider-message .line3 {
+    font-size: 2.5rem;
+    font-style: italic;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+/* Keyframes para la animación de aparición */
 @keyframes fadeInUp {
     to {
         opacity: 1;
@@ -136,7 +148,7 @@
     }
 }
 
-/*Imagenes y texto*/
+/* Contenedor para secciones de imagen y texto */
 .image-text-container {
     display: flex;
     align-items: flex-start;
@@ -148,6 +160,7 @@
     box-shadow: none /*0 2px 8px rgba(0,0,0,0.07)*/;
 }
 
+/* Contenido de texto alineado a la derecha */
 .text-content-right {
     flex: 1;
     padding-right: 30px;
@@ -155,35 +168,42 @@
     flex-direction: column;
     justify-content: flex-start; 
 }
-    .text-content-right h2 {
-        font-family: 'Segoe UI', Arial, sans-serif;
-        font-weight: 900;
-        font-size: 3.5rem;
-        color: #002147;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        margin-bottom: 1.5rem;
-        position: relative;
-        padding-bottom: 0.75rem;
-    }
-        .text-content-right h2::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 60px; /* ancho de la línea */
-            height: 5px; /* grosor del separador */
-            background-color: #1e341d; /* color del separador */
-            border-radius: 2px;
-        }
 
-    .text-content-right p {
-        font-size: 1.3rem;
-        text-align: justify-all;
-        line-height: 1.6;
-        color: #333333;
-        font-family: 'Segoe UI', Arial, sans-serif;
-    }
+/* Título en el contenido derecho */
+.text-content-right h2 {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 3.5rem;
+    color: #002147;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+/* Línea decorativa bajo el título derecho */
+.text-content-right h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px; /* ancho de la línea */
+    height: 5px; /* grosor del separador */
+    background-color: #1e341d; /* color del separador */
+    border-radius: 2px;
+}
+
+/* Párrafo en el contenido derecho */
+.text-content-right p {
+    font-size: 1.3rem;
+    text-align: justify-all;
+    line-height: 1.6;
+    color: #333333;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Contenido de texto alineado a la izquierda */
 .text-content-left {
     flex: 1;
     padding-left: 30px;
@@ -191,17 +211,21 @@
     flex-direction: column;
     justify-content: flex-start;
 }
-    .text-content-left h2 {
-        font-family: 'Segoe UI', Arial, sans-serif;
-        font-weight: 900;
-        font-size: 3.5rem;
-        color: #002147;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        margin-bottom: 1.5rem;
-        position: relative;
-        padding-bottom: 0.75rem;
-    }
+
+/* Título en el contenido izquierdo */
+.text-content-left h2 {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 3.5rem;
+    color: #002147;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+/* Línea decorativa bajo el título izquierdo */
 .text-content-left h2::after {
     content: "";
     position: absolute;
@@ -213,13 +237,15 @@
     border-radius: 2px;
 }
 
+/* Estilo para imágenes en el contenedor de imagen */
 .image-content img {
     max-width: 500px;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 1px 6px rgba(0,0,0,0.10);
 }
-/*Correo info*/
+
+/* Sección de información de contacto */
 .contact-info {
     margin-top: 2rem;
     color: #1a3d1f;
@@ -228,18 +254,21 @@
     font-family: 'Segoe UI', Arial, sans-serif;
 }
 
+/* Icono en la información de contacto */
 .contact-info i {
     font-size: 2rem; 
     margin-bottom: 0.5rem;
     display: inline-block;
 }
 
+/* Texto destacado en la información de contacto */
 .contact-info strong {
     display: block;
     margin-top: 0.5rem;
     font-size: 1.35rem; 
 }
 
+/* Enlace en la información de contacto */
 .contact-info a {
     color: #1a3d1f;
     text-decoration: none;
@@ -249,7 +278,7 @@
     font-size: 1.25rem;
 }
 
-/*Divisor*/
+/* Sección divisor con imagen de fondo */
 .info-divider {
     position: relative;
     background-image: url('/Content/Imagenes/imagen11.png');
@@ -267,44 +296,46 @@
     overflow: hidden;
 }
 
-    /* Capa overlay con transparencia */
-    .info-divider::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.1); 
-        z-index: 1;
-    }
+/* Capa overlay con transparencia en el divisor */
+.info-divider::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1); 
+    z-index: 1;
+}
 
-    /* Eleva el contenido sobre el overlay */
-    .info-divider h3,
-    .info-divider p {
-        position: relative;
-        z-index: 2;
-    }
+/* Eleva el contenido sobre el overlay en el divisor */
+.info-divider h3,
+.info-divider p {
+    position: relative;
+    z-index: 2;
+}
 
-    .info-divider h3 {
-        font-size: 3rem;
-        color: #ffffff;
-        margin-bottom: 1rem;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        font-family: 'Segoe UI', Arial, sans-serif;
-    }
+/* Título en el divisor */
+.info-divider h3 {
+    font-size: 3rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
 
-    .info-divider p {
-        font-size: 1.8rem;
-        color: #ffffff;
-        max-width: 800px;
-        margin: 0 auto;
-        line-height: 1.8;
-        font-family: 'Segoe UI', Arial, sans-serif;
-    }
+/* Párrafo en el divisor */
+.info-divider p {
+    font-size: 1.8rem;
+    color: #ffffff;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
 
-/*Servicios*/
+/* Texto introductorio de la sección de servicios */
 .services-intro {
     font-size: 1.2rem;
     margin-bottom: 24px;
@@ -312,32 +343,36 @@
     font-family: 'Segoe UI', Arial, sans-serif;
 }
 
+/* Diseño de columnas para la lista de servicios */
 .services-list-columns {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
 }
 
-    .services-list-columns ul {
-        flex: 1 1 30%;
-        list-style: none;
-        padding-left: 0;
-    }
+/* Estilo para listas no ordenadas en columnas de servicios */
+.services-list-columns ul {
+    flex: 1 1 30%;
+    list-style: none;
+    padding-left: 0;
+}
 
-    .services-list-columns li {
-        margin-bottom: 12px;
-        font-size: 1.3rem;
-        padding-left: 20px;
-        position: relative;
-        color: #333;
-        font-family: 'Segoe UI', Arial, sans-serif;
-        line-height: 1.5;
-    }
+/* Estilo para los elementos de la lista de servicios */
+.services-list-columns li {
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+    padding-left: 20px;
+    position: relative;
+    color: #333;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.5;
+}
 
-        .services-list-columns li::before {
-            content: "✔";
-            position: absolute;
-            left: 0;
-            color: #1a3d1f;
-            font-weight: bold;
-        }
+/* Check de color antes de cada servicio */
+.services-list-columns li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #1a3d1f;
+    font-weight: bold;
+}

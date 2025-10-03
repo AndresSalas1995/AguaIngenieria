@@ -47,25 +47,25 @@
 }
 
 
-.navbar .nav-link::before {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: 5px;
-    width: 0;
-    height: 3px;
-    background: #2bb6b2;
-    transition: width 0.3s;
-    border-radius: 2px;
-}
+    .navbar .nav-link::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 5px;
+        width: 0;
+        height: 3px;
+        background: #1e341d;
+        transition: width 0.3s;
+        border-radius: 2px;
+    }
 
 .navbar .nav-link:hover::before {
     width: 100%;
 }
 
     .navbar .nav-link:hover {
-        color: #2bb6b2 !important;
+        color: #1e341d !important;
     }
 
  /*Remover unicamente el caret de bootstrap*/
