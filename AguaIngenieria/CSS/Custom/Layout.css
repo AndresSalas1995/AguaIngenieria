@@ -1,7 +1,7 @@
 ﻿.container-fluid.body-content {
-    max-width: 90%; /* para que ocupe más ancho */
-    padding-left: 40px;
-    padding-right: 40px;
+    max-width: 90%; 
+    padding-left: 100px;
+    padding-right: 100px;
     margin: 0 auto;
 }
 

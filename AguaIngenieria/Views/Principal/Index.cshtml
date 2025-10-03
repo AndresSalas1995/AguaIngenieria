@@ -2,67 +2,102 @@
     ViewBag.Title = "Index";
 }
 
+@* Seccion de imagenes inicio *@
 <link href="@Url.Content("~/CSS/Custom/Principal.css")" rel="stylesheet" />
 @section FullWidthContent {
     <div class="slider-container">
-        <button class="slider-arrow left" id="prevBtn">&#8592;</button>
+        @*<button class="slider-arrow left" id="prevBtn">&#8592;</button>*@
+        <button class="slider-arrow left" id="prevBtn" aria-label="Imagen anterior">&#8592;</button>
         <img id="slider" src="@Url.Content("~/Content/Imagenes/1-5.jpg")" alt="Slider" />
-        <div class="slider-message fade-in">
-            <div class="line1">Bienvenidos a Agua Ingenieria Costa Rica.</div>
+        <div class="slider-message">
+            <div class="line1">Bienvenidos a Agua Ingeniería Costa Rica.</div>
             <div class="line2">Ingenieria y Asesoria.</div>
             <div class="line3">Gestión en recurso hídrico y ambiente</div>
         </div>
-        <button class="slider-arrow right" id="nextBtn">&#8594;</button>
+        @*<button class="slider-arrow right" id="nextBtn">&#8594;</button>*@
+        <button class="slider-arrow right" id="nextBtn" aria-label="Imagen siguiente">&#8594;</button>
     </div>
-    }
-    <div class="image-text-container">
-        <div class="text-content-right">
-            <h2>Bienvenido a Agua Ingeniería</h2>
-            <p>
-                Ofrecemos soluciones en gestión de recursos hídricos y medio ambiente.<br />
-                Nuestro equipo está listo para asesorarte.
-                Ofrecemos soluciones en gestión de recursos hídricos y medio ambiente.<br />
-                Nuestro equipo está listo para asesorarte.
-                Ofrecemos soluciones en gestión de recursos hídricos y medio ambiente.<br />
-                Nuestro equipo está listo para asesorarte.
-                Ofrecemos soluciones en gestión de recursos hídricos y medio ambiente.<br />
-                Nuestro equipo está listo para asesorarte.
-                Ofrecemos soluciones en gestión de recursos hídricos y medio ambiente.<br />
-                Nuestro equipo está listo para asesorarte.
-                Ofrecemos soluciones en gestión de recursos hídricos y medio ambiente.<br />
-                Nuestro equipo está listo para asesorarte.
-            </p>
-        </div>
-        <div class="image-content">
-            <img src="@Url.Content("~/Content/Imagenes/1-5.jpg")" alt="Imagen descriptiva" />
-        </div>
+}
+
+@* Seccion de presentacion de la empresa *@
+<div class="image-text-container">
+    <div class="text-content-right">
+        <h2>Agua Ingeniería <br /> Costa Rica</h2>
+        <p>
+            La gestión de trámites ambientales, permisos <br />
+            relacionados con el recurso hídrico y estudios <br />
+            técnicos en Costa Rica está sujeta a una <br />
+            normativa compleja que requiere la intervención <br />
+            de profesionales especializados.<br />
+            Agua Ingeniería Costa Rica ha desempeñado un <br />
+            papel importante en este campo, brindando asesoría <br />
+            técnica y legal para el desarrollo de proyectos <br />
+            vinculados al aprovechamiento de aguas, <br />
+            perforación de pozos, viabilidades ambientales y <br />
+            estudios técnico-científicos del recurso hídrico. <br />
+            <div class="contact-info">
+                <i class="fas fa-envelope"></i><br />
+                <strong>Correo electrónico</strong><br />
+                <a href="mailto:aguaingenieriacr@gmail.com">aguaingenieriacr@gmail.com</a>
+            </div>
+        </p>
+    </div>
+    <div class="image-content">
+        <img src="@Url.Content("~/Content/Imagenes/photo-1503435980610-a51f3ddfee50.jpg")" alt="presentacion" />
+    </div>
+</div>
+
+@* Division de secciones *@
+<div class="info-divider">
+    <h3>Nuestra propuesta</h3>
+    <p>
+        En Agua Ingeniería Costa Rica, combinamos experiencia técnica con compromiso ambiental para acompañar a nuestros clientes en el cumplimiento de requisitos legales, sostenibilidad y desarrollo responsable.<br />
+        Nuestro enfoque interdisciplinario nos permite ofrecer soluciones prácticas, ajustadas a la realidad local y con visión de largo plazo.
+    </p>
+</div>
+
+@* bloque de servicios *@
+<div class="image-text-container">
+    <div class="image-content">
+        <img src="@Url.Content("~/Content/Imagenes/Catarata-Tesoro-Escondido-otra-catarata-que-visitar-en-Costa-Rica.jpg")" alt="Imagen descriptiva" />
     </div>
 
-    <div class="image-text-container">
-        <div class="image-content">
-            <img src="@Url.Content("~/Content/Imagenes/AguaNaturaleza.jpg")" alt="Imagen descriptiva" />
-        </div>
-        <div class="text-content-left">
-            <h2>Compromiso Ambiental</h2>
-            <p>
-                Trabajamos por un futuro sostenible.<br />
-                Nuestra experiencia garantiza soluciones responsables y eficientes.
-                Trabajamos por un futuro sostenible.<br />
-                Nuestra experiencia garantiza soluciones responsables y eficientes.
-                Trabajamos por un futuro sostenible.<br />
-                Nuestra experiencia garantiza soluciones responsables y eficientes.
-                Trabajamos por un futuro sostenible.<br />
-                Nuestra experiencia garantiza soluciones responsables y eficientes.
-                Trabajamos por un futuro sostenible.<br />
-                Nuestra experiencia garantiza soluciones responsables y eficientes.
-                Trabajamos por un futuro sostenible.<br />
-                Nuestra experiencia garantiza soluciones responsables y eficientes.
-            </p>
+    <div class="text-content-left">
+        <h2>Servicios Profesionales</h2>
+        <p class="services-intro">
+            En Agua Ingeniería Costa Rica brindamos asesoría y soluciones técnicas en temas de recurso hídrico, ambiente e infraestructura:
+        </p>
+        <div class="services-list-columns">
+            <ul>
+                <li>Concesiones para aguas superficiales y subterráneas</li>
+                <li>Fuerza hidráulica (Pelton, Hidroeléctricas)</li>
+                <li>Viabilidades (licencias) ambientales</li>
+                <li>Perforaciones de pozos (artesanal o con maquinaria)</li>
+                <li>Permisos de vertido de aguas residuales</li>
+                <li>Estudios hidrogeológicos (según AYA)</li>
+            </ul>
+            <ul>
+                <li>Aforos (medición de caudales)</li>
+                <li>Estudios para compra de terrenos</li>
+                <li>Estudios hidráulicos e hidrológicos</li>
+                <li>Capacitaciones ambientales</li>
+                <li>Ubicación de nacientes y fuentes</li>
+                <li>Obras en cauce (puentes, diques, alcantarillas)</li>
+            </ul>
+            <ul>
+                <li>Sistemas de captación y almacenamiento</li>
+                <li>Estudios de geofísica y sondeos eléctricos</li>
+                <li>Análisis de calidad de agua</li>
+                <li>Pruebas de bombeo</li>
+                <li>Estudios técnicos de abastecimiento (AYA)</li>
+                <li>Obras calibradoras para aprovechamiento de agua</li>
+            </ul>
         </div>
     </div>
+</div>
 
-    @section Scripts {
-        <script type="text/javascript">
+@section Scripts {
+    <script type="text/javascript">
         var images = [
             '@Url.Content("~/Content/Imagenes/1-5.jpg")',
             '@Url.Content("~/Content/Imagenes/1_jSOsZ_5aDLAsd7s0dTVtVA.jpg")',
@@ -76,6 +111,22 @@
 
         function showImage(index) {
             slider.src = images[index];
+
+            // Reiniciar animaciones de cada línea
+            const line1 = document.querySelector('.slider-message .line1');
+            const line2 = document.querySelector('.slider-message .line2');
+            const line3 = document.querySelector('.slider-message .line3');
+
+            [line1, line2, line3].forEach(line => {
+                    line.style.animation = 'none';
+                    void line.offsetWidth;
+            });
+
+                line1.style.animation = 'fadeInUp 1s ease-out forwards';
+                line2.style.animation = 'fadeInUp 1s ease-out forwards';
+                line2.style.animationDelay = '0.5s';
+                line3.style.animation = 'fadeInUp 1s ease-out forwards';
+                line3.style.animationDelay = '1s';
         }
 
         /*En caso que el cliente decida tener un tipo de fade para la transicion en las imagenes*/
@@ -83,8 +134,8 @@
         //    slider.classList.add('fade-out');
 
         //        setTimeout(function () {
-        //            slider.src = images[index]; 
-        //            slider.classList.remove('fade-out'); 
+        //            slider.src = images[index];
+        //            slider.classList.remove('fade-out');
         //        }, 1000); // Tiempo igual a la duración del transition (1s)
         //}
 
@@ -117,5 +168,5 @@
             startInterval();
         }
         startInterval();
-        </script>
-    }
+    </script>
+}
