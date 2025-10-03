@@ -150,6 +150,8 @@
     <Content Include="Content\Imagenes\Catarata-Tesoro-Escondido-otra-catarata-que-visitar-en-Costa-Rica.jpg" />
     <Content Include="Content\Imagenes\drop-3698073_640.jpg" />
     <Content Include="Content\Imagenes\f42f83c1-8f2b-4426-a8ce-505e30c7b5bf.jpg" />
+    <Content Include="Content\Imagenes\imagen.png" />
+    <Content Include="Content\Imagenes\imagen11.png" />
     <Content Include="Content\Imagenes\pexels-pixabay-45229-scaled-e1692914150546.jpg" />
     <Content Include="Content\Imagenes\photo-1503435980610-a51f3ddfee50.jpg" />
     <Content Include="CSS\Custom\Layout.css" />
