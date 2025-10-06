@@ -13,5 +13,11 @@ namespace AguaIngenieria.Controllers
         {
             return View();
         }
+
+        //Vista para novedades/principal
+        public ActionResult Novedades()
+        {
+            return View();
+        }
     }
 }

@@ -1,0 +1,87 @@
+﻿/* .novedades-container */
+.novedades-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* .novedades-container h1 */
+    .novedades-container h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #002147;
+    }
+
+/* .intro */
+.intro {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.1em;
+}
+
+/* .novedades-list .novedad-item */
+.novedades-list .novedad-item {
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+}
+
+/* .novedad-item h3 */
+.novedad-item h3 {
+    margin: 0 0 10px;
+    font-size: 1.3em;
+}
+
+/* .novedad-item a */
+.novedad-item a {
+    color: #0074D9;
+    text-decoration: none;
+}
+
+/* .novedad-item a:hover */
+.novedad-item a:hover {
+    text-decoration: underline;
+}
+
+/* .fuente */
+.fuente {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* .resumen */
+.resumen {
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+/* .card-title a:hover */
+.card-title a:hover {
+    color: #007BFF;
+    text-decoration: underline;
+}
+
+/* .card-img-top */
+.card-img-top {
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    height: 200px;
+    background-color: #f9f9f9; 
+}
+
+/*
+.card-img-top {
+    object-fit: cover;*/ /* recorta sin deformar */
+    /*object-position: center;*/ /* centra la imagen */
+    /*width: 100%;*/ /* ocupa todo el ancho */
+    /*height: 200px;*/ /* altura fija y uniforme */
+    /*border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+*/
+
+/* .card-footer .btn */
+.card-footer .btn {
+    float: right;
+}
