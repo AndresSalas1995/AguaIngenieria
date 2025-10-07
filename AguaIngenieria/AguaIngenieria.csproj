@@ -159,7 +159,9 @@
     <Content Include="Content\Imagenes\Logo-nuevo-office-1-300x128.png" />
     <Content Include="Content\Imagenes\Logo_AguaIngenieria.png" />
     <Content Include="Content\Imagenes\minae.jpg" />
+    <Content Include="Content\Imagenes\pexels-photo-807598.jpeg" />
     <Content Include="Content\Imagenes\pexels-pixabay-45229-scaled-e1692914150546.jpg" />
+    <Content Include="Content\Imagenes\pexels-sam-lg-1572036.jpg" />
     <Content Include="Content\Imagenes\photo-1503435980610-a51f3ddfee50.jpg" />
     <Content Include="Content\Imagenes\viabilidad.jpg" />
     <Content Include="CSS\Custom\Layout.css" />
