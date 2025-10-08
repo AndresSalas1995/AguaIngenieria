@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "Viabilidad y Servicios Técnicos";
+}
+
+<link href="~/CSS/Custom/Viabilidad.css" rel="stylesheet" />
+
+<div class="viabilidad-page">
+    @*Hero*@
+    <section class="hero-viabilidad">
+        <img src="~/Content/Imagenes/banner.png" alt="Viabilidad y Servicios Técnicos - Agua Ingeniería Costa Rica" />
+        <div class="hero-overlay">
+            <h1>Viabilidad y Servicios Técnicos</h1>
+            <p>Apoyamos el desarrollo de proyectos con soluciones técnicas, ambientales y de campo.</p>
+        </div>
+    </section>
+
+    @*Tabs*@
+    <section class="tabs-container">
+        <div class="tabs">
+            <button class="tab active" data-target="viabilidades">Viabilidades Ambientales</button>
+            <button class="tab" data-target="perforaciones">Perforaciones de Pozos</button>
+            <button class="tab" data-target="bombeo">Pruebas de Bombeo</button>
+            <button class="tab" data-target="captacion">Sistemas de Captación y Distribución</button>
+            <button class="tab" data-target="capacitaciones">Capacitaciones Ambientales</button>
+        </div>
+
+        @*Paneles de contenido*@
+        <div class="tab-content">
+            <div id="viabilidades" class="tab-panel active">
+                <img src="~/Content/Imagenes/Catarata-Tesoro-Escondido-otra-catarata-que-visitar-en-Costa-Rica.jpg" alt="Viabilidades Ambientales" />
+                <h2>Viabilidades (Licencias) Ambientales</h2>
+                <p>
+                    Elaboramos estudios y gestionamos licencias ambientales ante SETENA y municipalidades
+                    para garantizar la sostenibilidad de proyectos en zonas rurales y urbanas.
+                </p>
+            </div>
+
+            <div id="perforaciones" class="tab-panel">
+                <img src="~/Content/Imagenes/concesion.jpg" alt="Perforaciones de pozos" />
+                <h2>Perforaciones de Pozos</h2>
+                <p>
+                    Contamos con equipo especializado y personal técnico para la perforación de pozos artesanales
+                    o con maquinaria, garantizando un proceso eficiente y conforme a la normativa SENARA.
+                </p>
+            </div>
+
+            <div id="bombeo" class="tab-panel">
+                <img src="~/Content/Imagenes/viabilidad.jpg" alt="Pruebas de bombeo" />
+                <h2>Pruebas de Bombeo</h2>
+                <p>
+                    Realizamos pruebas de bombeo y recuperación en pozos profundos para determinar su rendimiento
+                    y capacidad de extracción de agua subterránea.
+                </p>
+            </div>
+
+            <div id="captacion" class="tab-panel">
+                <img src="~/Content/Imagenes/concesion.jpg" alt="Sistemas de captación" />
+                <h2>Proyectos de Captación y Distribución</h2>
+                <p>
+                    Diseñamos sistemas de captación, conducción y almacenamiento de agua adaptados a las condiciones
+                    del terreno y las necesidades del proyecto.
+                </p>
+            </div>
+
+            <div id="capacitaciones" class="tab-panel">
+                <img src="~/Content/Imagenes/photo-1503435980610-a51f3ddfee50.jpg" alt="Capacitaciones ambientales" />
+                <h2>Capacitaciones Ambientales</h2>
+                <p>
+                    Impartimos capacitaciones y talleres en gestión hídrica, normativas ambientales
+                    y buenas prácticas para el uso responsable del recurso agua.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    @*Botón de retorno*@
+    <div class="volver-container">
+        <a href="@Url.Action("Servicios", "Servicios")" class="volver-btn">Volver a Servicios</a>
+    </div>
+</div>
+
+ @*Script de pestañas*@ 
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const tabs = document.querySelectorAll(".tab");
+        const panels = document.querySelectorAll(".tab-panel");
+
+        tabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+                /* Quitar clase activa de todas las pestañas*/
+                tabs.forEach(t => t.classList.remove("active"));
+                tab.classList.add("active");
+
+                /* Mostrar solo el panel correspondiente*/
+                const target = tab.dataset.target;
+                panels.forEach(panel => {
+                    panel.classList.toggle("active", panel.id === target);
+                });
+            });
+        });
+    });
+</script>

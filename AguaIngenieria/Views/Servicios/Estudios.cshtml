@@ -1,0 +1,128 @@
+﻿@{
+    ViewBag.Title = "Estudios y Análisis";
+}
+
+<link href="~/CSS/Custom/Estudios.css" rel="stylesheet" />
+
+<div class="estudios-page">
+     @*Hero / Banner*@ 
+    <section class="hero-section">
+        <img src="~/Content/Imagenes/pexels-photo-807598.jpeg" alt="Estudios y Análisis de Agua Ingeniería Costa Rica" />
+        <div class="hero-text">
+            <h1>Estudios y Análisis</h1>
+            <p>Soluciones técnicas y científicas para la gestión sostenible del recurso hídrico.</p>
+        </div>
+    </section>
+
+     @*Introducción*@ 
+    <section class="intro-section">
+        <h2>Expertos en estudios hidrogeológicos y ambientales</h2>
+        <p>
+            En <strong>Agua Ingeniería Costa Rica</strong> realizamos estudios y análisis especializados
+            que respaldan la toma de decisiones en proyectos de abastecimiento, construcción y conservación ambiental.
+            Contamos con profesionales en hidrología, geología, hidrogeología y química ambiental.
+        </p>
+    </section>
+
+     @*Sección de estudios*@ 
+    <section class="estudios-grid">
+        <div class="estudio-card" data-info="estudio1">
+            <img src="~/Content/Imagenes/AguaNaturaleza.jpg" alt="Estudios hidrogeológicos" />
+            <h3>Estudios Hidrogeológicos</h3>
+            <p>Evaluación del subsuelo para determinar disponibilidad y comportamiento de acuíferos.</p>
+        </div>
+
+        <div class="estudio-card" data-info="estudio2">
+            <img src="~/Content/Imagenes/Catarata-Tesoro-Escondido-otra-catarata-que-visitar-en-Costa-Rica.jpg" alt="Aforos de cuerpos de agua" />
+            <h3>Aforos de Cuerpos de Agua</h3>
+            <p>Medición y análisis de caudales para cumplir con los requerimientos técnicos del AYA y MINAE.</p>
+        </div>
+
+        <div class="estudio-card" data-info="estudio3">
+            <img src="~/Content/Imagenes/concesion.jpg" alt="Análisis de calidad del agua" />
+            <h3>Análisis de Calidad de las Aguas</h3>
+            <p>Determinación de parámetros fisicoquímicos y microbiológicos para uso humano o industrial.</p>
+        </div>
+
+        <div class="estudio-card" data-info="estudio4">
+            <img src="~/Content/Imagenes/estudio.jpg" alt="Sondeos eléctricos verticales" />
+            <h3>Sondeos Eléctricos Verticales</h3>
+            <p>Aplicación de geofísica para ubicar zonas óptimas de perforación o fuentes subterráneas.</p>
+        </div>
+
+        <div class="estudio-card" data-info="estudio5">
+            <img src="~/Content/Imagenes/viabilidad.jpg" alt="Estudios hidráulicos e hidrológicos" />
+            <h3>Estudios Hidráulicos e Hidrológicos</h3>
+            <p>Modelado de escorrentía, drenajes y cauces naturales para proyectos de infraestructura.</p>
+        </div>
+    </section>
+
+     @*Modal de información (oculto al inicio)*@ 
+    <div id="modal-info" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+     @*Botón de retorno*@ 
+    <div class="volver-container">
+        <a href="@Url.Action("Servicios", "Servicios")" class="volver-btn">Volver a Servicios</a>
+    </div>
+</div>
+
+ @*Script para mostrar modales*@ 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".estudio-card");
+    const modal = document.getElementById("modal-info");
+    const modalBody = document.getElementById("modal-body");
+    const closeBtn = document.querySelector(".close");
+
+    const info = {
+        estudio1: {
+            title: "Estudios Hidrogeológicos",
+            text: "Realizamos estudios completos que determinan la capacidad del terreno para captar, almacenar y distribuir agua subterránea. Cumplimos con los requisitos técnicos del AYA y SENARA.",
+            img: "~/Content/Imagenes/AguaNaturaleza.jpg"
+        },
+        estudio2: {
+            title: "Aforos de Cuerpos de Agua",
+            text: "Medimos caudales en ríos, quebradas y nacientes utilizando instrumentación de precisión para determinar la disponibilidad hídrica.",
+            img: "~/Content/Imagenes/Catarata-Tesoro-Escondido-otra-catarata-que-visitar-en-Costa-Rica.jpg"
+        },
+        estudio3: {
+            title: "Análisis de Calidad de las Aguas",
+            text: "Realizamos muestreo y análisis físico-químico y microbiológico conforme a normas nacionales e internacionales.",
+            img: "~/Content/Imagenes/concesion.jpg"
+        },
+        estudio4: {
+            title: "Sondeos Eléctricos Verticales (GEOV)",
+            text: "Aplicamos métodos eléctricos para identificar la estructura del subsuelo y definir puntos estratégicos de perforación de pozos.",
+            img: "~/Content/Imagenes/estudio.jpg"
+        },
+        estudio5: {
+            title: "Estudios Hidráulicos e Hidrológicos",
+            text: "Desarrollamos modelaciones de flujo y escorrentía superficial para diseño de obras hidráulicas seguras y eficientes.",
+            img: "~/Content/Imagenes/viabilidad.jpg"
+        }
+    };
+
+    cards.forEach(card => {
+        card.addEventListener("click", () => {
+            const id = card.getAttribute("data-info");
+            const item = info[id];
+            modalBody.innerHTML = `
+                <h2>${item.title}</h2>
+                <img src="${item.img.replace('~', '')}" alt="${item.title}" />
+                <p>${item.text}</p>
+            `;
+            modal.classList.add("show");
+        });
+    });
+
+    closeBtn.addEventListener("click", () => modal.classList.remove("show"));
+    modal.addEventListener("click", e => { if (e.target === modal) modal.classList.remove("show"); });
+});
+</script>
+
+

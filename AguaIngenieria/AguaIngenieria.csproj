@@ -164,10 +164,13 @@
     <Content Include="Content\Imagenes\pexels-sam-lg-1572036.jpg" />
     <Content Include="Content\Imagenes\photo-1503435980610-a51f3ddfee50.jpg" />
     <Content Include="Content\Imagenes\viabilidad.jpg" />
+    <Content Include="CSS\Custom\Concesiones.css" />
+    <Content Include="CSS\Custom\Estudios.css" />
     <Content Include="CSS\Custom\Layout.css" />
     <Content Include="CSS\Custom\Novedades.css" />
     <Content Include="CSS\Custom\Principal.css" />
     <Content Include="CSS\Custom\Servicios.css" />
+    <Content Include="CSS\Custom\Viabilidad.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -205,6 +208,9 @@
     <Content Include="Views\Principal\Index.cshtml" />
     <Content Include="Views\Principal\Novedades.cshtml" />
     <Content Include="Views\Servicios\Servicios.cshtml" />
+    <Content Include="Views\Servicios\Concesiones.cshtml" />
+    <Content Include="Views\Servicios\Estudios.cshtml" />
+    <Content Include="Views\Servicios\Viabilidad.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,114 @@
+﻿@{
+    ViewBag.Title = "Concesiones de Agua";
+}
+
+<link href="~/CSS/Custom/Concesiones.css" rel="stylesheet" />
+
+<div class="concesiones-page">
+    @*Banner superior*@
+    <section class="hero-concesiones">
+        <img src="~/Content/Imagenes/banner.png" alt="Concesiones de Agua - Agua Ingeniería Costa Rica" />
+        <div class="hero-overlay">
+            <h1>Concesiones de Agua</h1>
+            <p>Tramitamos permisos y licencias para el uso legal, responsable y sostenible del recurso hídrico.</p>
+        </div>
+    </section>
+
+    @* Si decidimos tener el menú al lado izquierdo, por mientras lo mostraré por medio de css *@
+    @*<section class="concesiones-container">
+        <aside class="sidebar">...</aside>
+        <div class="service-content">...</div>
+    </section>*@
+
+
+    @*Contenedor principal*@
+    <section class="concesiones-container">
+        @*Contenido dinámico*@
+        <div class="service-content">
+            <div id="servicio1" class="content-section active">
+                <h2>Concesiones para Aprovechamiento de Aguas Superficiales y Subterráneas</h2>
+                <p>
+                    Gestionamos los permisos necesarios ante el MINAE y SENARA para el uso legal del recurso hídrico,
+                    ya sea proveniente de ríos, quebradas o pozos. Incluye la elaboración de estudios técnicos y la
+                    presentación de documentación conforme a la normativa nacional.
+                </p>
+                <img src="~/Content/Imagenes/AguaNaturaleza.jpg" alt="Aguas superficiales y subterráneas" />
+            </div>
+
+            <div id="servicio2" class="content-section">
+                <h2>Concesiones de Fuerza Hidráulica</h2>
+                <p>
+                    Elaboramos estudios y tramitamos concesiones para el aprovechamiento de la energía de corrientes
+                    de agua, aplicables a proyectos de tipo Pelton, microcentrales y pequeñas hidroeléctricas.
+                </p>
+                <img src="~/Content/Imagenes/estudio.jpg" alt="Fuerza Hidráulica" />
+            </div>
+
+            <div id="servicio3" class="content-section">
+                <h2>Permisos de Vertido de Aguas Residuales</h2>
+                <p>
+                    Realizamos el trámite ante el MINAE para obtener la autorización de vertido de aguas residuales,
+                    garantizando el cumplimiento del Reglamento de Vertidos y las normas ambientales vigentes.
+                </p>
+                <img src="~/Content/Imagenes/Catarata-Tesoro-Escondido-otra-catarata-que-visitar-en-Costa-Rica.jpg" alt="Vertido de aguas residuales" />
+            </div>
+
+            <div id="servicio4" class="content-section">
+                <h2>Obras en Cauce</h2>
+                <p>
+                    Tramitamos permisos y elaboramos los estudios técnicos requeridos para la ejecución de obras en cauce,
+                    como pasos de alcantarilla, puentes, diques o estructuras de contención.
+                </p>
+                <img src="~/Content/Imagenes/pexels-photo-807598.jpeg" alt="Obras en cauce" />
+            </div>
+
+            <div id="servicio5" class="content-section">
+                <h2>Diseño e Instalación de Obras Calibradoras</h2>
+                <p>
+                    Diseñamos e instalamos obras calibradoras de caudal para el aprovechamiento de agua, cumpliendo con las
+                    disposiciones del MINAE y SENARA, asegurando una medición precisa del recurso concesionado.
+                </p>
+                <img src="~/Content/Imagenes/viabilidad.jpg" alt="Obras calibradoras" />
+            </div>
+        </div>
+
+        @*Submenú lateral (derecha)*@
+        <aside class="sidebar">
+            <ul class="service-menu">
+                <li data-target="servicio1" class="active">Aguas Superficiales y Subterráneas</li>
+                <li data-target="servicio2">Fuerza Hidráulica</li>
+                <li data-target="servicio3">Permisos de Vertido</li>
+                <li data-target="servicio4">Obras en Cauce</li>
+                <li data-target="servicio5">Obras Calibradoras</li>
+            </ul>
+        </aside>
+    </section>
+
+    @*Botón volver*@
+    <div class="volver-container">
+        <a href="@Url.Action("Servicios", "Servicios")" class="volver-btn">Volver a Servicios</a>
+    </div>
+</div>
+
+ @*Script*@ 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const menuItems = document.querySelectorAll(".service-menu li");
+    const sections = document.querySelectorAll(".content-section");
+
+    menuItems.forEach(item => {
+        item.addEventListener("click", () => {
+            /* Activar item del menú*/
+            menuItems.forEach(i => i.classList.remove("active"));
+            item.classList.add("active");
+
+            /* Mostrar solo la sección correspondiente*/
+            const target = item.dataset.target;
+            sections.forEach(section => {
+                section.classList.toggle("active", section.id === target);
+            });
+        });
+    });
+});
+</script>
+

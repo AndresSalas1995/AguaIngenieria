@@ -20,5 +20,22 @@ namespace AguaIngenieria.Controllers
             return View();
         }
 
+        //GetServicios Concesiones
+        public ActionResult Concesiones()
+        {
+            return View();
+        }
+        //GetServicios Estudios
+        public ActionResult Estudios()
+        {
+            return View();
+        }
+
+        //GetServicios Viabilidad
+        public ActionResult Viabilidad()
+        {
+            return View();
+        }
+
     }
 }
