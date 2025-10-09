@@ -1,0 +1,90 @@
+﻿/*Estilo para las imagenes*/
+.card {
+    position: relative;
+    overflow: hidden;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+    .card img {
+        object-fit: cover;
+        height: 600px;
+        width: 100%;
+        transition: transform 0.5s ease;
+    }
+
+    .card:hover img {
+        transform: scale(1.1);
+    }
+
+    /* cortina */
+    .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 119, 182, 0.7);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        z-index: 1;
+    }
+
+    /* Mostrar la cortina al pasar el mouse */
+    .card:hover::before {
+        opacity: 1;
+    }
+
+    /* Texto centrado sobre la imagen */
+    .card .overlay-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-weight: 600;
+        font-size: 1.4rem;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+        z-index: 2;
+    }
+
+    /* Mostrar el texto cuando se activa el hover */
+    .card:hover .overlay-text {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+
+/*TEXTO titulo*/
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #0077b6;
+    text-align: center;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+    padding-bottom: 10px;
+    background: linear-gradient(90deg, #0077b6, #00b4d8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+    /* Línea decorativa inferior */
+    h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background-color: #00b4d8;
+        border-radius: 2px;
+    }

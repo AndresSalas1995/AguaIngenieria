@@ -47,15 +47,10 @@
                         </ul>
                     </li>
                     @*Proyectos*@
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navProyectos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Proyectos
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navProyectos">
-                            <li><a class="dropdown-item" href="@Url.Action("EnCurso", "Proyectos")">En curso</a></li>
-                            <li><a class="dropdown-item" href="@Url.Action("Finalizados", "Proyectos")">Finalizados</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Proyectos", "Proyectos")">Proyectos</a>
                     </li>
+
                     @*Contáctenos*@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navContactenos" role="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -122,6 +122,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PrincipalController.cs" />
+    <Compile Include="Controllers\ProyectosController.cs" />
     <Compile Include="Controllers\ServiciosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -169,6 +170,7 @@
     <Content Include="CSS\Custom\Layout.css" />
     <Content Include="CSS\Custom\Novedades.css" />
     <Content Include="CSS\Custom\Principal.css" />
+    <Content Include="CSS\Custom\Proyectos.css" />
     <Content Include="CSS\Custom\Servicios.css" />
     <Content Include="CSS\Custom\Viabilidad.css" />
     <Content Include="favicon.ico" />
@@ -211,6 +213,7 @@
     <Content Include="Views\Servicios\Concesiones.cshtml" />
     <Content Include="Views\Servicios\Estudios.cshtml" />
     <Content Include="Views\Servicios\Viabilidad.cshtml" />
+    <Content Include="Views\Proyectos\Proyectos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
