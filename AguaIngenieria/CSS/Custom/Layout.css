@@ -1,10 +1,32 @@
-﻿.container-fluid.body-content {
+﻿
+/* Contenedor principal */
+.container-fluid.body-content {
     max-width: 90%; 
     padding-left: 100px;
     padding-right: 100px;
     margin: 0 auto;
 }
 
+/* Ajustes para tablets */
+@media (max-width: 992px) {
+    .container-fluid.body-content {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+/* Ajustes para móviles */
+@media (max-width: 576px) {
+    .container-fluid.body-content {
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
+}
+
+/* Inicio de menú o navbar*/
 
 /* Mostrar dropdown en hover (solo funciona en escritorio) */
 @media (min-width: 768px) {
@@ -27,12 +49,39 @@
     margin-right: 30px; 
 }
 
+/* Ajustes para tablets */
+@media (max-width: 768px) {
+    .navbar-logo {
+        height: 70px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
 
 /* Separación entre ítems del menú */
 .navbar-nav .nav-item {
     margin-left: 50px; 
     margin-right: 50px; 
 }
+
+/* Ajustes para tablets */
+/* Reducir separación en tablets */
+@media (max-width: 992px) {
+    .navbar-nav .nav-item {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+/* Sin márgenes laterales en móviles */
+@media (max-width: 576px) {
+    .navbar-nav .nav-item {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
 
 /* Color del texto del menú */
 .navbar .nav-link {
@@ -46,7 +95,17 @@
     transition: color 0.2s;
 }
 
+/* Ajustes para tablets y móviles */
+/* Texto más pequeño en móviles */
+@media (max-width: 768px) {
+    .navbar .nav-link {
+        font-size: 16px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
 
+/*Subrayado animado en hover*/
     .navbar .nav-link::before {
         content: "";
         display: block;
@@ -86,47 +145,79 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
-/* Texto */
+/* Texto del footer */
 .footer-text {
     flex: 1;
 }
 
-/* Estilos de iconos */
-.footer-icons a {
-    margin-left: 20px;
-    text-decoration: none;
+/*  Íconos sociales  */
+
+    .footer-icons {
+        margin-top: 10px;
+    }
+
+        .footer-icons a {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+    /* Estilos de iconos */
+    .footer-icons a {
+        margin-left: 20px;
+        text-decoration: none;
+    }
+
+        /* Íconos: tamaño, color base, transiciones */
+        .footer-icons a i {
+            font-size: 30px;
+            color: #444 !important;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Hover: animación general */
+        .footer-icons a:hover i {
+            transform: scale(1.2);
+        }
+
+        /* Hover con color por red social (usar más especificidad) */
+        .footer-icons a[aria-label="Instagram"]:hover i {
+            color: #E1306C !important;
+        }
+
+        .footer-icons a[aria-label="Facebook"]:hover i {
+            color: #1877F2 !important;
+        }
+
+        .footer-icons a[aria-label="WhatsApp"]:hover i {
+            color: #25D366 !important;
+        }
+
+        .footer-icons a[aria-label="TikTok"]:hover i {
+            color: #000000 !important;
+        }
+
+
+/*Moviles y tablet*/
+/*Footer en pantallas pequeñas*/
+@media (max-width: 576px) {
+    .footer-custom {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .footer-icons {
+        margin-top: 10px;
+    }
+
+        .footer-icons a {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
 }
-
-    /* Íconos: tamaño, color base, transiciones */
-    .footer-icons a i {
-        font-size: 30px;
-        color: #444 !important;
-        transition: color 0.3s ease, transform 0.3s ease;
-    }
-
-    /* Hover: animación general */
-    .footer-icons a:hover i {
-        transform: scale(1.2);
-    }
-
-    /* Hover con color por red social (usar más especificidad) */
-    .footer-icons a[aria-label="Instagram"]:hover i {
-        color: #E1306C !important;
-    }
-
-    .footer-icons a[aria-label="Facebook"]:hover i {
-        color: #1877F2 !important;
-    }
-
-    .footer-icons a[aria-label="WhatsApp"]:hover i {
-        color: #25D366 !important;
-    }
-
-    .footer-icons a[aria-label="TikTok"]:hover i {
-        color: #000000 !important;
-    }
 
 
 
