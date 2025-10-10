@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Ubicacion";
+}
+
+<link href="@Url.Content("~/CSS/Custom/Contacto.css")" rel="stylesheet" />
+
+<div class="ubicacion-container">
+    <div class="ubicacion-header">
+        <h2>Nuestra Ubicación</h2>
+        <p>Visítenos o contáctenos para coordinar una cita técnica o consulta profesional.</p>
+    </div>
+
+    <div class="ubicacion-content">
+        <div class="map-container">
+             @* Mapa embebido de Google Maps*@ 
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7855.458316819889!2d-84.39986711079129!3d10.121241483714993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2scr!4v1760128451028!5m2!1sen!2scr" 
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="ubicacion-info">
+            <h3>Dirección</h3>
+            <p>
+                Alajuela, Costa Rica <br />
+                San Juan de Naranjo <br />
+                <strong>Horario de atención:</strong><br />
+                Lunes a Viernes: 8:00 a.m. - 5:00 p.m.<br />
+                Sábados: 8:00 a.m. - 12:00 p.m.
+            </p>
+
+            <div class="ubicacion-contacto">
+                <p><i class="fas fa-phone"></i> Teléfono: <strong>+506 8767-8430</strong></p>
+                <p><i class="fas fa-envelope"></i> Correo: <a href="mailto:aguaingenieriacr@gmail.com">aguaingenieriacr@gmail.com</a></p>
+                <p><i class="fas fa-globe"></i> Sitio web: <a href="https://www.aguaingenieriacr.com" target="_blank">www.aguaingenieriacr.com</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
