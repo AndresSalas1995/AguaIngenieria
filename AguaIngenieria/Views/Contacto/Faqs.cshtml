@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "Faqs";
+}
+
+<link href="@Url.Content("~/CSS/Custom/Faqs.css")" rel="stylesheet" />
+
+<div class="faqs-container">
+    <div class="faqs-header">
+        <h2>Preguntas Frecuentes</h2>
+        <p>Resuelve tus dudas con nuestras respuestas rápidas y claras.</p>
+    </div>
+
+    <div class="faqs-list">
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq1" id="faq1-btn">
+                ¿Cuáles son sus horarios de atención?
+                <span class="faq-icon">+</span>
+            </button>
+            <div id="faq1" class="faq-answer" aria-labelledby="faq1-btn" hidden>
+                Nuestro horario de atención es de lunes a viernes de 8:00 a.m. a 5:00 p.m. y sábados y domingos de 8:00 a.m. a 12:00 p.m.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq2" id="faq2-btn">
+                ¿Cómo puedo agendar una cita técnica?
+                <span class="faq-icon">+</span>
+            </button>
+            <div id="faq2" class="faq-answer" aria-labelledby="faq2-btn" hidden>
+                Puedes contactarnos por teléfono o correo electrónico para coordinar una cita según tu disponibilidad.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq3" id="faq3-btn">
+                ¿Ofrecen servicios de consultoría online?
+                <span class="faq-icon">+</span>
+            </button>
+            <div id="faq3" class="faq-answer" aria-labelledby="faq3-btn" hidden>
+                Sí, ofrecemos consultas virtuales a través de videollamada para mayor comodidad.
+            </div>
+        </div>
+
+         @*Agrega más preguntas aquí para abajo*@ 
+    </div>
+</div>
+
+<script>
+    // Script para togglear el FAQ
+    document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+            const expanded = button.getAttribute('aria-expanded') === 'true';
+            button.setAttribute('aria-expanded', !expanded);
+            const answer = document.getElementById(button.getAttribute('aria-controls'));
+            if (expanded) {
+                answer.hidden = true;
+                button.querySelector('.faq-icon').textContent = '+';
+            } else {
+                answer.hidden = false;
+                button.querySelector('.faq-icon').textContent = '−';
+            }
+        });
+    });
+</script>
+

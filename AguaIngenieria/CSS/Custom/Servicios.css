@@ -32,7 +32,7 @@
 
 .category-btn {
     background-color: #1a3d1f;
-    color: white;
+    color: white !important;
     padding: 12px 24px;
     border-radius: 8px;
     text-decoration: none;
@@ -88,7 +88,7 @@
 .service-btn {
     display: inline-block;
     background-color: #1a3d1f;
-    color: #fff;
+    color: #fff !important;
     padding: 10px 20px;
     border-radius: 6px;
     text-decoration: none;

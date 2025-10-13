@@ -25,5 +25,17 @@ namespace AguaIngenieria.Controllers
         {
             return View();
         }
+
+        //GET: Redes Sociales
+        public ActionResult RedesSociales()
+        {
+            return View();
+        }
+
+        //GET: Faqs
+        public ActionResult Faqs()
+        {
+            return View();
+        }
     }
 }

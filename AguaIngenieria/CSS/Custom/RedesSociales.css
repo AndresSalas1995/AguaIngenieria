@@ -1,0 +1,126 @@
+﻿/* Redes Sociales CSS */
+
+.redes-container {
+    padding: 60px 20px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    text-align: center;
+}
+
+/* Encabezado */
+.redes-header {
+    margin-bottom: 50px;
+}
+
+    .redes-header h2 {
+        font-size: 4rem;
+        font-weight: 900;
+        color: #5C4033;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        letter-spacing: 2px;
+    }
+
+    .redes-header p {
+        font-size: 1.6rem;
+        color: #333;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.8;
+    }
+
+/* Contenedor de redes */
+.redes-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Tarjetas individuales */
+.redes-card {
+    flex: 1 1 250px;
+    max-width: 280px;
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .redes-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Íconos grandes */
+    .redes-card i {
+        font-size: 4rem;
+        margin-bottom: 15px;
+    }
+
+/* Colores por red */
+.instagram i {
+    color: #E1306C;
+}
+
+.facebook i {
+    color: #1877F2;
+}
+
+.whatsapp i {
+    color: #25D366;
+}
+
+.tiktok i {
+    color: #000;
+}
+
+/* Textos dentro de las tarjetas */
+.redes-card h3 {
+    font-size: 2rem;
+    color: #3e2723;
+    margin-bottom: 10px;
+}
+
+.redes-card p {
+    font-size: 1.4rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Botones */
+.btn-red {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #8B5E3C, #5C4033);
+    color: #fff !important;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+    .btn-red:hover {
+        background: linear-gradient(135deg, #5C4033, #3e2723);
+        transform: translateY(-3px);
+    }
+
+/* Adaptabilidad móvil */
+@media (max-width: 768px) {
+    .redes-header h2 {
+        font-size: 3rem;
+    }
+
+    .redes-header p {
+        font-size: 1.3rem;
+    }
+
+    .redes-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .redes-card {
+        max-width: 90%;
+    }
+}

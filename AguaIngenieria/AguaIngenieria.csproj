@@ -167,7 +167,9 @@
     <Content Include="Content\Imagenes\photo-1503435980610-a51f3ddfee50.jpg" />
     <Content Include="Content\Imagenes\viabilidad.jpg" />
     <Content Include="CSS\Custom\Concesiones.css" />
-    <Content Include="CSS\Custom\Contacto.css" />
+    <Content Include="CSS\Custom\Faqs.css" />
+    <Content Include="CSS\Custom\RedesSociales.css" />
+    <Content Include="CSS\Custom\Ubicacion.css" />
     <Content Include="CSS\Custom\Estudios.css" />
     <Content Include="CSS\Custom\Layout.css" />
     <Content Include="CSS\Custom\Novedades.css" />
@@ -218,6 +220,8 @@
     <Content Include="Views\Proyectos\Proyectos.cshtml" />
     <Content Include="Views\Contacto\Formulario.cshtml" />
     <Content Include="Views\Contacto\Ubicacion.cshtml" />
+    <Content Include="Views\Contacto\RedesSociales.cshtml" />
+    <Content Include="Views\Contacto\Faqs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
