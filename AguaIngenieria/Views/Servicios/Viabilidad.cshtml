@@ -2,101 +2,124 @@
     ViewBag.Title = "Viabilidad y Servicios Técnicos";
 }
 
-<link href="~/CSS/Custom/Viabilidad.css" rel="stylesheet" />
+<link href="~/CSS/Custom/Estudios.css" rel="stylesheet" />
 
-<div class="viabilidad-page">
-    @*Hero*@
-    <section class="hero-viabilidad">
+<div class="estudios-page">
+    @*Hero Section*@
+    <section class="hero-section">
         <img src="~/Content/Imagenes/banner.png" alt="Viabilidad y Servicios Técnicos - Agua Ingeniería Costa Rica" />
-        <div class="hero-overlay">
+        <div class="hero-text">
             <h1>Viabilidad y Servicios Técnicos</h1>
             <p>Apoyamos el desarrollo de proyectos con soluciones técnicas, ambientales y de campo.</p>
         </div>
     </section>
 
-    @*Tabs*@
-    <section class="tabs-container">
-        <div class="tabs">
-            <button class="tab active" data-target="viabilidades">Viabilidades Ambientales</button>
-            <button class="tab" data-target="perforaciones">Perforaciones de Pozos</button>
-            <button class="tab" data-target="bombeo">Pruebas de Bombeo</button>
-            <button class="tab" data-target="captacion">Sistemas de Captación y Distribución</button>
-            <button class="tab" data-target="capacitaciones">Capacitaciones Ambientales</button>
+    @*Intro Section*@
+    <section class="intro-section">
+        <h2>Soluciones integrales para el desarrollo sostenible de proyectos</h2>
+        <p>
+            En <strong>Agua Ingeniería Costa Rica</strong> brindamos acompañamiento técnico, ambiental y operativo
+            en cada etapa de los proyectos, asegurando el cumplimiento normativo y la eficiencia en el uso del recurso hídrico.
+        </p>
+    </section>
+
+    @*Grid de servicios de viabilidad*@
+    <section class="estudios-grid">
+        <div class="estudio-card" data-info="viabilidad1">
+            <img src="~/Content/Imagenes/Catarata-Tesoro-Escondido-otra-catarata-que-visitar-en-Costa-Rica.jpg" alt="Viabilidades Ambientales" />
+            <h3>Viabilidades Ambientales</h3>
+            <p>Elaboramos estudios y gestionamos licencias ambientales ante SETENA y municipalidades.</p>
         </div>
 
-        @*Paneles de contenido*@
-        <div class="tab-content">
-            <div id="viabilidades" class="tab-panel active">
-                <img src="~/Content/Imagenes/Catarata-Tesoro-Escondido-otra-catarata-que-visitar-en-Costa-Rica.jpg" alt="Viabilidades Ambientales" />
-                <h2>Viabilidades (Licencias) Ambientales</h2>
-                <p>
-                    Elaboramos estudios y gestionamos licencias ambientales ante SETENA y municipalidades
-                    para garantizar la sostenibilidad de proyectos en zonas rurales y urbanas.
-                </p>
-            </div>
+        <div class="estudio-card" data-info="viabilidad2">
+            <img src="~/Content/Imagenes/concesion.jpg" alt="Perforaciones de Pozos" />
+            <h3>Perforaciones de Pozos</h3>
+            <p>Realizamos perforaciones artesanales o con maquinaria conforme a la normativa SENARA.</p>
+        </div>
 
-            <div id="perforaciones" class="tab-panel">
-                <img src="~/Content/Imagenes/concesion.jpg" alt="Perforaciones de pozos" />
-                <h2>Perforaciones de Pozos</h2>
-                <p>
-                    Contamos con equipo especializado y personal técnico para la perforación de pozos artesanales
-                    o con maquinaria, garantizando un proceso eficiente y conforme a la normativa SENARA.
-                </p>
-            </div>
+        <div class="estudio-card" data-info="viabilidad3">
+            <img src="~/Content/Imagenes/viabilidad.jpg" alt="Pruebas de Bombeo" />
+            <h3>Pruebas de Bombeo</h3>
+            <p>Determinamos el rendimiento y capacidad de extracción de pozos profundos.</p>
+        </div>
 
-            <div id="bombeo" class="tab-panel">
-                <img src="~/Content/Imagenes/viabilidad.jpg" alt="Pruebas de bombeo" />
-                <h2>Pruebas de Bombeo</h2>
-                <p>
-                    Realizamos pruebas de bombeo y recuperación en pozos profundos para determinar su rendimiento
-                    y capacidad de extracción de agua subterránea.
-                </p>
-            </div>
+        <div class="estudio-card" data-info="viabilidad4">
+            <img src="~/Content/Imagenes/concesion.jpg" alt="Sistemas de Captación y Distribución" />
+            <h3>Sistemas de Captación y Distribución</h3>
+            <p>Diseñamos sistemas de captación, conducción y almacenamiento adaptados al terreno.</p>
+        </div>
 
-            <div id="captacion" class="tab-panel">
-                <img src="~/Content/Imagenes/concesion.jpg" alt="Sistemas de captación" />
-                <h2>Proyectos de Captación y Distribución</h2>
-                <p>
-                    Diseñamos sistemas de captación, conducción y almacenamiento de agua adaptados a las condiciones
-                    del terreno y las necesidades del proyecto.
-                </p>
-            </div>
-
-            <div id="capacitaciones" class="tab-panel">
-                <img src="~/Content/Imagenes/photo-1503435980610-a51f3ddfee50.jpg" alt="Capacitaciones ambientales" />
-                <h2>Capacitaciones Ambientales</h2>
-                <p>
-                    Impartimos capacitaciones y talleres en gestión hídrica, normativas ambientales
-                    y buenas prácticas para el uso responsable del recurso agua.
-                </p>
-            </div>
+        <div class="estudio-card" data-info="viabilidad5">
+            <img src="~/Content/Imagenes/photo-1503435980610-a51f3ddfee50.jpg" alt="Capacitaciones Ambientales" />
+            <h3>Capacitaciones Ambientales</h3>
+            <p>Capacitamos en gestión hídrica, normativas ambientales y buenas prácticas sostenibles.</p>
         </div>
     </section>
 
-    @*Botón de retorno*@
+    @*Modal informativo*@
+    <div id="modal-info" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    @*Botón volver*@
     <div class="volver-container">
         <a href="@Url.Action("Servicios", "Servicios")" class="volver-btn">Volver a Servicios</a>
     </div>
 </div>
 
- @*Script de pestañas*@ 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        const tabs = document.querySelectorAll(".tab");
-        const panels = document.querySelectorAll(".tab-panel");
+        const cards = document.querySelectorAll(".estudio-card");
+        const modal = document.getElementById("modal-info");
+        const modalBody = document.getElementById("modal-body");
+        const closeBtn = document.querySelector(".close");
 
-        tabs.forEach(tab => {
-            tab.addEventListener("click", () => {
-                /* Quitar clase activa de todas las pestañas*/
-                tabs.forEach(t => t.classList.remove("active"));
-                tab.classList.add("active");
+        const info = {
+            viabilidad1: {
+                title: "Viabilidades (Licencias) Ambientales",
+                text: "Elaboramos estudios y gestionamos licencias ambientales ante SETENA y municipalidades para garantizar la sostenibilidad de proyectos en zonas rurales y urbanas.",
+                img: '@Url.Content("~/Content/Imagenes/Catarata-Tesoro-Escondido-otra-catarata-que-visitar-en-Costa-Rica.jpg")'
+            },
+            viabilidad2: {
+                title: "Perforaciones de Pozos",
+                text: "Contamos con equipo especializado y personal técnico para la perforación de pozos artesanales o con maquinaria, garantizando un proceso eficiente y conforme a la normativa SENARA.",
+                img: '@Url.Content("~/Content/Imagenes/concesion.jpg")'
+            },
+            viabilidad3: {
+                title: "Pruebas de Bombeo",
+                text: "Realizamos pruebas de bombeo y recuperación en pozos profundos para determinar su rendimiento y capacidad de extracción de agua subterránea.",
+                img: '@Url.Content("~/Content/Imagenes/viabilidad.jpg")'
+            },
+            viabilidad4: {
+                title: "Sistemas de Captación y Distribución",
+                text: "Diseñamos sistemas de captación, conducción y almacenamiento de agua adaptados a las condiciones del terreno y las necesidades del proyecto.",
+                img: '@Url.Content("~/Content/Imagenes/concesion.jpg")'
+            },
+            viabilidad5: {
+                title: "Capacitaciones Ambientales",
+                text: "Impartimos capacitaciones y talleres en gestión hídrica, normativas ambientales y buenas prácticas para el uso responsable del recurso agua.",
+                img: '@Url.Content("~/Content/Imagenes/photo-1503435980610-a51f3ddfee50.jpg")'
+            }
+        };
 
-                /* Mostrar solo el panel correspondiente*/
-                const target = tab.dataset.target;
-                panels.forEach(panel => {
-                    panel.classList.toggle("active", panel.id === target);
-                });
+        cards.forEach(card => {
+            card.addEventListener("click", () => {
+                const id = card.getAttribute("data-info");
+                const item = info[id];
+                modalBody.innerHTML = `
+                <h2>${item.title}</h2>
+                <img src="${item.img.replace('~', '')}" alt="${item.title}" />
+                <p>${item.text}</p>
+            `;
+                modal.classList.add("show");
             });
         });
+
+        closeBtn.addEventListener("click", () => modal.classList.remove("show"));
+        modal.addEventListener("click", e => { if (e.target === modal) modal.classList.remove("show"); });
     });
 </script>
+

@@ -24,7 +24,7 @@
         </p>
     </section>
 
-     @*Sección de estudios*@ 
+     @*Sección servicios de estudios*@ 
     <section class="estudios-grid">
         <div class="estudio-card" data-info="estudio1">
             <img src="~/Content/Imagenes/AguaNaturaleza.jpg" alt="Estudios hidrogeológicos" />
@@ -83,27 +83,28 @@ document.addEventListener("DOMContentLoaded", () => {
         estudio1: {
             title: "Estudios Hidrogeológicos",
             text: "Realizamos estudios completos que determinan la capacidad del terreno para captar, almacenar y distribuir agua subterránea. Cumplimos con los requisitos técnicos del AYA y SENARA.",
-            img: "~/Content/Imagenes/AguaNaturaleza.jpg"
+            img: '@Url.Content("~/Content/Imagenes/AguaNaturaleza.jpg")'
+
         },
         estudio2: {
             title: "Aforos de Cuerpos de Agua",
             text: "Medimos caudales en ríos, quebradas y nacientes utilizando instrumentación de precisión para determinar la disponibilidad hídrica.",
-            img: "~/Content/Imagenes/Catarata-Tesoro-Escondido-otra-catarata-que-visitar-en-Costa-Rica.jpg"
+            img: '@Url.Content("~/Content/Imagenes/Catarata-Tesoro-Escondido-otra-catarata-que-visitar-en-Costa-Rica.jpg")'
         },
         estudio3: {
             title: "Análisis de Calidad de las Aguas",
             text: "Realizamos muestreo y análisis físico-químico y microbiológico conforme a normas nacionales e internacionales.",
-            img: "~/Content/Imagenes/concesion.jpg"
+            img: '@Url.Content("~/Content/Imagenes/concesion.jpg")'
         },
         estudio4: {
             title: "Sondeos Eléctricos Verticales (GEOV)",
             text: "Aplicamos métodos eléctricos para identificar la estructura del subsuelo y definir puntos estratégicos de perforación de pozos.",
-            img: "~/Content/Imagenes/estudio.jpg"
+            img: '@Url.Content("~/Content/Imagenes/estudio.jpg")'
         },
         estudio5: {
             title: "Estudios Hidráulicos e Hidrológicos",
             text: "Desarrollamos modelaciones de flujo y escorrentía superficial para diseño de obras hidráulicas seguras y eficientes.",
-            img: "~/Content/Imagenes/viabilidad.jpg"
+            img: '@Url.Content("~/Content/Imagenes/viabilidad.jpg")'
         }
     };
 

@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|d:\\visual studio 2022\\projects\\aguaingenieria\\aguaingenieria\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|d:\\visual studio 2022\\projects\\aguaingenieria\\aguaingenieria\\views\\servicios\\concesiones.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|solutionrelative:views\\servicios\\concesiones.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|d:\\visual studio 2022\\projects\\aguaingenieria\\aguaingenieria\\views\\servicios\\estudios.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|solutionrelative:views\\servicios\\estudios.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|d:\\visual studio 2022\\projects\\aguaingenieria\\aguaingenieria\\views\\servicios\\viabilidad.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|solutionrelative:views\\servicios\\viabilidad.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,15 +50,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAAD0AAACAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Viabilidad.cshtml",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Views\\Servicios\\Viabilidad.cshtml",
+              "RelativeDocumentMoniker": "Views\\Servicios\\Viabilidad.cshtml",
+              "ToolTip": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Views\\Servicios\\Viabilidad.cshtml",
+              "RelativeToolTip": "Views\\Servicios\\Viabilidad.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGcAAABeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-13T17:52:41.573Z",
+              "WhenOpened": "2025-10-15T16:15:45.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Estudios.cshtml",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Views\\Servicios\\Estudios.cshtml",
+              "RelativeDocumentMoniker": "Views\\Servicios\\Estudios.cshtml",
+              "ToolTip": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Views\\Servicios\\Estudios.cshtml",
+              "RelativeToolTip": "Views\\Servicios\\Estudios.cshtml",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAFsAAAB5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-15T15:38:20.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Concesiones.cshtml",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Views\\Servicios\\Concesiones.cshtml",
+              "RelativeDocumentMoniker": "Views\\Servicios\\Concesiones.cshtml",
+              "ToolTip": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Views\\Servicios\\Concesiones.cshtml",
+              "RelativeToolTip": "Views\\Servicios\\Concesiones.cshtml",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAGgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-15T15:46:55.537Z",
               "EditorCaption": ""
             }
           ]
