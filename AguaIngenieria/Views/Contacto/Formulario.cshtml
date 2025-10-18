@@ -1,7 +1,62 @@
-﻿
+﻿@model AguaIngenieria.Models.ContactoFormulario
+
 @{
     ViewBag.Title = "Formulario";
 }
 
-<h2>Formulario</h2>
+<link href="@Url.Content("~/CSS/Custom/Formulario.css")" rel="stylesheet" />
+
+<div class="contacto-container">
+    <h2>Contáctenos</h2>
+    <p>Complete el siguiente formulario y nos pondremos en contacto con usted.</p>
+
+    @* Mensaje *@
+    @if (ViewBag.Mensaje != null)
+    {
+        <div class="alert alert-success">@ViewBag.Mensaje</div>
+    }
+
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger">@ViewBag.Error</div>
+    }
+
+    @using (Html.BeginForm("Formulario", "Contacto", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email)
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "correo@ejemplo.com" })
+            @Html.ValidationMessageFor(m => m.Email)
+        </div>
+
+        <div class="form-row">
+            <div class="form-group half">
+                @Html.LabelFor(m => m.Nombre)
+                @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control", placeholder = "Nombre" })
+                @Html.ValidationMessageFor(m => m.Nombre)
+            </div>
+            <div class="form-group half">
+                @Html.LabelFor(m => m.Apellido)
+                @Html.TextBoxFor(m => m.Apellido, new { @class = "form-control", placeholder = "Apellido" })
+                @Html.ValidationMessageFor(m => m.Apellido)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Telefono)
+            @Html.TextBoxFor(m => m.Telefono, new { @class = "form-control", placeholder = "Número de teléfono" })
+            @Html.ValidationMessageFor(m => m.Telefono)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Mensaje)
+            @Html.TextAreaFor(m => m.Mensaje, new { @class = "form-control", rows = 5, placeholder = "Escriba su mensaje..." })
+            @Html.ValidationMessageFor(m => m.Mensaje)
+        </div>
+
+        <button type="submit" class="btn-enviar">Enviar</button>
+    }
+</div>
 

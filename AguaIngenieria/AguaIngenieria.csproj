@@ -128,6 +128,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ContactoFormulario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +168,7 @@
     <Content Include="Content\Imagenes\photo-1503435980610-a51f3ddfee50.jpg" />
     <Content Include="Content\Imagenes\viabilidad.jpg" />
     <Content Include="CSS\Custom\Faqs.css" />
+    <Content Include="CSS\Custom\Formulario.css" />
     <Content Include="CSS\Custom\RedesSociales.css" />
     <Content Include="CSS\Custom\Ubicacion.css" />
     <Content Include="CSS\Custom\Estudios.css" />
@@ -223,7 +225,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\ContactoViewModel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
