@@ -29,31 +29,36 @@
         <div class="estudio-card" data-info="concesion1">
             <img src="~/Content/Imagenes/AguaNaturaleza.jpg" alt="Aguas superficiales y subterráneas" />
             <h3>Aguas Superficiales y Subterráneas</h3>
-            <p>Permisos ante MINAE y SENARA para el aprovechamiento de aguas de ríos, quebradas o pozos.</p>
+            <p>Permisos ante MINAE y SENARA para el aprovechamiento de aguas de ríos, quebradas, pozos, entre otros...</p>
+            <button class="ver-mas-btn">Ver más</button>
         </div>
 
         <div class="estudio-card" data-info="concesion2">
             <img src="~/Content/Imagenes/estudio.jpg" alt="Fuerza hidráulica" />
             <h3>Concesiones de Fuerza Hidráulica</h3>
             <p>Tramitamos concesiones para el aprovechamiento energético de corrientes de agua.</p>
+            <button class="ver-mas-btn">Ver más</button>
         </div>
 
         <div class="estudio-card" data-info="concesion3">
             <img src="~/Content/Imagenes/Catarata-Tesoro-Escondido-otra-catarata-que-visitar-en-Costa-Rica.jpg" alt="Permisos de vertido" />
             <h3>Permisos de Vertido</h3>
             <p>Autorizaciones ante el MINAE para el vertido controlado de aguas residuales.</p>
+            <button class="ver-mas-btn">Ver más</button>
         </div>
 
         <div class="estudio-card" data-info="concesion4">
             <img src="~/Content/Imagenes/pexels-photo-807598.jpeg" alt="Obras en cauce" />
             <h3>Obras en Cauce</h3>
             <p>Tramitamos permisos y elaboramos estudios técnicos para obras en cauces naturales.</p>
+            <button class="ver-mas-btn">Ver más</button>
         </div>
 
         <div class="estudio-card" data-info="concesion5">
             <img src="~/Content/Imagenes/viabilidad.jpg" alt="Obras calibradoras" />
             <h3>Obras Calibradoras</h3>
             <p>Diseño e instalación de obras calibradoras de caudal conforme a disposiciones del MINAE y SENARA.</p>
+            <button class="ver-mas-btn">Ver más</button>
         </div>
     </section>
 
@@ -107,20 +112,30 @@
         };
 
         cards.forEach(card => {
-            card.addEventListener("click", () => {
+            const btn = card.querySelector(".ver-mas-btn");
+            if (!btn) return; 
+
+            btn.addEventListener("click", (e) => {
+                e.stopPropagation(); 
                 const id = card.getAttribute("data-info");
                 const item = info[id];
+
+                if (!item) return; 
+
                 modalBody.innerHTML = `
-                <h2>${item.title}</h2>
-                <img src="${item.img.replace('~', '')}" alt="${item.title}" />
-                <p>${item.text}</p>
-            `;
+                    <h2>${item.title}</h2>
+                    <img src="${item.img.replace('~', '')}" alt="${item.title}" />
+                    <p>${item.text}</p>
+                `;
                 modal.classList.add("show");
             });
         });
 
         closeBtn.addEventListener("click", () => modal.classList.remove("show"));
-        modal.addEventListener("click", e => { if (e.target === modal) modal.classList.remove("show"); });
+        modal.addEventListener("click", e => {
+            if (e.target === modal) modal.classList.remove("show");
+        });
     });
 </script>
+
 

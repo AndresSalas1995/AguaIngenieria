@@ -31,7 +31,7 @@
 }
 
 .category-btn {
-    background-color: #1a3d1f;
+    background-color: #2c943b;
     color: white !important;
     padding: 12px 24px;
     border-radius: 8px;
@@ -41,7 +41,7 @@
 }
 
     .category-btn:hover {
-        background-color: #145c17;
+        background-color: #47eb5f;
     }
 
 /* Grid de servicios */
@@ -87,7 +87,7 @@
 
 .service-btn {
     display: inline-block;
-    background-color: #1a3d1f;
+    background-color: #2c943b;
     color: #fff !important;
     padding: 10px 20px;
     border-radius: 6px;
@@ -97,13 +97,13 @@
 }
 
     .service-btn:hover {
-        background-color: #145c17;
+        background-color: #47eb5f;
     }
 
 /*Imagen*/
 .service-image {
     width: 100%;
-    height: 100%; /* ajusta según necesidad */
+    height: 100%; 
     object-fit: cover; /* para que la imagen rellene sin distorsión */
     border-radius: 12px 12px 0 0; /* para que coincida con las esquinas de la tarjeta */
     margin-bottom: 16px;
@@ -124,7 +124,7 @@
     margin: 40px 0;
     animation: fadeSlideUp 1.2s ease forwards;
     margin-bottom: 100px;
-    background: rgba(26, 61, 31, 0.6); 
+    background: #2c943b; 
     border-radius: 12px;
     padding: 20px 0;
     backdrop-filter: blur(6px);

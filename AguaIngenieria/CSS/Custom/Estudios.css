@@ -53,12 +53,12 @@
 
 /*  Grid de estudios  */
 .estudios-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
     padding: 0 40px 80px;
 }
+
 
 .estudio-card {
     background: #ffffff;
@@ -147,6 +147,25 @@
     cursor: pointer;
 }
 
+/* Botón "Ver más" dentro de las tarjetas */
+.ver-mas-btn {
+    background-color: #2c943b;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    margin-top: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+    .ver-mas-btn:hover {
+        background-color: #47eb5f;
+        transform: scale(1.05);
+    }
+
+
 /*  Botón volver  */
 .volver-container {
     text-align: center;
@@ -154,8 +173,8 @@
 }
 
 .volver-btn {
-    background: #1a3d1f;
-    color: white;
+    background: #2c943b;
+    color: white !important;
     text-decoration: none;
     padding: 12px 24px;
     border-radius: 8px;
@@ -164,7 +183,7 @@
 }
 
     .volver-btn:hover {
-        background: #145c17;
+        background: #47eb5f;
     }
 
 /*  Animaciones  */
@@ -180,13 +199,72 @@
     }
 }
 
-/* Responsivo  */
-@media (max-width: 768px) {
-    .hero-text h1 {
-        font-size: 2.8rem;
+/* Ajuste visual y responsivo del modal */
+.modal-content {
+    background: white;
+    border-radius: 12px;
+    max-width: 700px;
+    max-height: 90vh; /* Evita que el modal sobrepase la pantalla */
+    overflow-y: auto; /* Permite hacer scroll si el contenido es muy largo */
+    padding: 30px;
+    position: relative;
+    animation: fadeSlideUp 0.5s ease;
+}
+
+    /* Imagen del modal: tamaño uniforme y adaptable */
+    .modal-content img {
+        width: 100%;
+        object-fit: contain; /* Ajusta la imagen sin recortar */
+        /*height: 300px;*/ /* Altura fija para uniformar */
+        object-fit: cover; /* Recorta sin deformar */
+        border-radius: 10px;
+        margin-bottom: 20px;
     }
 
-    .estudio-card {
-        width: 90%;
+    /* Título y texto dentro del modal */
+    .modal-content h2 {
+        color: #1a3d1f;
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        text-align: center;
     }
+
+    .modal-content p {
+        color: #333;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+.estudio-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* separa contenido y botón */
+    height: 100%; /* ayuda a que la tarjeta tome toda la altura posible */
+}
+
+    .estudio-card p {
+        flex-grow: 1; 
+    }
+
+
+/* Hacer el modal más usable en pantallas pequeñas */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        max-height: 85vh;
+        padding: 20px;
+    }
+
+        .modal-content img {
+            height: 200px; /* más bajo en móviles */
+        }
+
+        .modal-content h2 {
+            font-size: 1.5rem;
+        }
+
+        .modal-content p {
+            font-size: 1rem;
+        }
 }

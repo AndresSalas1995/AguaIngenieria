@@ -29,30 +29,35 @@
             <img src="~/Content/Imagenes/Catarata-Tesoro-Escondido-otra-catarata-que-visitar-en-Costa-Rica.jpg" alt="Viabilidades Ambientales" />
             <h3>Viabilidades Ambientales</h3>
             <p>Elaboramos estudios y gestionamos licencias ambientales ante SETENA y municipalidades.</p>
+            <button class="ver-mas-btn">Ver más</button>
         </div>
 
         <div class="estudio-card" data-info="viabilidad2">
             <img src="~/Content/Imagenes/concesion.jpg" alt="Perforaciones de Pozos" />
             <h3>Perforaciones de Pozos</h3>
             <p>Realizamos perforaciones artesanales o con maquinaria conforme a la normativa SENARA.</p>
+            <button class="ver-mas-btn">Ver más</button>
         </div>
 
         <div class="estudio-card" data-info="viabilidad3">
             <img src="~/Content/Imagenes/viabilidad.jpg" alt="Pruebas de Bombeo" />
             <h3>Pruebas de Bombeo</h3>
             <p>Determinamos el rendimiento y capacidad de extracción de pozos profundos.</p>
+            <button class="ver-mas-btn">Ver más</button>
         </div>
 
         <div class="estudio-card" data-info="viabilidad4">
             <img src="~/Content/Imagenes/concesion.jpg" alt="Sistemas de Captación y Distribución" />
             <h3>Sistemas de Captación y Distribución</h3>
             <p>Diseñamos sistemas de captación, conducción y almacenamiento adaptados al terreno.</p>
+            <button class="ver-mas-btn">Ver más</button>
         </div>
 
         <div class="estudio-card" data-info="viabilidad5">
             <img src="~/Content/Imagenes/photo-1503435980610-a51f3ddfee50.jpg" alt="Capacitaciones Ambientales" />
             <h3>Capacitaciones Ambientales</h3>
             <p>Capacitamos en gestión hídrica, normativas ambientales y buenas prácticas sostenibles.</p>
+            <button class="ver-mas-btn">Ver más</button>
         </div>
     </section>
 
@@ -106,20 +111,29 @@
         };
 
         cards.forEach(card => {
-            card.addEventListener("click", () => {
+            const btn = card.querySelector(".ver-mas-btn");
+            if (!btn) return;
+
+            btn.addEventListener("click", (e) => {
+                e.stopPropagation();
                 const id = card.getAttribute("data-info");
                 const item = info[id];
+
+                if (!item) return;
+
                 modalBody.innerHTML = `
-                <h2>${item.title}</h2>
-                <img src="${item.img.replace('~', '')}" alt="${item.title}" />
-                <p>${item.text}</p>
-            `;
+            <h2>${item.title}</h2>
+            <img src="${item.img.replace('~', '')}" alt="${item.title}" />
+            <p>${item.text}</p>
+        `;
                 modal.classList.add("show");
             });
         });
 
         closeBtn.addEventListener("click", () => modal.classList.remove("show"));
-        modal.addEventListener("click", e => { if (e.target === modal) modal.classList.remove("show"); });
+        modal.addEventListener("click", e => {
+            if (e.target === modal) modal.classList.remove("show");
+        });
     });
 </script>
 

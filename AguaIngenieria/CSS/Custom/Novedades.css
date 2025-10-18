@@ -85,3 +85,24 @@
 .card-footer .btn {
     float: right;
 }
+
+/*titulo, subtitulo y descrpcion novedades tamaño*/
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.card-subtitle {
+    font-size: 1rem;
+}
+
+.card-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/*Texto introductotio*/
+.container > p.text-center.text-muted {
+    font-size: 1.5rem !important;
+    line-height: 1.7 !important;
+}
