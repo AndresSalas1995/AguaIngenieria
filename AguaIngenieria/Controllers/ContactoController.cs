@@ -50,15 +50,26 @@ namespace AguaIngenieria.Controllers
                 { 
                     smtp.Credentials = new System.Net.NetworkCredential(smtpUser, smtpPass);
                     smtp.EnableSsl = true;
+                    
                     //Creamos el mensaje de correo para administrador
+                    //Con HTML para mejor formato
                     var mail = new System.Net.Mail.MailMessage();
-                    mail.From = new System.Net.Mail.MailAddress(smtpUser);
+                    mail.From = new System.Net.Mail.MailAddress(smtpUser, "Agua Ingenieria Costa Rica");
                     mail.To.Add(adminEmail);
-                    mail.Subject = "Nuevo mensaje de contacto desde el sitio web";
-                    mail.Body = $"Nombre: {modelo.Nombre} {modelo.Apellido}\n" +
-                                $"Correo Eléctronico: {modelo.Email}\n" +
-                                $"Teléfono: {modelo.Telefono}\n\n" +
-                                $"Mensaje:\n{modelo.Mensaje}";
+                    mail.Subject = $"Nuevo mensaje de contacto - {modelo.Nombre} {modelo.Apellido}";
+                    mail.IsBodyHtml = true;
+                    mail.Body = $@"
+                      <h2>Nuevo mensaje de contacto recibido</h2>
+                      <p><strong>Nombre:</strong> {modelo.Nombre} {modelo.Apellido}<br/>
+                      <strong>Correo Electrónico:</strong> {modelo.Email}<br/>
+                      <strong>Teléfono:</strong> {modelo.Telefono}<br/>
+                      <strong>Fecha:</strong> {DateTime.Now:dd/MM/yyyy HH:mm}</p>
+                      <hr/>
+                      <p><strong>Mensaje:</strong><br/>{HttpUtility.HtmlEncode(modelo.Mensaje)}</p>
+                      <br/>
+                      <p style='font-size:small;color:gray;'>Este mensaje fue generado automáticamente desde el sitio web de Agua Ingenieria Costa Rica.</p>
+                    ";
+
                     //Enviamos el correo
                     await smtp.SendMailAsync(mail);
 
@@ -66,18 +77,53 @@ namespace AguaIngenieria.Controllers
                     var correoUsuario = new System.Net.Mail.MailMessage();
                     correoUsuario.From = new System.Net.Mail.MailAddress(smtpUser, "Agua Ingenieria Costa Rica");
                     correoUsuario.To.Add(modelo.Email);
-                    correoUsuario.Subject = "Confirmación de recepción de mensaje";
-                    correoUsuario.Body = $"Hola {modelo.Nombre},\n\n" +
-                                          $"Hemos recibido tu mensaje y te responderemos pronto.\n\n" +
-                                          $"Gracias por contactarnos.\n\n" +
-                                          $"— Equipo de Agua Ingenieria Costa Rica";
+                    correoUsuario.Subject = "Confirmación de recepción de tu mensaje - Agua Ingenieria Costa Rica";
+                    correoUsuario.IsBodyHtml = true;
+                    correoUsuario.Body = $@"
+                      <p>Estimado/a {modelo.Nombre},</p>
+                      <p>Gracias por contactarnos. Hemos recibido tu mensaje y nuestro equipo te responderá a la brevedad posible.</p>
+                      <p><strong>Resumen de tu mensaje:</strong></p>
+                      <blockquote style='background:#f9f9f9;padding:10px;border-left:3px solid #0078d7;'>{HttpUtility.HtmlEncode(modelo.Mensaje)}</blockquote>
+                      <br/>
+                      <p>Saludos cordiales,<br/>
+                      <strong>Equipo de Agua Ingenieria Costa Rica</strong><br/>
+                      <a href='https://aguacostarica.com'>aguacostarica.com</a></p>
+                      <hr/>
+                      <p style='font-size:small;color:gray;'>Este es un mensaje automático, por favor no responder a este correo.</p>
+                      ";
 
                     //Enviamos el correo de confirmación al usuario
                     await smtp.SendMailAsync(correoUsuario);
+
+                    //sin HTML más sencillo
+                    ////Creamos el mensaje de correo para administrador
+                    //var mail = new System.Net.Mail.MailMessage();
+                    //mail.From = new System.Net.Mail.MailAddress(smtpUser);
+                    //mail.To.Add(adminEmail);
+                    //mail.Subject = "Nuevo mensaje de contacto desde el sitio web";
+                    //mail.Body = $"Nombre: {modelo.Nombre} {modelo.Apellido}\n" +
+                    //            $"Correo Eléctronico: {modelo.Email}\n" +
+                    //            $"Teléfono: {modelo.Telefono}\n\n" +
+                    //            $"Mensaje:\n{modelo.Mensaje}";
+                    ////Enviamos el correo
+                    //await smtp.SendMailAsync(mail);
+
+                    ////Correo de confirmación al usuario que envió el mensaje
+                    //var correoUsuario = new System.Net.Mail.MailMessage();
+                    //correoUsuario.From = new System.Net.Mail.MailAddress(smtpUser, "Agua Ingenieria Costa Rica");
+                    //correoUsuario.To.Add(modelo.Email);
+                    //correoUsuario.Subject = "Confirmación de recepción de mensaje";
+                    //correoUsuario.Body = $"Hola {modelo.Nombre},\n\n" +
+                    //                      $"Hemos recibido tu mensaje y te responderemos pronto.\n\n" +
+                    //                      $"Gracias por contactarnos.\n\n" +
+                    //                      $"— Equipo de Agua Ingenieria Costa Rica";
+
+                    ////Enviamos el correo de confirmación al usuario
+                    //await smtp.SendMailAsync(correoUsuario);
                 }
 
-            // Si el modelo no es válido, volvemos a mostrar el formulario con los errores
-            ViewBag.Mensaje = "Tu mensaje se envió correctamente. Pronto nos pondremos en contacto.";
+                // Si el modelo no es válido, volvemos a mostrar el formulario con los errores
+                ViewBag.Mensaje = "Tu mensaje se envió correctamente. Pronto nos pondremos en contacto.";
             return View(new Models.ContactoFormulario());
             }
             catch (SmtpException ex)
