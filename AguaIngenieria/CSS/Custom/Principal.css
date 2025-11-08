@@ -24,16 +24,6 @@
         object-fit: cover;
         display: block;
     }
-/* En caso que el cliente decida tener un tipo de fade para la transición en las imágenes */
-/*#slider {
-    transition: opacity 1s ease-in-out;
-    opacity: 1;
-}
-
-#slider.fade-out {
-    opacity: 0;
-}
-*/
 
 /* Flechas para navegar el slider */
 .slider-arrow {
@@ -174,7 +164,7 @@
     font-family: 'Segoe UI', Arial, sans-serif;
     font-weight: 900;
     font-size: 3.5rem;
-    color: #002147;
+    color: #279acc;
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-bottom: 1.5rem;
@@ -190,7 +180,7 @@
     bottom: 0;
     width: 60px; /* ancho de la línea */
     height: 5px; /* grosor del separador */
-    background-color: #1e341d; /* color del separador */
+    background-color: #3bd5d5; /* color del separador */
     border-radius: 2px;
 }
 
@@ -205,6 +195,7 @@
 
 /* Contenido de texto alineado a la izquierda */
 .text-content-left {
+    width: 100%;
     flex: 1;
     padding-left: 30px;
     display: flex;
@@ -217,7 +208,7 @@
     font-family: 'Segoe UI', Arial, sans-serif;
     font-weight: 900;
     font-size: 3.5rem;
-    color: #002147;
+    color: #279acc;
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-bottom: 1.5rem;
@@ -233,7 +224,7 @@
     bottom: 0;
     width: 60px; /* ancho de la línea */
     height: 5px; /* grosor del separador */
-    background-color: #1e341d; /* color del separador */
+    background-color: #3bd5d5; /* color del separador */
     border-radius: 2px;
 }
 
@@ -248,7 +239,7 @@
 /* Sección de información de contacto */
 .contact-info {
     margin-top: 2rem;
-    color: #1a3d1f;
+    color: #279acc;
     font-size: 1.25rem;
     line-height: 1.6;
     font-family: 'Segoe UI', Arial, sans-serif;
@@ -270,7 +261,7 @@
 
 /* Enlace en la información de contacto */
 .contact-info a {
-    color: #1a3d1f;
+    color: #279acc;
     text-decoration: none;
     font-weight: bold;
     display: block;
@@ -281,7 +272,7 @@
 /* Sección divisor con imagen de fondo */
 .info-divider {
     position: relative;
-    background-image: url('/Content/Imagenes/pexels-sam-lg-1572036.jpg');
+    background-image: url('/Content/Imagenes/ruleta1.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -335,6 +326,27 @@
     font-family: 'Segoe UI', Arial, sans-serif;
 }
 
+/*Contenedor princiapl servicios*/
+.services-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 40px 20px;
+}
+
+/* Imagen panorámica arriba */
+.image-content-top img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 32px;
+}
+
+
 /* Texto introductorio de la sección de servicios */
 .services-intro {
     font-size: 1.2rem;
@@ -373,7 +385,7 @@
     content: "✔";
     position: absolute;
     left: 0;
-    color: #1a3d1f;
+    color: #3bd5d5;
     font-weight: bold;
 }
 

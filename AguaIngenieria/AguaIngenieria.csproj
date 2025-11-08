@@ -279,7 +279,6 @@
     <Content Include="Content\Imagenes\AguaNaturaleza.jpg" />
     <Content Include="Content\Imagenes\aya.png" />
     <Content Include="Content\Imagenes\banner.png" />
-    <Content Include="Content\Imagenes\Catarata-Tesoro-Escondido-otra-catarata-que-visitar-en-Costa-Rica.jpg" />
     <Content Include="Content\Imagenes\concesion.jpg" />
     <Content Include="Content\Imagenes\drop-3698073_640.jpg" />
     <Content Include="Content\Imagenes\estudio.jpg" />
@@ -287,6 +286,9 @@
     <Content Include="Content\Imagenes\fondo-cielo-azul-nubes_461160-3434.jpg" />
     <Content Include="Content\Imagenes\imagen.png" />
     <Content Include="Content\Imagenes\imagen11.png" />
+    <Content Include="Content\Imagenes\IMG_1688.JPEG" />
+    <Content Include="Content\Imagenes\IMG_1695.JPEG" />
+    <Content Include="Content\Imagenes\IMG_1724.JPEG" />
     <Content Include="Content\Imagenes\Logo-nuevo-office-1-300x128.png" />
     <Content Include="Content\Imagenes\Logo_AguaIngenieria.png" />
     <Content Include="Content\Imagenes\minae.jpg" />
@@ -294,6 +296,10 @@
     <Content Include="Content\Imagenes\pexels-pixabay-45229-scaled-e1692914150546.jpg" />
     <Content Include="Content\Imagenes\pexels-sam-lg-1572036.jpg" />
     <Content Include="Content\Imagenes\photo-1503435980610-a51f3ddfee50.jpg" />
+    <Content Include="Content\Imagenes\ruleta1.jpg" />
+    <Content Include="Content\Imagenes\ruleta2.jpg" />
+    <Content Include="Content\Imagenes\ruleta3.jpg" />
+    <Content Include="Content\Imagenes\ruleta4.jpg" />
     <Content Include="Content\Imagenes\viabilidad.jpg" />
     <Content Include="CSS\Custom\Faqs.css" />
     <Content Include="CSS\Custom\Formulario.css" />
