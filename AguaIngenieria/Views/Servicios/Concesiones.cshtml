@@ -7,7 +7,7 @@
 <div class="estudios-page">
     @*Hero / Banner*@
     <section class="hero-section">
-        <img src="~/Content/Imagenes/banner.png" alt="Concesiones de Agua - Agua Ingeniería Costa Rica" />
+        <img src="~/Content/Imagenes/concesion1.jpg" alt="Concesiones de Agua - Agua Ingeniería Costa Rica" />
         <div class="hero-text">
             <h1>Concesiones de Agua</h1>
             <p>Tramitamos permisos y licencias para el uso legal, responsable y sostenible del recurso hídrico.</p>
@@ -15,47 +15,72 @@
     </section>
 
     @*Introducción*@
-    <section class="intro-section">
-        <h2>Gestión integral de concesiones y permisos hídricos</h2>
-        <p>
-            En <strong>Agua Ingeniería Costa Rica</strong> acompañamos a nuestros clientes en la obtención de
-            concesiones, licencias y permisos requeridos para el uso del recurso hídrico, asegurando el cumplimiento
-            de la normativa ambiental y técnica vigente.
-        </p>
-    </section>
+<section class="intro-section">
+    <h2>Gestión integral de concesiones y permisos hídricos</h2>
+    <p>
+        En <strong>Agua Ingeniería Costa Rica</strong> acompañamos a nuestros clientes en la obtención de
+        concesiones, licencias y permisos requeridos para el uso del recurso hídrico, asegurando el cumplimiento
+        de la normativa ambiental y técnica vigente.
+    </p>
+    <p>
+        Una <strong>concesión de agua</strong> es la autorización legal otorgada por el Estado costarricense, a través del
+        <strong>Ministerio de Ambiente y Energía (MINAE)</strong> y otras instituciones competentes, que permite el
+        aprovechamiento de aguas superficiales o subterráneas de forma responsable y sostenible. Este permiso
+        garantiza que el uso del agua se realice sin afectar negativamente los ecosistemas, otras fuentes
+        de abastecimiento ni los derechos de terceros.
+    </p>
+    <p>
+        El proceso de concesión involucra diferentes etapas técnicas, legales y ambientales, tales como la
+        presentación de estudios hidrogeológicos, evaluaciones de impacto, medición de caudales, análisis de
+        calidad del agua y definición de obras de captación o control. En <strong>Agua Ingeniería Costa Rica</strong>
+        contamos con un equipo multidisciplinario que brinda acompañamiento en todas estas fases, asegurando
+        un trámite ágil, transparente y conforme a la legislación nacional.
+    </p>
+    <p>
+        Además de las concesiones para uso de agua, gestionamos <strong>permisos de vertido</strong>,
+        <strong>autorizaciones para obras en cauce</strong> y <strong>concesiones de fuerza hidráulica</strong>, entre otros.
+        Cada uno de estos servicios busca garantizar el aprovechamiento racional del recurso hídrico, promoviendo la
+        <strong>sostenibilidad ambiental</strong> y el cumplimiento de los estándares técnicos exigidos por las autoridades.
+    </p>
+    <p>
+        Con nuestras soluciones integrales, ayudamos a empresas, instituciones y particulares a transformar
+        la gestión del agua en una oportunidad para crecer de manera responsable, proteger el ambiente y
+        asegurar la disponibilidad del recurso para las generaciones futuras.
+    </p>
+</section>
 
     @*Grid de servicios de concesiones*@
     <section class="estudios-grid">
         <div class="estudio-card" data-info="concesion1">
-            <img src="~/Content/Imagenes/AguaNaturaleza.jpg" alt="Aguas superficiales y subterráneas" />
+            <img src="~/Content/Imagenes/concesion2.jpg" alt="Aguas superficiales y subterráneas" />
             <h3>Aguas Superficiales y Subterráneas</h3>
             <p>Permisos ante MINAE y SENARA para el aprovechamiento de aguas de ríos, quebradas, pozos, entre otros...</p>
             <button class="ver-mas-btn">Ver más</button>
         </div>
 
         <div class="estudio-card" data-info="concesion2">
-            <img src="~/Content/Imagenes/estudio.jpg" alt="Fuerza hidráulica" />
+            <img src="~/Content/Imagenes/concesion3.jpg" alt="Fuerza hidráulica" />
             <h3>Concesiones de Fuerza Hidráulica</h3>
             <p>Tramitamos concesiones para el aprovechamiento energético de corrientes de agua.</p>
             <button class="ver-mas-btn">Ver más</button>
         </div>
 
         <div class="estudio-card" data-info="concesion3">
-            <img src="~/Content/Imagenes/Catarata-Tesoro-Escondido-otra-catarata-que-visitar-en-Costa-Rica.jpg" alt="Permisos de vertido" />
+            <img src="~/Content/Imagenes/concesion4.jpg" alt="Permisos de vertido" />
             <h3>Permisos de Vertido</h3>
             <p>Autorizaciones ante el MINAE para el vertido controlado de aguas residuales.</p>
             <button class="ver-mas-btn">Ver más</button>
         </div>
 
         <div class="estudio-card" data-info="concesion4">
-            <img src="~/Content/Imagenes/pexels-photo-807598.jpeg" alt="Obras en cauce" />
+            <img src="~/Content/Imagenes/concesion5.jpg" alt="Obras en cauce" />
             <h3>Obras en Cauce</h3>
             <p>Tramitamos permisos y elaboramos estudios técnicos para obras en cauces naturales.</p>
             <button class="ver-mas-btn">Ver más</button>
         </div>
 
         <div class="estudio-card" data-info="concesion5">
-            <img src="~/Content/Imagenes/viabilidad.jpg" alt="Obras calibradoras" />
+            <img src="~/Content/Imagenes/concesion6.jpg" alt="Obras calibradoras" />
             <h3>Obras Calibradoras</h3>
             <p>Diseño e instalación de obras calibradoras de caudal conforme a disposiciones del MINAE y SENARA.</p>
             <button class="ver-mas-btn">Ver más</button>
@@ -84,43 +109,169 @@
         const closeBtn = document.querySelector(".close");
 
         const info = {
-            concesion1: {
-                title: "Concesiones para Aprovechamiento de Aguas Superficiales y Subterráneas",
-                text: "Gestionamos los permisos necesarios ante el MINAE y SENARA para el uso legal del recurso hídrico, ya sea proveniente de ríos, quebradas o pozos. Incluye la elaboración de estudios técnicos y la presentación de documentación conforme a la normativa nacional.",
-                img: '@Url.Content("~/Content/Imagenes/AguaNaturaleza.jpg")'
-            },
-            concesion2: {
-                title: "Concesiones de Fuerza Hidráulica",
-                text: "Elaboramos estudios y tramitamos concesiones para el aprovechamiento de la energía de corrientes de agua, aplicables a proyectos de tipo Pelton, microcentrales y pequeñas hidroeléctricas.",
-                img: '@Url.Content("~/Content/Imagenes/estudio.jpg")'
-            },
-            concesion3: {
-                title: "Permisos de Vertido de Aguas Residuales",
-                text: "Realizamos el trámite ante el MINAE para obtener la autorización de vertido de aguas residuales, garantizando el cumplimiento del Reglamento de Vertidos y las normas ambientales vigentes.",
-                img: '@Url.Content("~/Content/Imagenes/Catarata-Tesoro-Escondido-otra-catarata-que-visitar-en-Costa-Rica.jpg")'
-            },
-            concesion4: {
-                title: "Obras en Cauce",
-                text: "Tramitamos permisos y elaboramos los estudios técnicos requeridos para la ejecución de obras en cauce, como pasos de alcantarilla, puentes, diques o estructuras de contención.",
-                img: '@Url.Content("~/Content/Imagenes/pexels-photo-807598.jpeg")'
-            },
-            concesion5: {
-                title: "Diseño e Instalación de Obras Calibradoras",
-                text: "Diseñamos e instalamos obras calibradoras de caudal para el aprovechamiento de agua, cumpliendo con las disposiciones del MINAE y SENARA, asegurando una medición precisa del recurso concesionado.",
-                img: '@Url.Content("~/Content/Imagenes/viabilidad.jpg")'
-            }
-        };
+    concesion1: {
+        title: "Concesiones para Aprovechamiento de Aguas Superficiales y Subterráneas",
+        img: '@Url.Content("~/Content/Imagenes/concesion2.jpg")',
+        text: `
+            <strong>¿Qué son las concesiones de agua?</strong><br>
+            Las concesiones para el aprovechamiento de aguas superficiales y subterráneas son autorizaciones otorgadas por el Estado costarricense
+            que permiten el uso legal y controlado del recurso hídrico, asegurando su aprovechamiento sostenible y equitativo.
+            Se aplican tanto a fuentes naturales como ríos, quebradas y manantiales, así como a pozos perforados o nacientes.
+
+            <br><br>
+            <strong>¿Por qué son importantes?</strong><br>
+            Toda persona física o jurídica que utilice agua de una fuente pública para actividades domésticas, agrícolas, industriales o turísticas
+            debe contar con una concesión aprobada por el MINAE y, en el caso de aguas subterráneas, también por el SENARA.
+            Esto garantiza la trazabilidad del uso, la sostenibilidad del recurso y el cumplimiento de la normativa ambiental vigente.
+
+            <br><br>
+            <strong>Nuestros servicios incluyen:</strong>
+            <ul>
+                <li>Gestión de permisos y presentación de expedientes ante MINAE y SENARA.</li>
+                <li>Elaboración de estudios hidrogeológicos e informes técnicos.</li>
+                <li>Determinación de caudales, balances hídricos y modelación de acuíferos.</li>
+                <li>Asesoría legal y técnica durante todo el proceso de concesión.</li>
+                <li>Entre otros.</li>
+            </ul>
+
+            <br>
+            En <strong>Agua Ingeniería Costa Rica</strong> garantizamos un proceso ágil, preciso y responsable,
+            promoviendo el uso sostenible del agua como eje del desarrollo económico y ambiental del país.
+        `
+    },
+
+    concesion2: {
+        title: "Concesiones de Fuerza Hidráulica",
+        img: '@Url.Content("~/Content/Imagenes/concesion3.jpg")',
+        text: `
+            <strong>¿En qué consisten?</strong><br>
+            Las concesiones de fuerza hidráulica permiten el aprovechamiento de la energía potencial del agua
+            para generar electricidad mediante turbinas, microcentrales o sistemas Pelton.
+            Este tipo de concesión requiere un análisis técnico detallado del caudal disponible y de los impactos ambientales asociados.
+
+            <br><br>
+            <strong>Importancia del trámite</strong><br>
+            La generación hidroeléctrica es una fuente limpia y renovable, pero debe gestionarse bajo parámetros técnicos que aseguren
+            la sostenibilidad del recurso y el equilibrio ecológico del cauce natural.
+            Por ello, el MINAE regula este tipo de aprovechamientos mediante concesiones específicas.
+
+            <br><br>
+            <strong>Ofrecemos:</strong>
+            <ul>
+                <li>Estudios hidráulicos e hidrológicos para estimación de caudales y energía disponible.</li>
+                <li>Tramitación completa de concesiones ante el MINAE y la Dirección de Aguas.</li>
+                <li>Diseño técnico de sistemas de captación, conducción y restitución.</li>
+                <li>Evaluaciones de impacto ambiental y viabilidad técnica.</li>
+                <li>Entre otros.</li>
+            </ul>
+
+            <br>
+            Nuestro equipo combina experiencia en ingeniería hidráulica, ambiental y energética
+            para ofrecer soluciones eficientes y sostenibles en el aprovechamiento de la fuerza del agua.
+        `
+    },
+
+    concesion3: {
+        title: "Permisos de Vertido de Aguas Residuales",
+        img: '@Url.Content("~/Content/Imagenes/concesion4.jpg")',
+        text: `
+            <strong>¿Qué es un permiso de vertido?</strong><br>
+            Es la autorización otorgada por el MINAE que permite descargar aguas residuales a cuerpos receptores,
+            siempre y cuando se cumplan los parámetros físico-químicos y biológicos establecidos en el
+            <em>Reglamento de Vertidos y Reuso de Aguas Residuales (Decreto Nº 33601-MINAE-S)</em>.
+
+            <br><br>
+            <strong>Importancia del control de vertidos</strong><br>
+            Este permiso busca proteger los cuerpos de agua de la contaminación, garantizando que las descargas
+            no afecten la salud pública ni los ecosistemas. Es indispensable para industrias, hoteles, urbanizaciones,
+            plantas de tratamiento, entre otros proyectos.
+
+            <br><br>
+            <strong>Nuestros servicios incluyen:</strong>
+            <ul>
+                <li>Elaboración de estudios de caracterización de aguas residuales.</li>
+                <li>Diseño y validación de sistemas de tratamiento.</li>
+                <li>Tramitación del permiso ante el MINAE y acompañamiento técnico.</li>
+                <li>Monitoreo periódico y actualización de permisos conforme a la normativa vigente.</li>
+                <li>Entre otros.</li>
+            </ul>
+
+            <br>
+            En <strong>Agua Ingeniería Costa Rica</strong> aseguramos el cumplimiento normativo,
+            promoviendo el manejo responsable del agua y la protección ambiental.
+        `
+    },
+
+    concesion4: {
+        title: "Permisos para Obras en Cauce",
+        img: '@Url.Content("~/Content/Imagenes/concesion5.jpg")',
+        text: `
+            <strong>¿Qué son las obras en cauce?</strong><br>
+            Se consideran obras en cauce aquellas estructuras que se construyen sobre ríos, quebradas o nacientes,
+            tales como pasos de alcantarilla, puentes, diques, gaviones, muros de contención o desvíos hidráulicos.
+            Estas obras requieren autorización del MINAE antes de su ejecución.
+
+            <br><br>
+            <strong>Importancia del permiso</strong><br>
+            El trámite garantiza que las intervenciones no alteren el cauce natural, no generen erosión ni afecten
+            los ecosistemas acuáticos. Es obligatorio tanto para proyectos públicos como privados.
+
+            <br><br>
+            <strong>Servicios que ofrecemos:</strong>
+            <ul>
+                <li>Diseño y justificación técnica de obras hidráulicas en cauce.</li>
+                <li>Gestión de permisos ambientales y de construcción ante MINAE y municipalidades.</li>
+                <li>Modelación hidráulica y evaluación de impacto.</li>
+                <li>Supervisión técnica durante la ejecución del proyecto.</li>
+                <li>Entre otros.</li>
+            </ul>
+
+            <br>
+            Nuestro compromiso es asegurar que cada obra se realice con responsabilidad ambiental y
+            cumpliendo las disposiciones técnicas establecidas por las autoridades competentes.
+        `
+    },
+
+    concesion5: {
+        title: "Diseño e Instalación de Obras Calibradoras de Caudal",
+        img: '@Url.Content("~/Content/Imagenes/concesion6.jpg")',
+        text: `
+            <strong>¿Qué son las obras calibradoras?</strong><br>
+            Son estructuras diseñadas para medir y controlar el caudal de agua aprovechado en una concesión.
+            Permiten verificar que el volumen de agua utilizado se mantenga dentro de los límites autorizados por el MINAE o SENARA.
+
+            <br><br>
+            <strong>¿Por qué se requieren?</strong><br>
+            Las obras calibradoras son un requisito técnico y legal para todas las concesiones de aprovechamiento,
+            ya que garantizan la transparencia en la gestión del recurso hídrico y permiten su control por parte de las autoridades.
+
+            <br><br>
+            <strong>Nuestros servicios incluyen:</strong>
+            <ul>
+                <li>Diseño técnico de vertederos, canales Parshall y estructuras calibradoras personalizadas.</li>
+                <li>Instalación y calibración en campo con equipos de medición de alta precisión.</li>
+                <li>Elaboración de memorias de cálculo y planos conforme a norma.</li>
+                <li>Capacitación para el uso y mantenimiento de las obras instaladas.</li>
+                <li>Entre otros.</li>
+            </ul>
+
+            <br>
+            En <strong>Agua Ingeniería Costa Rica</strong> desarrollamos soluciones técnicas que combinan precisión,
+            eficiencia y cumplimiento normativo, contribuyendo a una gestión hídrica más transparente y sostenible.
+        `
+    }
+};
 
         cards.forEach(card => {
             const btn = card.querySelector(".ver-mas-btn");
-            if (!btn) return; 
+            if (!btn) return;
 
             btn.addEventListener("click", (e) => {
-                e.stopPropagation(); 
+                e.stopPropagation();
                 const id = card.getAttribute("data-info");
                 const item = info[id];
 
-                if (!item) return; 
+                if (!item) return;
 
                 modalBody.innerHTML = `
                     <h2>${item.title}</h2>

@@ -187,7 +187,7 @@
 /* Párrafo en el contenido derecho */
 .text-content-right p {
     font-size: 1.3rem;
-    text-align: justify-all;
+    text-align: justify;
     line-height: 1.6;
     color: #333333;
     font-family: 'Segoe UI', Arial, sans-serif;
