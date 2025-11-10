@@ -241,6 +241,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\ContactoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PrincipalController.cs" />
@@ -292,6 +293,7 @@
     <Content Include="Content\Imagenes\estudio5.jpg" />
     <Content Include="Content\Imagenes\fondo-atardecer.jpg" />
     <Content Include="Content\Imagenes\fondo-cielo-azul-nubes_461160-3434.jpg" />
+    <Content Include="Content\Imagenes\gota.jpg" />
     <Content Include="Content\Imagenes\IMG_1688.JPEG" />
     <Content Include="Content\Imagenes\IMG_1695.JPEG" />
     <Content Include="Content\Imagenes\IMG_1724.JPEG" />
@@ -386,6 +388,7 @@
     <Content Include="Views\Contacto\Ubicacion.cshtml" />
     <Content Include="Views\Contacto\RedesSociales.cshtml" />
     <Content Include="Views\Contacto\Faqs.cshtml" />
+    <Content Include="Views\Authentication\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

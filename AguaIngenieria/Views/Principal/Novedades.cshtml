@@ -5,9 +5,14 @@
 
 <div class="container py-5">
     <div class="novedades-container">
-        <h1 class="text-center mb-4 text-primary"><i class="fas fa-bullhorn"></i> Últimas Novedades</h1>
+        <h1 class="text-center mb-4 text-primary">
+            <i class="fas fa-bullhorn"></i> Últimas Novedades
+            <a href="@Url.Action("Index", "Authentication")" class="ms-2 gota-oculta">
+                <img src="@Url.Content("~/Content/Imagenes/gota.jpg")" alt="Login oculto" style="width:32px; height:32px; vertical-align:middle;">
+            </a>
+        </h1>
     </div>
-    
+
     <p class="text-center text-muted mb-5">
         Información reciente de instituciones como MINAE, AYA, SENARA, y más.<br />
         Esta sección se actualiza periódicamente para mantenerte informado.
