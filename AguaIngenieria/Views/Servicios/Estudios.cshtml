@@ -7,7 +7,7 @@
 <div class="estudios-page">
      @*Hero / Banner*@ 
     <section class="hero-section">
-        <img src="~/Content/Imagenes/pexels-photo-807598.jpeg" alt="Estudios y Análisis de Agua Ingeniería Costa Rica" />
+        <img src="~/Content/Imagenes/estudio.jpg" alt="Estudios y Análisis de Agua Ingeniería Costa Rica" />
         <div class="hero-text">
             <h1>Estudios y Análisis</h1>
             <p>Soluciones técnicas y científicas para la gestión sostenible del recurso hídrico.</p>
@@ -15,47 +15,63 @@
     </section>
 
      @*Introducción*@ 
-    <section class="intro-section">
-        <h2>Expertos en estudios hidrogeológicos y ambientales</h2>
-        <p>
-            En <strong>Agua Ingeniería Costa Rica</strong> realizamos estudios y análisis especializados
-            que respaldan la toma de decisiones en proyectos de abastecimiento, construcción y conservación ambiental.
-            Contamos con profesionales en hidrología, geología, hidrogeología y química ambiental.
-        </p>
-    </section>
+<section class="intro-section">
+    <h2>Expertos en estudios hidrogeológicos y ambientales</h2>
+    <p>
+        En <strong>Agua Ingeniería Costa Rica</strong> realizamos estudios y análisis especializados
+        que respaldan la toma de decisiones en proyectos de abastecimiento, construcción y conservación ambiental.
+        Contamos con profesionales altamente capacitados en hidrología, geología, hidrogeología y química ambiental,
+        que aplican metodologías modernas y tecnología de punta.
+    </p>
+    <p>
+        Nuestros estudios abarcan desde la caracterización de acuíferos y la calidad del agua,
+        hasta el modelado hidráulico e hidrológico de cuencas y cuerpos de agua.
+        Esto nos permite ofrecer información confiable para el diseño, construcción y operación de proyectos sostenibles.
+    </p>
+    <p>
+        Cada análisis se realiza bajo estrictos estándares nacionales e internacionales, garantizando cumplimiento
+        con normativas del <strong>AYA</strong>, <strong>MINAE</strong> y otras entidades regulatorias.
+        Además, nuestros informes incluyen recomendaciones prácticas y soluciones técnicas adaptadas a cada situación.
+    </p>
+    <p>
+        Con nuestra experiencia, apoyamos a municipalidades, empresas privadas, organizaciones ambientales y otros
+        a tomar decisiones basadas en evidencia científica, optimizando recursos y reduciendo riesgos.
+        Explore nuestros servicios a continuación y descubra cómo podemos contribuir a la gestión sostenible del agua.
+    </p>
+</section>
 
      @*Sección servicios de estudios*@ 
     <section class="estudios-grid">
         <div class="estudio-card" data-info="estudio1">
-            <img src="~/Content/Imagenes/AguaNaturaleza.jpg" alt="Estudios hidrogeológicos" />
+            <img src="~/Content/Imagenes/estudio1.jpg" alt="Estudios hidrogeológicos" />
             <h3>Estudios Hidrogeológicos</h3>
             <p>Evaluación del subsuelo para determinar disponibilidad y comportamiento de acuíferos.</p>
             <button class="ver-mas-btn">Ver más</button>
         </div>
 
         <div class="estudio-card" data-info="estudio2">
-            <img src="~/Content/Imagenes/Catarata-Tesoro-Escondido-otra-catarata-que-visitar-en-Costa-Rica.jpg" alt="Aforos de cuerpos de agua" />
+            <img src="~/Content/Imagenes/estudio2.jpg" alt="Aforos de cuerpos de agua" />
             <h3>Aforos de Cuerpos de Agua</h3>
             <p>Medición y análisis de caudales para cumplir con los requerimientos técnicos del AYA y MINAE.</p>
             <button class="ver-mas-btn">Ver más</button>
         </div>
 
         <div class="estudio-card" data-info="estudio3">
-            <img src="~/Content/Imagenes/concesion.jpg" alt="Análisis de calidad del agua" />
+            <img src="~/Content/Imagenes/estudio3.jpg" alt="Análisis de calidad del agua" />
             <h3>Análisis de Calidad de las Aguas</h3>
             <p>Determinación de parámetros fisicoquímicos y microbiológicos para uso humano o industrial.</p>
             <button class="ver-mas-btn">Ver más</button>
         </div>
 
         <div class="estudio-card" data-info="estudio4">
-            <img src="~/Content/Imagenes/estudio.jpg" alt="Sondeos eléctricos verticales" />
+            <img src="~/Content/Imagenes/estudio4.jpg" alt="Sondeos eléctricos verticales" />
             <h3>Sondeos Eléctricos Verticales</h3>
             <p>Aplicación de geofísica para ubicar zonas óptimas de perforación o fuentes subterráneas.</p>
             <button class="ver-mas-btn">Ver más</button>
         </div>
 
         <div class="estudio-card" data-info="estudio5">
-            <img src="~/Content/Imagenes/viabilidad.jpg" alt="Estudios hidráulicos e hidrológicos" />
+            <img src="~/Content/Imagenes/estudio5.jpg" alt="Estudios hidráulicos e hidrológicos" />
             <h3>Estudios Hidráulicos e Hidrológicos</h3>
             <p>Modelado de escorrentía, drenajes y cauces naturales para proyectos de infraestructura.</p>
             <button class="ver-mas-btn">Ver más</button>
@@ -85,33 +101,82 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeBtn = document.querySelector(".close");
 
     const info = {
-        estudio1: {
-            title: "Estudios Hidrogeológicos",
-            text: "Realizamos estudios completos que determinan la capacidad del terreno para captar, almacenar y distribuir agua subterránea. Cumplimos con los requisitos técnicos del AYA y SENARA.",
-            img: '@Url.Content("~/Content/Imagenes/AguaNaturaleza.jpg")'
-
-        },
-        estudio2: {
-            title: "Aforos de Cuerpos de Agua",
-            text: "Medimos caudales en ríos, quebradas y nacientes utilizando instrumentación de precisión para determinar la disponibilidad hídrica.",
-            img: '@Url.Content("~/Content/Imagenes/Catarata-Tesoro-Escondido-otra-catarata-que-visitar-en-Costa-Rica.jpg")'
-        },
-        estudio3: {
-            title: "Análisis de Calidad de las Aguas",
-            text: "Realizamos muestreo y análisis físico-químico y microbiológico conforme a normas nacionales e internacionales.",
-            img: '@Url.Content("~/Content/Imagenes/concesion.jpg")'
-        },
-        estudio4: {
-            title: "Sondeos Eléctricos Verticales (GEOV)",
-            text: "Aplicamos métodos eléctricos para identificar la estructura del subsuelo y definir puntos estratégicos de perforación de pozos.",
-            img: '@Url.Content("~/Content/Imagenes/estudio.jpg")'
-        },
-        estudio5: {
-            title: "Estudios Hidráulicos e Hidrológicos",
-            text: "Desarrollamos modelaciones de flujo y escorrentía superficial para diseño de obras hidráulicas seguras y eficientes.",
-            img: '@Url.Content("~/Content/Imagenes/viabilidad.jpg")'
-        }
-    };
+    estudio1: {
+        title: "Estudios Hidrogeológicos",
+        img: '@Url.Content("~/Content/Imagenes/estudio1.jpg")',
+        text: `
+        Realizamos estudios completos que determinan la capacidad del terreno para captar, almacenar y distribuir agua subterránea.
+        Nuestros análisis incluyen:
+        <ul>
+            <li>Caracterización de acuíferos y análisis de capacidad de recarga.</li>
+            <li>Identificación de zonas óptimas para perforación de pozos.</li>
+            <li>Estudios de vulnerabilidad y riesgo de contaminación.</li>
+            <li>Entre otros.</li>
+        </ul>
+        Cumplimos con los requisitos técnicos del AYA y SENARA, generando informes claros y prácticos que facilitan la toma de decisiones en proyectos de abastecimiento, construcción y conservación ambiental.
+        `
+    },
+    estudio2: {
+        title: "Aforos de Cuerpos de Agua",
+        img: '@Url.Content("~/Content/Imagenes/estudio2.jpg")',
+        text: `
+        Medimos caudales en ríos, quebradas y nacientes utilizando instrumentación de precisión.
+        Esto nos permite:
+        <ul>
+            <li>Determinar disponibilidad hídrica para consumo humano, agrícola e industrial.</li>
+            <li>Analizar variaciones estacionales y efectos de la sequía o lluvias intensas.</li>
+            <li>Emitir reportes que cumplen con las normativas del AYA y MINAE.</li>
+            <li>Entre otros.</li>
+        </ul>
+        Nuestro objetivo es proporcionar datos confiables para planificar la gestión sostenible de recursos hídricos.
+        `
+    },
+    estudio3: {
+        title: "Análisis de Calidad de las Aguas",
+        img: '@Url.Content("~/Content/Imagenes/estudio3.jpg")',
+        text: `
+        Realizamos muestreo y análisis físico-químico y microbiológico siguiendo estándares nacionales e internacionales.
+        Nuestros servicios incluyen:
+        <ul>
+            <li>Determinación de parámetros como pH, turbidez, conductividad, metales y bacterias.</li>
+            <li>Evaluación para uso humano, industrial o ambiental.</li>
+            <li>Interpretación de resultados y recomendaciones para tratamiento o mitigación.</li>
+            <li>Entre otros.</li>
+        </ul>
+        Brindamos seguridad y confianza a proyectos que dependen de agua de calidad.
+        `
+    },
+    estudio4: {
+        title: "Sondeos Eléctricos Verticales (GEOV)",
+        img: '@Url.Content("~/Content/Imagenes/estudio4.jpg")',
+        text: `
+        Aplicamos métodos eléctricos para identificar la estructura del subsuelo y definir puntos estratégicos de perforación de pozos.
+        Beneficios de este estudio:
+        <ul>
+            <li>Minimiza riesgos al perforar pozos y optimiza costos.</li>
+            <li>Permite ubicar zonas con mayor potencial de agua subterránea.</li>
+            <li>Complementa estudios hidrogeológicos para proyectos confiables y sostenibles.</li>
+            <li>Entre otros.</li>
+        </ul>
+        Utilizamos tecnología avanzada y análisis profesional para generar mapas interpretativos precisos.
+        `
+    },
+    estudio5: {
+        title: "Estudios Hidráulicos e Hidrológicos",
+        img: '@Url.Content("~/Content/Imagenes/estudio5.jpg")',
+        text: `
+        Desarrollamos modelaciones de flujo y escorrentía superficial para diseño de obras hidráulicas seguras y eficientes.
+        Incluye:
+        <ul>
+            <li>Modelado de ríos, quebradas y drenajes urbanos.</li>
+            <li>Simulación de eventos extremos y gestión de riesgos de inundación.</li>
+            <li>Recomendaciones técnicas para obras de infraestructura, canales y embalses.</li>
+            <li>Entre otros.</li>
+        </ul>
+        Esto permite optimizar recursos, proteger comunidades y cumplir con normativas ambientales.
+        `
+    }
+};
 
     cards.forEach(card => {
         const btn = card.querySelector(".ver-mas-btn");

@@ -7,7 +7,7 @@
 <div class="estudios-page">
     @*Hero Section*@
     <section class="hero-section">
-        <img src="~/Content/Imagenes/banner.png" alt="Viabilidad y Servicios Técnicos - Agua Ingeniería Costa Rica" />
+        <img src="~/Content/Imagenes/viabilidad.jpg" alt="Viabilidad y Servicios Técnicos - Agua Ingeniería Costa Rica" />
         <div class="hero-text">
             <h1>Viabilidad y Servicios Técnicos</h1>
             <p>Apoyamos el desarrollo de proyectos con soluciones técnicas, ambientales y de campo.</p>
@@ -15,46 +15,56 @@
     </section>
 
     @*Intro Section*@
-    <section class="intro-section">
-        <h2>Soluciones integrales para el desarrollo sostenible de proyectos</h2>
-        <p>
-            En <strong>Agua Ingeniería Costa Rica</strong> brindamos acompañamiento técnico, ambiental y operativo
-            en cada etapa de los proyectos, asegurando el cumplimiento normativo y la eficiencia en el uso del recurso hídrico.
-        </p>
-    </section>
+<section class="intro-section">
+    <h2>Soluciones integrales para el desarrollo sostenible de proyectos</h2>
+    <p>
+        En <strong>Agua Ingeniería Costa Rica</strong> brindamos acompañamiento técnico, ambiental y operativo
+        en cada etapa de los proyectos, asegurando el cumplimiento normativo y la eficiencia en el uso del recurso hídrico.
+    </p>
+    <p>
+        Nuestro equipo multidisciplinario se encarga de elaborar estudios de factibilidad, gestionar permisos y licencias,
+        supervisar la ejecución de obras, y realizar pruebas técnicas necesarias para garantizar la viabilidad de cada proyecto.
+    </p>
+    <p>
+        Además, ofrecemos asesoría en la planificación de sistemas de captación y distribución de agua,
+        diseño de pozos y estudios ambientales, así como capacitación en gestión hídrica y buenas prácticas
+        para el uso sostenible de los recursos. Cada solución es personalizada según las características
+        del terreno, las necesidades del proyecto y la normativa vigente en Costa Rica.
+    </p>
+</section>
 
     @*Grid de servicios de viabilidad*@
     <section class="estudios-grid">
         <div class="estudio-card" data-info="viabilidad1">
-            <img src="~/Content/Imagenes/Catarata-Tesoro-Escondido-otra-catarata-que-visitar-en-Costa-Rica.jpg" alt="Viabilidades Ambientales" />
+            <img src="~/Content/Imagenes/viabilidad1.jpg" alt="Viabilidades Ambientales" />
             <h3>Viabilidades Ambientales</h3>
             <p>Elaboramos estudios y gestionamos licencias ambientales ante SETENA y municipalidades.</p>
             <button class="ver-mas-btn">Ver más</button>
         </div>
 
         <div class="estudio-card" data-info="viabilidad2">
-            <img src="~/Content/Imagenes/concesion.jpg" alt="Perforaciones de Pozos" />
+            <img src="~/Content/Imagenes/viabilidad2.jpg" alt="Perforaciones de Pozos" />
             <h3>Perforaciones de Pozos</h3>
             <p>Realizamos perforaciones artesanales o con maquinaria conforme a la normativa SENARA.</p>
             <button class="ver-mas-btn">Ver más</button>
         </div>
 
         <div class="estudio-card" data-info="viabilidad3">
-            <img src="~/Content/Imagenes/viabilidad.jpg" alt="Pruebas de Bombeo" />
+            <img src="~/Content/Imagenes/viabilidad3.jpg" alt="Pruebas de Bombeo" />
             <h3>Pruebas de Bombeo</h3>
             <p>Determinamos el rendimiento y capacidad de extracción de pozos profundos.</p>
             <button class="ver-mas-btn">Ver más</button>
         </div>
 
         <div class="estudio-card" data-info="viabilidad4">
-            <img src="~/Content/Imagenes/concesion.jpg" alt="Sistemas de Captación y Distribución" />
+            <img src="~/Content/Imagenes/viabilidad4.jpg" alt="Sistemas de Captación y Distribución" />
             <h3>Sistemas de Captación y Distribución</h3>
             <p>Diseñamos sistemas de captación, conducción y almacenamiento adaptados al terreno.</p>
             <button class="ver-mas-btn">Ver más</button>
         </div>
 
         <div class="estudio-card" data-info="viabilidad5">
-            <img src="~/Content/Imagenes/photo-1503435980610-a51f3ddfee50.jpg" alt="Capacitaciones Ambientales" />
+            <img src="~/Content/Imagenes/viabilidad5.jpg" alt="Capacitaciones Ambientales" />
             <h3>Capacitaciones Ambientales</h3>
             <p>Capacitamos en gestión hídrica, normativas ambientales y buenas prácticas sostenibles.</p>
             <button class="ver-mas-btn">Ver más</button>
@@ -83,32 +93,87 @@
         const closeBtn = document.querySelector(".close");
 
         const info = {
-            viabilidad1: {
-                title: "Viabilidades (Licencias) Ambientales",
-                text: "Elaboramos estudios y gestionamos licencias ambientales ante SETENA y municipalidades para garantizar la sostenibilidad de proyectos en zonas rurales y urbanas.",
-                img: '@Url.Content("~/Content/Imagenes/Catarata-Tesoro-Escondido-otra-catarata-que-visitar-en-Costa-Rica.jpg")'
-            },
-            viabilidad2: {
-                title: "Perforaciones de Pozos",
-                text: "Contamos con equipo especializado y personal técnico para la perforación de pozos artesanales o con maquinaria, garantizando un proceso eficiente y conforme a la normativa SENARA.",
-                img: '@Url.Content("~/Content/Imagenes/concesion.jpg")'
-            },
-            viabilidad3: {
-                title: "Pruebas de Bombeo",
-                text: "Realizamos pruebas de bombeo y recuperación en pozos profundos para determinar su rendimiento y capacidad de extracción de agua subterránea.",
-                img: '@Url.Content("~/Content/Imagenes/viabilidad.jpg")'
-            },
-            viabilidad4: {
-                title: "Sistemas de Captación y Distribución",
-                text: "Diseñamos sistemas de captación, conducción y almacenamiento de agua adaptados a las condiciones del terreno y las necesidades del proyecto.",
-                img: '@Url.Content("~/Content/Imagenes/concesion.jpg")'
-            },
-            viabilidad5: {
-                title: "Capacitaciones Ambientales",
-                text: "Impartimos capacitaciones y talleres en gestión hídrica, normativas ambientales y buenas prácticas para el uso responsable del recurso agua.",
-                img: '@Url.Content("~/Content/Imagenes/photo-1503435980610-a51f3ddfee50.jpg")'
-            }
-        };
+    viabilidad1: {
+        title: "Viabilidades (Licencias) Ambientales",
+        img: '@Url.Content("~/Content/Imagenes/viabilidad1.jpg")',
+        text: `
+            <p>En <strong>Agua Ingeniería Costa Rica</strong> elaboramos estudios y gestionamos licencias ambientales ante SETENA y municipalidades para garantizar la sostenibilidad de proyectos en zonas rurales y urbanas.</p>
+            <p>Nuestros servicios incluyen:</p>
+            <ul>
+                <li>Evaluación de impacto ambiental y social.</li>
+                <li>Identificación de riesgos y mitigación de impactos.</li>
+                <li>Elaboración de informes técnicos conforme a la normativa vigente.</li>
+                <li>Acompañamiento completo durante el proceso administrativo.</li>
+                <li>Entre otros.</li>
+            </ul>
+            <p>Con esto, aseguramos que los proyectos puedan avanzar cumpliendo todas las regulaciones ambientales y contribuyendo al desarrollo sostenible.</p>
+        `
+    },
+    viabilidad2: {
+        title: "Perforaciones de Pozos",
+        img: '@Url.Content("~/Content/Imagenes/viabilidad2.jpg")',
+        text: `
+            <p>Realizamos perforaciones artesanales y mecánicas conforme a la normativa SENARA, garantizando eficiencia y seguridad en cada proyecto.</p>
+            <p>Nuestro proceso incluye:</p>
+            <ul>
+                <li>Estudio previo del terreno y selección de la técnica de perforación adecuada.</li>
+                <li>Supervisión técnica durante toda la perforación.</li>
+                <li>Pruebas de calidad y recomendaciones de operación.</li>
+                <li>Asesoría en mantenimiento y sostenibilidad del pozo.</li>
+                <li>Entre otros.</li>
+            </ul>
+            <p>Esto permite obtener un recurso hídrico confiable y duradero, optimizando el uso de agua subterránea y evitando riesgos ambientales.</p>
+        `
+    },
+    viabilidad3: {
+        title: "Pruebas de Bombeo",
+        img: '@Url.Content("~/Content/Imagenes/viabilidad3.jpg")',
+        text: `
+            <p>Realizamos pruebas de bombeo y recuperación en pozos profundos para determinar su rendimiento y capacidad de extracción.</p>
+            <p>Beneficios de nuestras pruebas:</p>
+            <ul>
+                <li>Evaluación de la productividad del pozo y sostenibilidad del acuífero.</li>
+                <li>Análisis hidrogeológicos detallados.</li>
+                <li>Recomendaciones técnicas para maximizar eficiencia.</li>
+                <li>Diseño de estrategias de explotación seguras.</li>
+                <li>Entre otros.</li>
+            </ul>
+            <p>Esto asegura que cada pozo opere de manera óptima y conforme a las regulaciones ambientales.</p>
+        `
+    },
+    viabilidad4: {
+        title: "Sistemas de Captación y Distribución",
+        img: '@Url.Content("~/Content/Imagenes/viabilidad4.jpg")',
+        text: `
+            <p>Diseñamos sistemas completos de captación, conducción y almacenamiento de agua adaptados al terreno y a las necesidades del proyecto.</p>
+            <p>Nuestros servicios incluyen:</p>
+            <ul>
+                <li>Dimensionamiento de tuberías, bombas y tanques.</li>
+                <li>Diseño de estructuras auxiliares y almacenamiento.</li>
+                <li>Optimización de eficiencia energética y automatización.</li>
+                <li>Garantía de suministro confiable y sostenible.</li>
+                <li>Entre otros.</li>
+            </ul>
+            <p>El resultado son sistemas de agua funcionales, eficientes y alineados con la normativa vigente.</p>
+        `
+    },
+    viabilidad5: {
+        title: "Capacitaciones Ambientales",
+        img: '@Url.Content("~/Content/Imagenes/viabilidad5.jpg")',
+        text: `
+            <p>Ofrecemos capacitaciones y talleres en gestión hídrica, normativas ambientales y buenas prácticas para el uso responsable del recurso agua.</p>
+            <p>Nuestros programas incluyen:</p>
+            <ul>
+                <li>Formación teórica y práctica adaptada al perfil del personal.</li>
+                <li>Talleres sobre sostenibilidad y eficiencia hídrica.</li>
+                <li>Asesoría y seguimiento para implementación de buenas prácticas.</li>
+                <li>Orientación en cumplimiento normativo y prevención de riesgos.</li>
+                <li>Entre otros.</li>
+            </ul>
+            <p>Así, las empresas y comunidades adquieren competencias concretas para gestionar sus recursos de manera sostenible.</p>
+        `
+    }
+};
 
         cards.forEach(card => {
             const btn = card.querySelector(".ver-mas-btn");
