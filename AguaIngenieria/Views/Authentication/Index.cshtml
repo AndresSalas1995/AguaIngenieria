@@ -1,7 +1,53 @@
-﻿
-@{
-    ViewBag.Title = "Index";
+﻿@{
+    ViewBag.Title = "Iniciar Sesión";
 }
 
-<h2>inicio de sesion</h2>
+@section FullWidthContent {
+    <div class="d-flex align-items-center justify-content-center" style="min-height: 80vh; background: #f0f2f5;">
+        <div class="card shadow-lg p-5 rounded-4" style="max-width: 420px; width: 100%; border: none;">
+            <div class="text-center mb-4">
+                <img src="~/Content/Imagenes/Logo_AguaIngenieria.png" alt="Logo Empresa" style="height: 60px;" class="mb-2" />
+                <h4 class="fw-bold">Bienvenido</h4>
+                <p class="text-muted">Ingresa tus credenciales para continuar</p>
+            </div>
+
+            <form method="post">
+                @Html.AntiForgeryToken()
+
+                <div class="mb-3 position-relative">
+                    <label class="form-label fw-semibold">Usuario</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-primary text-white"><i class="fa fa-user"></i></span>
+                        <input name="Usuario" type="text" class="form-control" placeholder="Ingrese su usuario" required />
+                    </div>
+                </div>
+
+                <div class="mb-4 position-relative">
+                    <label class="form-label fw-semibold">Contraseña</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-primary text-white"><i class="fa fa-lock"></i></span>
+                        <input name="Contrasena" type="password" class="form-control" placeholder="Ingrese su contraseña" required />
+                    </div>
+                </div>
+
+                <div class="d-grid mb-3">
+                    <button type="submit" class="btn btn-primary btn-lg fw-semibold">Iniciar Sesión</button>
+                </div>
+
+                @if (!string.IsNullOrEmpty(ViewBag.Mensaje as string))
+                {
+                    <div class="alert alert-danger text-center">
+                        @ViewBag.Mensaje
+                    </div>
+                }
+
+                <div class="text-center mt-2">
+                    <a href="#" class="text-decoration-none text-primary">¿Olvidaste tu contraseña?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+}
+
+
 

@@ -114,6 +114,7 @@ namespace DataModels
 		[Column,     NotNull ] public string   Nombre        { get; set; } // nvarchar(100)
 		[Column,     NotNull ] public string   Apellido      { get; set; } // nvarchar(100)
 		[Column,     NotNull ] public DateTime FechaCreacion { get; set; } // datetime
+		[Column,     NotNull ] public string   Email         { get; set; } // nvarchar(150)
 
 		#region Associations
 
@@ -202,7 +203,7 @@ namespace DataModels
 
 		#region SpCrearUsuarioAdmin
 
-		public static IEnumerable<SpCrearUsuarioAdminResult> SpCrearUsuarioAdmin(this AguaIngenieriaDB dataConnection, string @Usuario, string @Contrasena, string @Nombre, string @Apellido)
+		public static IEnumerable<SpCrearUsuarioAdminResult> SpCrearUsuarioAdmin(this AguaIngenieriaDB dataConnection, string @Usuario, string @Contrasena, string @Nombre, string @Apellido, string @Email)
 		{
 			var parameters = new []
 			{
@@ -221,6 +222,10 @@ namespace DataModels
 				new DataParameter("@Apellido",   @Apellido,   LinqToDB.DataType.NVarChar)
 				{
 					Size = 100
+				},
+				new DataParameter("@Email",      @Email,      LinqToDB.DataType.NVarChar)
+				{
+					Size = 150
 				}
 			};
 
@@ -304,7 +309,7 @@ namespace DataModels
 
 		#region SpEditarUsuarioAdmin
 
-		public static IEnumerable<SpEditarUsuarioAdminResult> SpEditarUsuarioAdmin(this AguaIngenieriaDB dataConnection, int? @Id, string @Usuario, string @Contrasena, string @Nombre, string @Apellido)
+		public static IEnumerable<SpEditarUsuarioAdminResult> SpEditarUsuarioAdmin(this AguaIngenieriaDB dataConnection, int? @Id, string @Usuario, string @Contrasena, string @Nombre, string @Apellido, string @Email)
 		{
 			var parameters = new []
 			{
@@ -324,6 +329,10 @@ namespace DataModels
 				new DataParameter("@Apellido",   @Apellido,   LinqToDB.DataType.NVarChar)
 				{
 					Size = 100
+				},
+				new DataParameter("@Email",      @Email,      LinqToDB.DataType.NVarChar)
+				{
+					Size = 150
 				}
 			};
 
