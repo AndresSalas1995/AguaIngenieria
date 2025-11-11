@@ -403,6 +403,25 @@ namespace DataModels
 
 		#endregion
 
+		#region SpLeerUsuarios
+
+		public static IEnumerable<SpLeerUsuariosResult> SpLeerUsuarios(this AguaIngenieriaDB dataConnection)
+		{
+			return dataConnection.QueryProc<SpLeerUsuariosResult>("[dbo].[sp_LeerUsuarios]");
+		}
+
+		public partial class SpLeerUsuariosResult
+		{
+			public int      Id            { get; set; }
+			public string   Usuario       { get; set; }
+			public string   Nombre        { get; set; }
+			public string   Apellido      { get; set; }
+			public DateTime FechaCreacion { get; set; }
+			public string   Email         { get; set; }
+		}
+
+		#endregion
+
 		#region SpLoginUsuario
 
 		public static IEnumerable<SpLoginUsuarioResult> SpLoginUsuario(this AguaIngenieriaDB dataConnection, string @UsuarioOEmail, string @Contrasena)

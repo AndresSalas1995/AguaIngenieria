@@ -1,0 +1,71 @@
+﻿@model List<AguaIngenieria.Models.DetalleUsuarioAdmin>
+
+@{
+    ViewBag.Title = "Users";
+}
+
+@if (TempData["MensajeExito"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <i class="fa fa-check-circle me-2"></i>
+        @TempData["MensajeExito"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+@if (TempData["MensajeError"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <i class="fa fa-exclamation-triangle me-2"></i>
+        @TempData["MensajeError"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<div class="text-center bg-light p-4 rounded shadow-sm mb-4">
+    <h2 class="text-primary fw-bold m-0">Administrar Usuarios</h2>
+    <span class="d-block mx-auto" style="width: 120px; height: 3px; background-color: #0d6efd; margin-top: 10px; border-radius: 2px;"></span>
+</div>
+
+<br />
+
+<p>
+    <a href="@Url.Action("Admin", "Principal")" class="btn btn-secondary">
+        <i class="fa fa-arrow-left"></i> Regresar
+    </a>
+</p>
+
+<p>
+    <a href="@Url.Action("CrearUsuario")" class="btn btn-primary">Agregar Nuevo Usuario</a>
+</p>
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Fecha de Creación</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var u in Model)
+        {
+            <tr>
+                <td>@u.Usuario</td>
+                <td>@u.Nombre</td>
+                <td>@u.Apellido</td>
+                <td>@u.Email</td>
+                <td>@u.FechaCreacion.ToString("dd/MM/yyyy")</td>
+                <td>
+                    <a href="@Url.Action("Editar", new { id = u.Id })" class="btn btn-sm btn-warning">Editar</a>
+                    <a href="@Url.Action("Eliminar", new { id = u.Id })" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

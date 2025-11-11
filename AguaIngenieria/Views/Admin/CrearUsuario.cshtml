@@ -1,0 +1,77 @@
+﻿@model AguaIngenieria.Models.DetalleUsuarioAdmin
+
+@{
+    ViewBag.Title = "Crear Usuario";
+}
+
+<div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+    <div class="card shadow-lg p-4 rounded" style="width: 450px;">
+        <div class="text-center mb-4">
+            @* Logo del sitio *@
+            <img src="~/Content/Imagenes/Logo_AguaIngenieria.png" alt="Logo" style="width: 100px; height: auto;" class="mb-3" />
+            <h3 class="text-primary fw-bold">Crear Nuevo Usuario</h3>
+            <p class="text-muted mb-0">Rellena los campos para agregar un administrador</p>
+        </div>
+
+        @using (Html.BeginForm("CrearUsuario", "Admin", FormMethod.Post, new { @class = "needs-validation", novalidate = "novalidate" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="mb-3">
+                @Html.LabelFor(m => m.Usuario, new { @class = "form-label fw-semibold" })
+                @Html.TextBoxFor(m => m.Usuario, new { @class = "form-control", placeholder = "Nombre de usuario", required = "required" })
+                @Html.ValidationMessageFor(m => m.Usuario, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                @Html.LabelFor(m => m.Contrasena, new { @class = "form-label fw-semibold" })
+                @Html.PasswordFor(m => m.Contrasena, new { @class = "form-control", placeholder = "Contraseña", required = "required" })
+                @Html.ValidationMessageFor(m => m.Contrasena, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                @Html.LabelFor(m => m.Nombre, new { @class = "form-label fw-semibold" })
+                @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control", placeholder = "Nombre", required = "required" })
+                @Html.ValidationMessageFor(m => m.Nombre, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                @Html.LabelFor(m => m.Apellido, new { @class = "form-label fw-semibold" })
+                @Html.TextBoxFor(m => m.Apellido, new { @class = "form-control", placeholder = "Apellido", required = "required" })
+                @Html.ValidationMessageFor(m => m.Apellido, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-4">
+                @Html.LabelFor(m => m.Email, new { @class = "form-label fw-semibold" })
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Correo electrónico", type = "email", required = "required" })
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-primary px-4">Crear Usuario</button>
+                <a href="@Url.Action("Usuarios", "Admin")" class="btn btn-secondary px-4">Cancelar</a>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        (() => {
+            'use strict';
+            const forms = document.querySelectorAll('.needs-validation');
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+    </script>
+}
+
+
+

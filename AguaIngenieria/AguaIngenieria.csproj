@@ -394,10 +394,11 @@
     <Content Include="Views\Contacto\Faqs.cshtml" />
     <Content Include="Views\Authentication\Index.cshtml" />
     <Content Include="Views\Principal\Admin.cshtml" />
+    <Content Include="Views\Admin\Usuarios.cshtml" />
+    <Content Include="Views\Admin\CrearUsuario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
