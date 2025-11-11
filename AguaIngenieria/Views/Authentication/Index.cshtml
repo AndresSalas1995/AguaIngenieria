@@ -1,4 +1,6 @@
-﻿@{
+﻿@model AguaIngenieria.Models.LoginViewModel
+
+@{
     ViewBag.Title = "Iniciar Sesión";
 }
 
@@ -14,25 +16,34 @@
             <form method="post">
                 @Html.AntiForgeryToken()
 
-                <div class="mb-3 position-relative">
-                    <label class="form-label fw-semibold">Usuario</label>
+                @Html.ValidationSummary(true, "", new { @class = "alert alert-danger text-center" })
+
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Usuario o Email</label>
                     <div class="input-group">
                         <span class="input-group-text bg-primary text-white"><i class="fa fa-user"></i></span>
-                        <input name="Usuario" type="text" class="form-control" placeholder="Ingrese su usuario" required />
+                        @Html.TextBoxFor(m => m.Usuario, new { @class = "form-control", placeholder = "Ingrese su usuario o email" })
                     </div>
+                    @Html.ValidationMessageFor(m => m.Usuario, "", new { @class = "text-danger" })
                 </div>
 
-                <div class="mb-4 position-relative">
+                <div class="mb-4">
                     <label class="form-label fw-semibold">Contraseña</label>
                     <div class="input-group">
                         <span class="input-group-text bg-primary text-white"><i class="fa fa-lock"></i></span>
-                        <input name="Contrasena" type="password" class="form-control" placeholder="Ingrese su contraseña" required />
+                        @Html.PasswordFor(m => m.Contrasena, new { @class = "form-control", placeholder = "Ingrese su contraseña" })
                     </div>
+                    @Html.ValidationMessageFor(m => m.Contrasena, "", new { @class = "text-danger" })
                 </div>
 
                 <div class="d-grid mb-3">
                     <button type="submit" class="btn btn-primary btn-lg fw-semibold">Iniciar Sesión</button>
                 </div>
+
+                <div class="text-center mt-2">
+                    @Html.ActionLink("¿Olvidaste tu contraseña?", "Recuperar", "Authentication", new { }, new { @class = "text-decoration-none text-primary" })
+                </div>
+
 
                 @if (!string.IsNullOrEmpty(ViewBag.Mensaje as string))
                 {
@@ -40,11 +51,8 @@
                         @ViewBag.Mensaje
                     </div>
                 }
-
-                <div class="text-center mt-2">
-                    <a href="#" class="text-decoration-none text-primary">¿Olvidaste tu contraseña?</a>
-                </div>
             </form>
+
         </div>
     </div>
 }

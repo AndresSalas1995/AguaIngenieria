@@ -402,6 +402,37 @@ namespace DataModels
 		}
 
 		#endregion
+
+		#region SpLoginUsuario
+
+		public static IEnumerable<SpLoginUsuarioResult> SpLoginUsuario(this AguaIngenieriaDB dataConnection, string @UsuarioOEmail, string @Contrasena)
+		{
+			var parameters = new []
+			{
+				new DataParameter("@UsuarioOEmail", @UsuarioOEmail, LinqToDB.DataType.NVarChar)
+				{
+					Size = 150
+				},
+				new DataParameter("@Contrasena",    @Contrasena,    LinqToDB.DataType.NVarChar)
+				{
+					Size = 200
+				}
+			};
+
+			return dataConnection.QueryProc<SpLoginUsuarioResult>("[dbo].[spLoginUsuario]", parameters);
+		}
+
+		public partial class SpLoginUsuarioResult
+		{
+			public int      Id            { get; set; }
+			public string   Usuario       { get; set; }
+			public string   Email         { get; set; }
+			public string   Nombre        { get; set; }
+			public string   Apellido      { get; set; }
+			public DateTime FechaCreacion { get; set; }
+		}
+
+		#endregion
 	}
 
 	public static partial class TableExtensions

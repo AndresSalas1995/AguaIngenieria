@@ -251,6 +251,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ContactoFormulario.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\MyDataBase1.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
