@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Admin";
+    var nombreCompleto = Session["NombreCompleto"] as string;
+    var email = Session["Email"] as string;
+}
+
+<link href="@Url.Content("~/CSS/Custom/Admin.css")" rel="stylesheet" />
+
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold text-primary">Panel de Administración</h2>
+        <p class="text-muted">Bienvenido, @nombreCompleto (@email)</p>
+        <hr class="mx-auto" style="width: 200px;" />
+    </div>
+
+    <div class="row g-4">
+        @* Gestión de Usuarios *@
+        <div class="col-md-4">
+            <div class="card admin-card shadow-sm border-0 h-100">
+                <div class="card-body text-center">
+                    <i class="fa fa-users fa-3x text-primary mb-3"></i>
+                    <h5 class="card-title fw-semibold">Usuarios Administradores</h5>
+                    <p class="card-text text-muted">Crea, edita o elimina usuarios con privilegios administrativos.</p>
+                    <a href="@Url.Action("Index", "UsuarioAdmin")" class="btn btn-outline-primary">Gestionar</a>
+                </div>
+            </div>
+        </div>
+
+         @*Gestión de Novedades*@ 
+        <div class="col-md-4">
+            <div class="card admin-card shadow-sm border-0 h-100">
+                <div class="card-body text-center">
+                    <i class="fa fa-newspaper fa-3x text-success mb-3"></i>
+                    <h5 class="card-title fw-semibold">Novedades</h5>
+                    <p class="card-text text-muted">Publica o administra las noticias y comunicados de la empresa.</p>
+                    <a href="@Url.Action("Index", "Novedades")" class="btn btn-outline-success">Gestionar</a>
+                </div>
+            </div>
+        </div>
+
+         @*Gestión de Proyectos / Galería*@ 
+        <div class="col-md-4">
+            <div class="card admin-card shadow-sm border-0 h-100">
+                <div class="card-body text-center">
+                    <i class="fa fa-image fa-3x text-warning mb-3"></i>
+                    <h5 class="card-title fw-semibold">Proyectos / Galería</h5>
+                    <p class="card-text text-muted">Sube, edita o elimina imágenes de proyectos realizados.</p>
+                    <a href="@Url.Action("Index", "Galeria")" class="btn btn-outline-warning">Gestionar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <a href="@Url.Action("Logout", "Authentication")" class="btn btn-danger px-4">
+            <i class="fa fa-sign-out-alt"></i> Cerrar sesión
+        </a>
+    </div>
+</div>
+
+

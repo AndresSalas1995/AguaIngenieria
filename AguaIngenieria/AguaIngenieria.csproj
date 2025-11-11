@@ -241,6 +241,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\ContactoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -251,12 +252,14 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ContactoFormulario.cs" />
+    <Compile Include="Models\DetalleUsuarioAdmin.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\MyDataBase1.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MyDataBase.tt</DependentUpon>
     </Compile>
+    <Compile Include="Permisos\ValidarSesion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -390,9 +393,11 @@
     <Content Include="Views\Contacto\RedesSociales.cshtml" />
     <Content Include="Views\Contacto\Faqs.cshtml" />
     <Content Include="Views\Authentication\Index.cshtml" />
+    <Content Include="Views\Principal\Admin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

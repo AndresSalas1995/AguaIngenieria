@@ -46,7 +46,7 @@ namespace AguaIngenieria.Controllers
                         Session["NombreCompleto"] = usuario.Nombre + " " + usuario.Apellido;
 
                         // Redirigir al panel principal (por ejemplo)
-                        return RedirectToAction("Proyectos", "Proyectos");
+                        return RedirectToAction("Admin", "Principal");
                     }
                     else
                     {
@@ -74,8 +74,5 @@ namespace AguaIngenieria.Controllers
             // Redirigir a la página de inicio de sesión
             return RedirectToAction("Index", "Authentication");
         }
-
-
-
     }
 }

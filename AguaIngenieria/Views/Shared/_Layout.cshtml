@@ -63,6 +63,15 @@
                             <li><a class="dropdown-item" href="@Url.Action("Faqs", "Contacto")">Preguntas Frecuentes</a></li>
                         </ul>
                     </li>
+                    @* Opción visible solo para usuarios logeados *@
+                    @if (Session["IdUsuario"] != null)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-warning fw-semibold" href="@Url.Action("Admin", "Principal")">
+                                <i class="fa fa-user-shield"></i> Administración
+                            </a>
+                        </li>
+                    }
                 </ul>
             </div>
         </div>
