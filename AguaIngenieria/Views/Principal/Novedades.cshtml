@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<DataModels.Novedade>
+@{
     ViewBag.Title = "Novedades";
 }
 <link href="@Url.Content("~/CSS/Custom/Novedades.css")" rel="stylesheet" />
@@ -18,114 +19,49 @@
         Esta sección se actualiza periódicamente para mantenerte informado.
     </p>
 
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-
-        @* Notica #0 *@
-        <div class="col">
-            <div class="card h-100 shadow-sm">
-                <img src="@Url.Content("~/Content/Imagenes/aya.png")" class="card-img-top" alt="MINAE noticia">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <a href="https://www.aya.go.cr/inicio/informacion_y_noticias/detalle/12" target="_blank" class="text-decoration-none text-dark">
-                            Agua potable segura y continua llega a los hogares de Andrómeda de Atenas
-                        </a>
-                    </h5>
-                    <p class="card-subtitle mb-2 text-muted">
-                        <i class="fas fa-newspaper"></i> Fuente: AYA | <i class="far fa-calendar-alt"></i> 10 de octubre 2025
-                    </p>
-                    <p class="card-text">
-                        Trabajos se realizaron en tan solo 11 meses • Inversión supera los ¢505 000 000...
-                    </p>
-                </div>
-                <div class="card-footer bg-white border-0">
-                    <a href="https://www.aya.go.cr/inicio/informacion_y_noticias/detalle/12" target="_blank" class="btn btn-outline-primary btn-sm">
-                        Leer más <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <div class="alert alert-danger text-center">
+            @ViewBag.ErrorMessage
         </div>
-
-        @* Notica #1 *@
-        <div class="col">
-            <div class="card h-100 shadow-sm">
-                <img src="@Url.Content("~/Content/Imagenes/minae.jpg")" class="card-img-top" alt="MINAE noticia">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <a href="https://www.minae.go.cr/noticias/detalle.aspx?id=1234" target="_blank" class="text-decoration-none text-dark">
-                            MINAE lanza nueva política de gestión hídrica 2025
-                        </a>
-                    </h5>
-                    <p class="card-subtitle mb-2 text-muted">
-                        <i class="fas fa-newspaper"></i> Fuente: MINAE | <i class="far fa-calendar-alt"></i> 04 de octubre 2025
-                    </p>
-                    <p class="card-text">
-                        El Ministerio de Ambiente y Energía anunció una nueva directriz que busca fortalecer la protección de fuentes de agua y promover tecnologías sostenibles...
-                    </p>
+    }
+    else if (Model != null && Model.Any())
+    {
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            @foreach (var novedad in Model)
+            {
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <img src="@Url.Content(novedad.ImagenPath)" class="card-img-top" alt="@novedad.Fuente noticia">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="@novedad.UrlNoticia" target="_blank" class="text-decoration-none text-dark">
+                                    @novedad.Titulo
+                                </a>
+                            </h5>
+                            <p class="card-subtitle mb-2 text-muted">
+                                <i class="fas fa-newspaper"></i> Fuente: @novedad.Fuente | <i class="far fa-calendar-alt"></i> @novedad.Fecha.ToString("dd 'de' MMMM yyyy")
+                            </p>
+                            <p class="card-text">
+                                @novedad.Resumen
+                            </p>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <a href="@novedad.UrlNoticia" target="_blank" class="btn btn-outline-primary btn-sm">
+                                Leer más <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-footer bg-white border-0">
-                    <a href="https://www.minae.go.cr/noticias/detalle.aspx?id=1234" target="_blank" class="btn btn-outline-primary btn-sm">
-                        Leer más <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
+            }
         </div>
-
-        @* Noticia #2 *@
-        <div class="col">
-            <div class="card h-100 shadow-sm">
-                <img src="@Url.Content("~/Content/Imagenes/aya.png")" class="card-img-top" alt="AYA noticia">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <a href="https://www.aya.go.cr/noticias/agua-potable-en-zonas-rurales" target="_blank" class="text-decoration-none text-dark">
-                            AYA amplía cobertura de agua potable en zonas rurales
-                        </a>
-                    </h5>
-                    <p class="card-subtitle mb-2 text-muted">
-                        <i class="fas fa-newspaper"></i> Fuente: AYA | <i class="far fa-calendar-alt"></i> 28 de septiembre 2025
-                    </p>
-                    <p class="card-text">
-                        En un esfuerzo conjunto con gobiernos locales, AYA ha logrado aumentar el acceso a agua potable en comunidades rurales de Guanacaste y Puntarenas...
-                    </p>
-                </div>
-                <div class="card-footer bg-white border-0">
-                    <a href="https://www.aya.go.cr/noticias/agua-potable-en-zonas-rurales" target="_blank" class="btn btn-outline-primary btn-sm">
-                        Leer más <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
+    }
+    else
+    {
+        <div class="alert alert-info text-center">
+            No hay novedades disponibles en este momento.
         </div>
-
-        @* Noticia #3 *@
-        <div class="col">
-            <div class="card h-100 shadow-sm">
-                <img src="@Url.Content("~/Content/Imagenes/Logo-nuevo-office-1-300x128.png")" class="card-img-top" alt="SENARA noticia">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <a href="https://www.senara.or.cr/noticias/comunicados/CP-05-09-2025.pdf" target="_blank" class="text-decoration-none text-dark">
-                            Proyecto PAACUME fortalece transparencia y viabilidad
-                        </a>
-                    </h5>
-                    <p class="card-subtitle mb-2 text-muted">
-                        <i class="fas fa-newspaper"></i> Fuente: SENARA | <i class="far fa-calendar-alt"></i> 05 de setiembre 2025
-                    </p>
-                    <p class="card-text">
-                        Este acercamiento fortalece la confianza interinstitucional y la viabilidad del proyecto, que busca mejorar la infraestructura hídrica en la región de la Bajura...
-                    </p>
-                </div>
-                <div class="card-footer bg-white border-0">
-                    <a href="https://www.senara.or.cr/noticias/comunicados/CP-05-09-2025.pdf" target="_blank" class="btn btn-outline-primary btn-sm">
-                        Leer más <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        @* Seguir agregando más noticias por el momento manualmente *@
-        @* Se puede continuar agregando más tarjetas dinámicamente desde base de datos *@
-        @* -> Preguntar por las imagenes tanto a cliente como a la profesora *@
-        @* ya que se quiere hacer administrable ver si se quieren usar imagenes fijas tipo dropdown *@
-        @* para cada institucion o si quieren diferentes para cada noticia, ya sea usando un link o subiendo la imagen *@
-    </div>
+    }
 </div>
 
 

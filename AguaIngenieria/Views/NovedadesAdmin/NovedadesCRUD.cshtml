@@ -1,0 +1,87 @@
+﻿@model IEnumerable<DataModels.Novedade>
+
+@{
+    ViewBag.Title = "Administrar Novedades";
+}
+
+<div class="text-center bg-light p-4 rounded shadow-sm mb-4">
+    <h2 class="text-primary fw-bold m-0">Administrar Novedades</h2>
+    <span class="d-block mx-auto" style="width: 120px; height: 3px; background-color: #0d6efd; margin-top: 10px; border-radius: 2px;"></span>
+</div>
+
+@*Mensajes de éxito o error*@
+@if (TempData["MensajeExito"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert" aria-live="assertive">
+        <i class="fa fa-check-circle me-2" style="color: #28a745;"></i>
+        @TempData["MensajeExito"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+@if (TempData["MensajeError"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" aria-live="assertive">
+        <i class="fa fa-exclamation-triangle me-2" style="color: #dc3545;"></i>
+        @TempData["MensajeError"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+
+@* Boton de agregar novedad y regresar *@
+<div class="d-flex justify-content-between mb-3">
+    <a href="@Url.Action("CrearNovedad", "NovedadesAdmin")" class="btn btn-primary">
+        <i class="fa fa-plus"></i> Agregar Novedad
+    </a>
+    <a href="@Url.Action("Admin", "Principal")" class="btn btn-secondary">
+        <i class="fa fa-arrow-left"></i> Regresar
+    </a>
+</div>
+
+@*Tabla de novedades*@
+@if (Model != null && Model.Any())
+{
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Título</th>
+                    <th>Fuente</th>
+                    <th>Fecha</th>
+                    <th>Resumen</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var novedad in Model)
+                {
+                    <tr>
+                        <td>@novedad.Titulo</td>
+                        <td>@novedad.Fuente</td>
+                        <td>@novedad.Fecha.ToString("dd 'de' MMMM yyyy")</td>
+                        <td>@novedad.Resumen</td>
+                        <td class="d-flex justify-content-between">
+                            @*Botón para editar*@
+                            <a href="@Url.Action("Editar", "NovedadesAdmin", new { id = novedad.Id })" class="btn btn-warning btn-sm">
+                                <i class="fas fa-edit"></i> Editar
+                            </a>
+                            @*Botón para eliminar*@
+                            <a href="@Url.Action("Eliminar", "NovedadesAdmin", new { id = novedad.Id })" class="btn btn-danger btn-sm"
+                               onclick="return confirm('¿Estás seguro de que deseas eliminar esta novedad?');">
+                                <i class="fas fa-trash"></i> Eliminar
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="alert alert-info">No hay novedades disponibles en este momento.</div>
+}
+
+
+

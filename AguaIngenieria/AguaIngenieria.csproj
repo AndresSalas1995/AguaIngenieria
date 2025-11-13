@@ -245,6 +245,7 @@
     <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\ContactoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NovedadesAdminController.cs" />
     <Compile Include="Controllers\PrincipalController.cs" />
     <Compile Include="Controllers\ProyectosController.cs" />
     <Compile Include="Controllers\ServiciosController.cs" />
@@ -259,6 +260,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MyDataBase.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Novedad.cs" />
     <Compile Include="Permisos\ValidarSesion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -315,6 +317,7 @@
     <Content Include="Content\Imagenes\viabilidad3.jpg" />
     <Content Include="Content\Imagenes\viabilidad4.jpg" />
     <Content Include="Content\Imagenes\viabilidad5.jpg" />
+    <Content Include="CSS\Custom\Admin.css" />
     <Content Include="CSS\Custom\Faqs.css" />
     <Content Include="CSS\Custom\Formulario.css" />
     <Content Include="CSS\Custom\RedesSociales.css" />
@@ -398,6 +401,8 @@
     <Content Include="Views\Admin\CrearUsuario.cshtml" />
     <Content Include="Views\Admin\Editar.cshtml" />
     <Content Include="Views\Admin\Eliminar.cshtml" />
+    <Content Include="Views\NovedadesAdmin\NovedadesCRUD.cshtml" />
+    <Content Include="Views\NovedadesAdmin\CrearNovedad.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

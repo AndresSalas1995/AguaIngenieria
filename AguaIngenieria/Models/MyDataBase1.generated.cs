@@ -164,7 +164,7 @@ namespace DataModels
 
 		#region SpCrearNovedad
 
-		public static IEnumerable<SpCrearNovedadResult> SpCrearNovedad(this AguaIngenieriaDB dataConnection, string @Titulo, string @Fuente, string @Resumen, string @UrlNoticia, string @ImagenPath, int? @IdAdmin)
+		public static IEnumerable<SpCrearNovedadResult> SpCrearNovedad(this AguaIngenieriaDB dataConnection, string @Titulo, string @Fuente, string @Resumen, string @UrlNoticia, string @ImagenPath, int? @IdAdmin, DateTime? @Fecha)
 		{
 			var parameters = new []
 			{
@@ -188,7 +188,8 @@ namespace DataModels
 				{
 					Size = 500
 				},
-				new DataParameter("@IdAdmin",    @IdAdmin,    LinqToDB.DataType.Int32)
+				new DataParameter("@IdAdmin",    @IdAdmin,    LinqToDB.DataType.Int32),
+				new DataParameter("@Fecha",      @Fecha,      LinqToDB.DataType.DateTime)
 			};
 
 			return dataConnection.QueryProc<SpCrearNovedadResult>("[dbo].[spCrearNovedad]", parameters);
@@ -269,7 +270,7 @@ namespace DataModels
 
 		#region SpEditarNovedad
 
-		public static IEnumerable<SpEditarNovedadResult> SpEditarNovedad(this AguaIngenieriaDB dataConnection, int? @Id, string @Titulo, string @Fuente, string @Resumen, string @UrlNoticia, string @ImagenPath, int? @IdAdmin)
+		public static IEnumerable<SpEditarNovedadResult> SpEditarNovedad(this AguaIngenieriaDB dataConnection, int? @Id, string @Titulo, string @Fuente, string @Resumen, string @UrlNoticia, string @ImagenPath, int? @IdAdmin, DateTime? @Fecha)
 		{
 			var parameters = new []
 			{
@@ -294,7 +295,8 @@ namespace DataModels
 				{
 					Size = 500
 				},
-				new DataParameter("@IdAdmin",    @IdAdmin,    LinqToDB.DataType.Int32)
+				new DataParameter("@IdAdmin",    @IdAdmin,    LinqToDB.DataType.Int32),
+				new DataParameter("@Fecha",      @Fecha,      LinqToDB.DataType.DateTime)
 			};
 
 			return dataConnection.QueryProc<SpEditarNovedadResult>("[dbo].[spEditarNovedad]", parameters);
@@ -449,6 +451,29 @@ namespace DataModels
 			public string   Nombre        { get; set; }
 			public string   Apellido      { get; set; }
 			public DateTime FechaCreacion { get; set; }
+		}
+
+		#endregion
+
+		#region SpObtenerNovedades
+
+		public static IEnumerable<Novedade> SpObtenerNovedades(this AguaIngenieriaDB dataConnection)
+		{
+			return dataConnection.QueryProc<Novedade>("[dbo].[spObtenerNovedades]");
+		}
+
+		#endregion
+
+		#region SpObtenerNovedadPorId
+
+		public static IEnumerable<Novedade> SpObtenerNovedadPorId(this AguaIngenieriaDB dataConnection, int? @Id)
+		{
+			var parameters = new []
+			{
+				new DataParameter("@Id", @Id, LinqToDB.DataType.Int32)
+			};
+
+			return dataConnection.QueryProc<Novedade>("[dbo].[spObtenerNovedadPorId]", parameters);
 		}
 
 		#endregion

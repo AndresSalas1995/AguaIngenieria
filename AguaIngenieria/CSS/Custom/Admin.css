@@ -1,0 +1,155 @@
+﻿/* Fondo general */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Fondo claro */
+    color: #333; /* Texto oscuro para mayor legibilidad */
+}
+
+/* Contenedor */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+/* Título del panel */
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #007bff; /* Azul principal */
+}
+
+/* Subtítulo y nombre */
+p.text-muted {
+    font-size: 1.1rem;
+    color: #6c757d; /* Gris suave */
+    font-style: italic;
+}
+
+/* Línea divisoria */
+hr {
+    border-top: 2px solid #007bff;
+    width: 200px;
+    margin: 20px auto;
+}
+/* Estilo general de las tarjetas */
+.card {
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    /* Hover en las tarjetas para darle interactividad */
+    .card:hover {
+        transform: translateY(-5px); /* Desplazamiento hacia arriba */
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra más prominente */
+    }
+
+    /* Iconos dentro de las tarjetas */
+    .card i {
+        font-size: 3rem;
+        margin-bottom: 15px;
+    }
+
+/* Títulos dentro de las tarjetas */
+.card-title {
+    font-weight: 600;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+/* Descripción dentro de las tarjetas */
+.card-text {
+    font-size: 1rem;
+    color: #6c757d; /* Gris suave */
+    margin-bottom: 20px;
+}
+
+/* Botones dentro de las tarjetas */
+.card .btn {
+    font-weight: 600;
+    border-radius: 20px; /* Bordes redondeados para los botones */
+    padding: 10px 30px;
+    transition: background-color 0.3s ease;
+}
+
+/* Botones con colores personalizados */
+.card .btn-outline-primary {
+    border: 2px solid #007bff;
+    color: #007bff;
+}
+
+    .card .btn-outline-primary:hover {
+        background-color: #007bff;
+        color: white;
+    }
+
+.card .btn-outline-success {
+    border: 2px solid #28a745;
+    color: #28a745;
+}
+
+    .card .btn-outline-success:hover {
+        background-color: #28a745;
+        color: white;
+    }
+
+.card .btn-outline-warning {
+    border: 2px solid #ffc107;
+    color: #ffc107;
+}
+
+    .card .btn-outline-warning:hover {
+        background-color: #ffc107;
+        color: white;
+    }
+/* Espaciado entre las tarjetas */
+.row.g-4 {
+    margin-top: 30px;
+}
+
+.col-md-4 {
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilo de los enlaces de acción (botones) */
+a {
+    text-decoration: none; /* Quitar subrayado de los enlaces */
+}
+/* Botón de cierre de sesión */
+.text-center.mt-5 .btn-danger {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 12px 40px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+    /* Hover en el botón de cierre de sesión */
+    .text-center.mt-5 .btn-danger:hover {
+        background-color: #c82333;
+        color: white;
+    }
+/* Ajustes en pantallas pequeñas */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .card {
+        margin-bottom: 20px; /* Espaciado entre las tarjetas */
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .card i {
+        font-size: 2.5rem;
+    }
+}

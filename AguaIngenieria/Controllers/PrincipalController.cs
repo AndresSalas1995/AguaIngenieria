@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AguaIngenieria.Permisos;
+using DataModels;
 
 namespace AguaIngenieria.Controllers
 {
@@ -18,7 +19,19 @@ namespace AguaIngenieria.Controllers
         //Vista para novedades/principal
         public ActionResult Novedades()
         {
-            return View();
+            try
+            {
+                using (var db = new AguaIngenieriaDB("MyDatabase"))
+                {
+                    var listaNovedades = db.SpObtenerNovedades().ToList();
+                    return View(listaNovedades);
+                }
+            }
+            catch (Exception ex)
+            {
+                ViewBag.ErrorMessage = "Ocurrió un error al cargar las novedades. Por favor, inténtalo de nuevo más tarde.";
+                return View("Error");
+            }
         }
 
         //Vista para usuario admin logeado exitosamente
