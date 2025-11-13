@@ -33,6 +33,7 @@
             <div>@Model.FechaCreacion.ToString("dd/MM/yyyy")</div>
         </div>
 
+        @* Fromulario para confirmar la eliminación *@
         @using (Html.BeginForm("Eliminar", "Admin", FormMethod.Post))
         {
             @Html.AntiForgeryToken()

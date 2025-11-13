@@ -21,12 +21,14 @@ namespace AguaIngenieria.Controllers
         // Vista para el CRUD de Usuarios
         public ActionResult Usuarios()
         {
+            // Lista donde se almacenarán los usuarios obtenidos de la BD
             List<DetalleUsuarioAdmin> lista = new List<DetalleUsuarioAdmin>();
 
             using (var db = new AguaIngenieriaDB("MyDatabase"))
             {
                 var resultado = db.SpLeerUsuarios().ToList();
 
+                // Mapea los datos obtenidos al modelo DetalleUsuarioAdmin
                 lista = resultado.Select(u => new DetalleUsuarioAdmin
                 {
                     Id = u.Id,
@@ -37,7 +39,7 @@ namespace AguaIngenieria.Controllers
                     FechaCreacion = u.FechaCreacion
                 }).ToList();
             }
-
+            // Retorna la vista "Usuarios" con la lista de usuarios cargada
             return View(lista);
         }
 
@@ -50,6 +52,7 @@ namespace AguaIngenieria.Controllers
         [HttpPost]
         public ActionResult CrearUsuario(DetalleUsuarioAdmin nuevoUsuario)
         {
+            // Valida que el modelo sea correcto (campos requeridos, formatos, etc.)
             if (!ModelState.IsValid)
             {
                 return View(nuevoUsuario);
@@ -72,11 +75,15 @@ namespace AguaIngenieria.Controllers
             }
         }
 
+
         // GET: Admin/Editar/{id}
+        // Acción GET para editar un usuario existente
+        // Carga los datos del usuario según su ID
         public ActionResult Editar(int id)
         {
             using (var db = new AguaIngenieriaDB("MyDatabase"))
             {
+                // Busca el usuario por ID
                 var usuario = db.SpLeerUsuarios().FirstOrDefault(u => u.Id == id);
                 if (usuario == null)
                 {
@@ -101,6 +108,7 @@ namespace AguaIngenieria.Controllers
         [HttpPost]
         public ActionResult Editar(DetalleUsuarioAdmin usuarioEditado)
         {
+            // Si el modelo no es válido, vuelve a mostrar el formulario
             if (!ModelState.IsValid)
             {
                 return View(usuarioEditado);
@@ -128,6 +136,7 @@ namespace AguaIngenieria.Controllers
         {
             using (var db = new AguaIngenieriaDB("MyDatabase"))
             {
+                // Busca el usuario por ID
                 var usuario = db.SpLeerUsuarios().FirstOrDefault(u => u.Id == id);
                 if (usuario == null)
                 {
@@ -168,6 +177,5 @@ namespace AguaIngenieria.Controllers
                 return RedirectToAction("Usuarios");
             }
         }
-
     }
 }

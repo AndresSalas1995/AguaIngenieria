@@ -13,6 +13,7 @@
             <p class="text-muted mb-0">Rellena los campos para agregar un administrador</p>
         </div>
 
+        @* formulario para crear el nueco usuario *@
         @using (Html.BeginForm("CrearUsuario", "Admin", FormMethod.Post, new { @class = "needs-validation", novalidate = "novalidate" }))
         {
             @Html.AntiForgeryToken()
@@ -59,13 +60,17 @@
     <script>
         (() => {
             'use strict';
+            // Selecciona todos los formularios con la clase 'needs-validation'
             const forms = document.querySelectorAll('.needs-validation');
+            // Recorre cada formulario para agregar validación personalizada
             Array.from(forms).forEach(form => {
                 form.addEventListener('submit', event => {
+                    // Si el formulario no es válido, previene el envío
                     if (!form.checkValidity()) {
                         event.preventDefault();
                         event.stopPropagation();
                     }
+                    // Agrega clase Bootstrap para mostrar visualmente los errores
                     form.classList.add('was-validated');
                 }, false);
             });
