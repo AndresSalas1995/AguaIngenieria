@@ -43,7 +43,7 @@ namespace AguaIngenieria.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult CrearNovedad(Novedad nuevaNovedad)
+        public ActionResult CrearNovedad(Novedade nuevaNovedad)
         {
             // Valida que el modelo sea correcto (campos requeridos, formatos, etc.)
             if (!ModelState.IsValid)
@@ -53,7 +53,7 @@ namespace AguaIngenieria.Controllers
             try
             {
                 //recuperamos el id del admin logueado
-                var idAdmin= Session["IdAdmin"] as int?;
+                var idAdmin= Session["IdUsuario"] as int?;
 
                 // Verifica que el IdAdmin exista en la sesión
                 if (idAdmin == null)
@@ -105,7 +105,7 @@ namespace AguaIngenieria.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditarNovedad(Novedad novedadEditada)
+        public ActionResult EditarNovedad(Novedade novedadEditada)
         {
             // Valida que el modelo sea correcto (campos requeridos, formatos, etc.)
             if (!ModelState.IsValid)
