@@ -396,6 +396,8 @@
     <Content Include="Views\Principal\Admin.cshtml" />
     <Content Include="Views\Admin\Usuarios.cshtml" />
     <Content Include="Views\Admin\CrearUsuario.cshtml" />
+    <Content Include="Views\Admin\Editar.cshtml" />
+    <Content Include="Views\Admin\Eliminar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

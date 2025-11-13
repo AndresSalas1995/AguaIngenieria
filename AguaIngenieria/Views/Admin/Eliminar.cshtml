@@ -1,0 +1,54 @@
+﻿@model AguaIngenieria.Models.DetalleUsuarioAdmin
+
+@{
+    ViewBag.Title = "Eliminar Usuario";
+}
+
+<div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+    <div class="card shadow-lg p-4 rounded" style="width: 450px;">
+        <div class="text-center mb-4">
+            <img src="~/Content/Imagenes/Logo_AguaIngenieria.png" alt="Logo" style="width: 100px; height: auto;" class="mb-3" />
+            <h3 class="text-danger fw-bold">Eliminar Usuario</h3>
+            <p class="text-muted mb-0">¿Estás seguro que deseas eliminar este usuario? Esta acción no se puede deshacer.</p>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-bold">Usuario:</label>
+            <div>@Model.Usuario</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label fw-bold">Nombre:</label>
+            <div>@Model.Nombre</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label fw-bold">Apellido:</label>
+            <div>@Model.Apellido</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label fw-bold">Email:</label>
+            <div>@Model.Email</div>
+        </div>
+        <div class="mb-4">
+            <label class="form-label fw-bold">Fecha de Creación:</label>
+            <div>@Model.FechaCreacion.ToString("dd/MM/yyyy")</div>
+        </div>
+
+        @using (Html.BeginForm("Eliminar", "Admin", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="d-flex justify-content-between">
+                <a href="@Url.Action("Usuarios", "Admin")" class="btn btn-secondary px-4">
+                    <i class="fa fa-arrow-left"></i> Cancelar
+                </a>
+                <button type="submit" class="btn btn-danger px-4">
+                    <i class="fa fa-trash"></i> Eliminar Usuario
+                </button>
+            </div>
+        }
+    </div>
+</div>
+
+
+

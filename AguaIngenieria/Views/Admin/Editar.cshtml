@@ -1,0 +1,63 @@
+﻿@model AguaIngenieria.Models.DetalleUsuarioAdmin
+
+@{
+    ViewBag.Title = "Editar Usuario";
+}
+
+<div class="text-center bg-light p-4 rounded shadow-sm mb-4">
+    <img src="~/Content/Imagenes/Logo_AguaIngenieria.png" alt="Logo" style="width: 100px; height: auto;" class="mb-3" />
+    <h2 class="text-danger fw-bold m-0">Eliminar Usuario</h2>
+    <span class="d-block mx-auto" style="width: 120px; height: 3px; background-color: #dc3545; margin-top: 10px; border-radius: 2px;"></span>
+</div>
+
+
+<div class="d-flex justify-content-center">
+    <div class="card shadow-sm p-4" style="min-width:350px; max-width:500px; width:100%;">
+        @using (Html.BeginForm("Editar", "Admin", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="mb-3">
+                @Html.LabelFor(model => model.Usuario, htmlAttributes: new { @class = "form-label" })
+                @Html.TextBoxFor(model => model.Usuario, new { @class = "form-control", @readonly = "readonly" })
+                @Html.ValidationMessageFor(model => model.Usuario, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                @Html.LabelFor(model => model.Contrasena, htmlAttributes: new { @class = "form-label" })
+                @Html.PasswordFor(model => model.Contrasena, new { @class = "form-control", autocomplete = "new-password" })
+                @Html.ValidationMessageFor(model => model.Contrasena, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "form-label" })
+                @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                @Html.LabelFor(model => model.Apellido, htmlAttributes: new { @class = "form-label" })
+                @Html.TextBoxFor(model => model.Apellido, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Apellido, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "form-label" })
+                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", type = "email" })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <a href="@Url.Action("Usuarios", "Admin")" class="btn btn-secondary">
+                    <i class="fa fa-arrow-left"></i> Cancelar
+                </a>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa fa-save"></i> Guardar Cambios
+                </button>
+            </div>
+        }
+    </div>
+</div>
+
+
