@@ -1,0 +1,67 @@
+﻿@model DataModels.Novedade
+
+@{
+    ViewBag.Title = "Editar Novedad";
+}
+
+<div class="text-center bg-light p-4 rounded shadow-sm mb-4">
+    <img src="~/Content/Imagenes/Logo_AguaIngenieria.png" alt="Logo" style="width: 100px; height: auto;" class="mb-3" />
+    <h2 class="text-success fw-bold m-0">Editar Novedad</h2>
+    <span class="d-block mx-auto" style="width: 120px; height: 3px; background-color: #198754; margin-top: 10px; border-radius: 2px;"></span>
+</div>
+
+<div class="d-flex justify-content-center">
+    <div class="card shadow-sm p-4" style="min-width:350px; max-width:600px; width:100%;">
+        @using (Html.BeginForm("EditarNovedad", "NovedadesAdmin", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="mb-3">
+                @Html.LabelFor(model => model.Titulo, htmlAttributes: new { @class = "form-label" })
+                @Html.TextBoxFor(model => model.Titulo, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Titulo, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                @Html.LabelFor(model => model.Fuente, htmlAttributes: new { @class = "form-label" })
+                @Html.TextBoxFor(model => model.Fuente, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Fuente, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                @Html.LabelFor(model => model.Fecha, htmlAttributes: new { @class = "form-label" })
+                @Html.TextBoxFor(model => model.Fecha, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+                @Html.ValidationMessageFor(model => model.Fecha, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                @Html.LabelFor(model => model.Resumen, htmlAttributes: new { @class = "form-label" })
+                @Html.TextAreaFor(model => model.Resumen, new { @class = "form-control", rows = 3 })
+                @Html.ValidationMessageFor(model => model.Resumen, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                @Html.LabelFor(model => model.UrlNoticia, htmlAttributes: new { @class = "form-label" })
+                @Html.TextBoxFor(model => model.UrlNoticia, new { @class = "form-control", type = "url" })
+                @Html.ValidationMessageFor(model => model.UrlNoticia, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                @Html.LabelFor(model => model.ImagenPath, htmlAttributes: new { @class = "form-label" })
+                @Html.TextBoxFor(model => model.ImagenPath, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ImagenPath, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <a href="@Url.Action("NovedadesCRUD", "NovedadesAdmin")" class="btn btn-secondary">
+                    <i class="fa fa-arrow-left"></i> Cancelar
+                </a>
+                <button type="submit" class="btn btn-success">
+                    <i class="fa fa-save"></i> Guardar Cambios
+                </button>
+            </div>
+        }
+    </div>
+</div>
+

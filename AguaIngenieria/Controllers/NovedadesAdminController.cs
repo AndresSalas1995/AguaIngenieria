@@ -131,22 +131,25 @@ namespace AguaIngenieria.Controllers
 
         }
 
-        //Get: Eliminar Novedad
+        // GET: NovedadesAdmin/EliminarNovedad
         public ActionResult EliminarNovedad(int id)
         {
             try
             {
                 using (var db = new AguaIngenieriaDB("MyDatabase"))
                 {
-                    db.SpEliminarNovedad(id);
+                    var novedad = db.SpObtenerNovedadPorId(id).FirstOrDefault();
+                    if (novedad == null)
+                    {
+                        return HttpNotFound();
+                    }
+                    return View(novedad); 
                 }
-                TempData["MensajeExito"] = "Novedad eliminada correctamente";
-                return RedirectToAction("NovedadesCRUD", "NovedadesAdmin");
             }
             catch (Exception ex)
             {
-                TempData["MensajeError"] = "Ocurrió un error al eliminar la novedad: " + ex.Message;
-                return RedirectToAction("NovedadesCRUD", "NovedadesAdmin");
+                ViewBag.ErrorMessage = "Ocurrió un error al cargar la novedad. Por favor, inténtalo de nuevo más tarde." + ex;
+                return View("Error");
             }
         }
 

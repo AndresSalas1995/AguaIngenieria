@@ -403,6 +403,8 @@
     <Content Include="Views\Admin\Eliminar.cshtml" />
     <Content Include="Views\NovedadesAdmin\NovedadesCRUD.cshtml" />
     <Content Include="Views\NovedadesAdmin\CrearNovedad.cshtml" />
+    <Content Include="Views\NovedadesAdmin\EditarNovedad.cshtml" />
+    <Content Include="Views\NovedadesAdmin\EliminarNovedad.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

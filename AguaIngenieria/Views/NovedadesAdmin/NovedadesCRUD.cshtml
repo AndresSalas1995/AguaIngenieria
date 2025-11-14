@@ -63,12 +63,11 @@
                         <td>@novedad.Resumen</td>
                         <td class="d-flex justify-content-between">
                             @*Botón para editar*@
-                            <a href="@Url.Action("Editar", "NovedadesAdmin", new { id = novedad.Id })" class="btn btn-warning btn-sm">
+                            <a href="@Url.Action("EditarNovedad", "NovedadesAdmin", new { id = novedad.Id })" class="btn btn-warning btn-sm">
                                 <i class="fas fa-edit"></i> Editar
                             </a>
                             @*Botón para eliminar*@
-                            <a href="@Url.Action("Eliminar", "NovedadesAdmin", new { id = novedad.Id })" class="btn btn-danger btn-sm"
-                               onclick="return confirm('¿Estás seguro de que deseas eliminar esta novedad?');">
+                            <a href="@Url.Action("EliminarNovedad", "NovedadesAdmin",new { id = novedad.Id })" class="btn btn-danger btn-sm">
                                 <i class="fas fa-trash"></i> Eliminar
                             </a>
                         </td>
