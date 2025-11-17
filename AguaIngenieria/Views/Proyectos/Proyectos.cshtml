@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<DataModels.Galeria>
+
+@{
     ViewBag.Title = "Proyectos";
 }
 
@@ -8,46 +10,17 @@
     <h2 class="text-center mb-4">Nuestros Proyectos</h2>
 
     <div class="row">
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="~/Content/Imagenes/concesion.jpg" class="card-img-top" alt="Proyecto 1">
-                <div class="overlay-text">Concesión - Cartago</div>
+        @foreach (var proyecto in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="@Url.Content(proyecto.ImagenPath)" class="card-img-top" alt="@proyecto.Titulo">
+                    <div class="overlay-text">@proyecto.Titulo</div>
+                </div>
             </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="~/Content/Imagenes/estudio.jpg" class="card-img-top" alt="Proyecto 2">
-                <div class="overlay-text">Estudio Hidrológico - San José</div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="~/Content/Imagenes/viabilidad.jpg" class="card-img-top" alt="Proyecto 3">
-                <div class="overlay-text">Viabilidad Ambiental - Guanacaste</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="~/Content/Imagenes/concesion.jpg" class="card-img-top" alt="Proyecto 4">
-                <div class="overlay-text">Concesión de Agua - Puntarenas</div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="~/Content/Imagenes/estudio.jpg" class="card-img-top" alt="Proyecto 5">
-                <div class="overlay-text">Estudio Técnico - Alajuela</div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="~/Content/Imagenes/viabilidad.jpg" class="card-img-top" alt="Proyecto 6">
-                <div class="overlay-text">Evaluación de Viabilidad - Limón</div>
-            </div>
-        </div>
+        }
     </div>
 </div>
+
 
 

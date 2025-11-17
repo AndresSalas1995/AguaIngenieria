@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|d:\\visual studio 2022\\projects\\aguaingenieria\\aguaingenieria\\views\\novedadesadmin\\eliminarnovedad.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|solutionrelative:views\\novedadesadmin\\eliminarnovedad.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|d:\\visual studio 2022\\projects\\aguaingenieria\\aguaingenieria\\views\\proyectos\\proyectos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|solutionrelative:views\\proyectos\\proyectos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|d:\\visual studio 2022\\projects\\aguaingenieria\\aguaingenieria\\views\\admin\\eliminar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|solutionrelative:views\\admin\\eliminar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|d:\\visual studio 2022\\projects\\aguaingenieria\\aguaingenieria\\views\\proyectosadmin\\crearproyecto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|solutionrelative:views\\proyectosadmin\\crearproyecto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|d:\\visual studio 2022\\projects\\aguaingenieria\\aguaingenieria\\views\\novedadesadmin\\novedadescrud.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|solutionrelative:views\\novedadesadmin\\novedadescrud.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|d:\\visual studio 2022\\projects\\aguaingenieria\\aguaingenieria\\controllers\\proyectoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|solutionrelative:controllers\\proyectoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|d:\\visual studio 2022\\projects\\aguaingenieria\\aguaingenieria\\models\\proyecto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|solutionrelative:models\\proyecto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|d:\\visual studio 2022\\projects\\aguaingenieria\\aguaingenieria\\controllers\\proyectosadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|solutionrelative:controllers\\proyectosadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|d:\\visual studio 2022\\projects\\aguaingenieria\\aguaingenieria\\views\\principal\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|solutionrelative:views\\principal\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|d:\\visual studio 2022\\projects\\aguaingenieria\\aguaingenieria\\controllers\\novedadesadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E7612F5-33CE-4016-9A9F-C163439AF69C}|AguaIngenieria.csproj|solutionrelative:controllers\\novedadesadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,20 +34,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Views\\Principal\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Principal\\Index.cshtml",
               "ToolTip": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Views\\Principal\\Index.cshtml",
               "RelativeToolTip": "Views\\Principal\\Index.cshtml",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-11-11T22:00:31.524Z",
               "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProyectosController.cs",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Controllers\\ProyectosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProyectosController.cs",
+              "ToolTip": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Controllers\\ProyectosController.cs",
+              "RelativeToolTip": "Controllers\\ProyectosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T15:53:57.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Proyectos.cshtml",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Views\\Proyectos\\Proyectos.cshtml",
+              "RelativeDocumentMoniker": "Views\\Proyectos\\Proyectos.cshtml",
+              "ToolTip": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Views\\Proyectos\\Proyectos.cshtml",
+              "RelativeToolTip": "Views\\Proyectos\\Proyectos.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-17T15:53:08.972Z",
               "EditorCaption": ""
             },
             {
@@ -72,54 +102,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Eliminar.cshtml",
-              "DocumentMoniker": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Views\\Admin\\Eliminar.cshtml",
-              "RelativeDocumentMoniker": "Views\\Admin\\Eliminar.cshtml",
-              "ToolTip": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Views\\Admin\\Eliminar.cshtml",
-              "RelativeToolTip": "Views\\Admin\\Eliminar.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-14T03:44:34.757Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EliminarNovedad.cshtml",
-              "DocumentMoniker": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Views\\NovedadesAdmin\\EliminarNovedad.cshtml",
-              "RelativeDocumentMoniker": "Views\\NovedadesAdmin\\EliminarNovedad.cshtml",
-              "ToolTip": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Views\\NovedadesAdmin\\EliminarNovedad.cshtml",
-              "RelativeToolTip": "Views\\NovedadesAdmin\\EliminarNovedad.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-14T03:32:40.661Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "NovedadesCRUD.cshtml",
-              "DocumentMoniker": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Views\\NovedadesAdmin\\NovedadesCRUD.cshtml",
-              "RelativeDocumentMoniker": "Views\\NovedadesAdmin\\NovedadesCRUD.cshtml",
-              "ToolTip": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Views\\NovedadesAdmin\\NovedadesCRUD.cshtml",
-              "RelativeToolTip": "Views\\NovedadesAdmin\\NovedadesCRUD.cshtml",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAD4AAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-14T03:28:44.175Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "NovedadesAdminController.cs",
-              "DocumentMoniker": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Controllers\\NovedadesAdminController.cs",
-              "RelativeDocumentMoniker": "Controllers\\NovedadesAdminController.cs",
-              "ToolTip": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Controllers\\NovedadesAdminController.cs",
-              "RelativeToolTip": "Controllers\\NovedadesAdminController.cs",
-              "ViewState": "AgIAAIkAAAAAAAAAAAAvwJEAAAAqAAAAAAAAAA==",
+              "Title": "ProyectosAdminController.cs",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Controllers\\ProyectosAdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProyectosAdminController.cs",
+              "ToolTip": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Controllers\\ProyectosAdminController.cs",
+              "RelativeToolTip": "Controllers\\ProyectosAdminController.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAIwEkAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T03:19:35.205Z",
+              "WhenOpened": "2025-11-17T15:00:40.215Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Proyecto.cs",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Models\\Proyecto.cs",
+              "RelativeDocumentMoniker": "Models\\Proyecto.cs",
+              "ToolTip": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Models\\Proyecto.cs",
+              "RelativeToolTip": "Models\\Proyecto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T15:21:22.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CrearProyecto.cshtml",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Views\\ProyectosAdmin\\CrearProyecto.cshtml",
+              "RelativeDocumentMoniker": "Views\\ProyectosAdmin\\CrearProyecto.cshtml",
+              "ToolTip": "D:\\Visual Studio 2022\\Projects\\AguaIngenieria\\AguaIngenieria\\Views\\ProyectosAdmin\\CrearProyecto.cshtml",
+              "RelativeToolTip": "Views\\ProyectosAdmin\\CrearProyecto.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAADsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-17T15:18:06.264Z",
               "EditorCaption": ""
             }
           ]

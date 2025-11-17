@@ -1,0 +1,78 @@
+﻿@model IEnumerable<DataModels.Galeria>
+
+@{
+    ViewBag.Title = "Administrar Proyectos";
+}
+
+<div class="text-center bg-light p-4 rounded shadow-sm mb-4">
+    <h2 class="text-primary fw-bold m-0">Administrar Proyectos</h2>
+    <span class="d-block mx-auto" style="width: 120px; height: 3px; background-color: #0d6efd; margin-top: 10px; border-radius: 2px;"></span>
+</div>
+
+@if (TempData["MensajeExito"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert" aria-live="assertive">
+        <i class="fa fa-check-circle me-2" style="color: #28a745;"></i>
+        @TempData["MensajeExito"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+@if (TempData["MensajeError"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" aria-live="assertive">
+        <i class="fa fa-exclamation-triangle me-2" style="color: #dc3545;"></i>
+        @TempData["MensajeError"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<div class="d-flex justify-content-between mb-3">
+    <a href="@Url.Action("CrearProyecto", "ProyectosAdmin")" class="btn btn-primary">
+        <i class="fa fa-plus"></i> Agregar Proyecto
+    </a>
+    <a href="@Url.Action("Admin", "Principal")" class="btn btn-secondary">
+        <i class="fa fa-arrow-left"></i> Regresar
+    </a>
+</div>
+
+@if (Model != null && Model.Any())
+{
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Titulo</th>
+                    <th>URL</th>
+                    <th>Fecha Subida</th>
+                    <th>Admin</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var proyecto in Model)
+                {
+                    <tr>
+                        <td>@proyecto.Id</td>
+                        <td>@proyecto.Titulo</td>
+                        <td>@proyecto.ImagenPath</td>
+                        <td>@proyecto.FechaSubida.ToString("dd 'de' MMMM yyyy")</td>
+                        <td>@proyecto.IdAdmin</td>
+                        <td class="d-flex justify-content-between">
+                            <a href="@Url.Action("EditarProyecto", "ProyectosAdmin", new { id = proyecto.Id })" class="btn btn-warning btn-sm">
+                                <i class="fas fa-edit"></i> Editar
+                            </a>
+                            <a href="@Url.Action("EliminarProyecto", "ProyectosAdmin", new { id = proyecto.Id })" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash"></i> Eliminar
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="alert alert-info">No hay proyectos disponibles en este momento.</div>
+}

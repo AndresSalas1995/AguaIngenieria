@@ -247,6 +247,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NovedadesAdminController.cs" />
     <Compile Include="Controllers\PrincipalController.cs" />
+    <Compile Include="Controllers\ProyectosAdminController.cs" />
     <Compile Include="Controllers\ProyectosController.cs" />
     <Compile Include="Controllers\ServiciosController.cs" />
     <Compile Include="Global.asax.cs">
@@ -261,6 +262,7 @@
       <DependentUpon>MyDataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Novedad.cs" />
+    <Compile Include="Models\Proyecto.cs" />
     <Compile Include="Permisos\ValidarSesion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -405,6 +407,8 @@
     <Content Include="Views\NovedadesAdmin\CrearNovedad.cshtml" />
     <Content Include="Views\NovedadesAdmin\EditarNovedad.cshtml" />
     <Content Include="Views\NovedadesAdmin\EliminarNovedad.cshtml" />
+    <Content Include="Views\ProyectosAdmin\ProyectosCRUD.cshtml" />
+    <Content Include="Views\ProyectosAdmin\CrearProyecto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

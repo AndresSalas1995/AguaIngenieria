@@ -137,19 +137,20 @@ namespace DataModels
 	{
 		#region SpCrearGaleria
 
-		public static IEnumerable<SpCrearGaleriaResult> SpCrearGaleria(this AguaIngenieriaDB dataConnection, string @Titulo, string @ImagenPath, int? @IdAdmin)
+		public static IEnumerable<SpCrearGaleriaResult> SpCrearGaleria(this AguaIngenieriaDB dataConnection, string @Titulo, string @ImagenPath, DateTime? @FechaSubida, int? @IdAdmin)
 		{
 			var parameters = new []
 			{
-				new DataParameter("@Titulo",     @Titulo,     LinqToDB.DataType.NVarChar)
+				new DataParameter("@Titulo",      @Titulo,      LinqToDB.DataType.NVarChar)
 				{
 					Size = 150
 				},
-				new DataParameter("@ImagenPath", @ImagenPath, LinqToDB.DataType.NVarChar)
+				new DataParameter("@ImagenPath",  @ImagenPath,  LinqToDB.DataType.NVarChar)
 				{
 					Size = 500
 				},
-				new DataParameter("@IdAdmin",    @IdAdmin,    LinqToDB.DataType.Int32)
+				new DataParameter("@FechaSubida", @FechaSubida, LinqToDB.DataType.DateTime),
+				new DataParameter("@IdAdmin",     @IdAdmin,     LinqToDB.DataType.Int32)
 			};
 
 			return dataConnection.QueryProc<SpCrearGaleriaResult>("[dbo].[spCrearGaleria]", parameters);
@@ -451,6 +452,29 @@ namespace DataModels
 			public string   Nombre        { get; set; }
 			public string   Apellido      { get; set; }
 			public DateTime FechaCreacion { get; set; }
+		}
+
+		#endregion
+
+		#region SpObtenerGaleria
+
+		public static IEnumerable<Galeria> SpObtenerGaleria(this AguaIngenieriaDB dataConnection)
+		{
+			return dataConnection.QueryProc<Galeria>("[dbo].[spObtenerGaleria]");
+		}
+
+		#endregion
+
+		#region SpObtenerGaleriaPorId
+
+		public static IEnumerable<Galeria> SpObtenerGaleriaPorId(this AguaIngenieriaDB dataConnection, int? @Id)
+		{
+			var parameters = new []
+			{
+				new DataParameter("@Id", @Id, LinqToDB.DataType.Int32)
+			};
+
+			return dataConnection.QueryProc<Galeria>("[dbo].[spObtenerGaleriaPorId]", parameters);
 		}
 
 		#endregion

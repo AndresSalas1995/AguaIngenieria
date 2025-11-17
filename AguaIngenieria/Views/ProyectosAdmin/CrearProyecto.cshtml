@@ -1,0 +1,62 @@
+﻿@model DataModels.Galeria
+
+@{
+    ViewBag.Title = "Crear Proyecto";
+}
+
+<div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+    <div class="card shadow-lg p-4 rounded" style="max-width: 450px; width: 100%;">
+        <div class="text-center mb-4">
+            <img src="~/Content/Imagenes/Logo_AguaIngenieria.png"
+                 alt="Logo" style="width: 100px; height: auto;" class="mb-3" />
+            <h3 class="text-primary fw-bold">Crear Nuevo Proyecto</h3>
+            <p class="text-muted mb-0">Rellena los campos para agregar un nuevo proyecto</p>
+        </div>
+
+        @using (Html.BeginForm("CrearProyecto", "ProyectosAdmin",
+                   FormMethod.Post,
+                   new { enctype = "multipart/form-data", @class = "needs-validation", novalidate = "novalidate" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="mb-3">
+                @Html.LabelFor(m => m.Titulo, new { @class = "form-label fw-semibold" })
+                @Html.TextBoxFor(m => m.Titulo,
+                    new { @class = "form-control", placeholder = "Título del proyecto", required = "required" })
+                @Html.ValidationMessageFor(m => m.Titulo, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold" for="ImagenProyecto">Imagen del proyecto</label>
+                <input type="file" name="ImagenProyecto" id="ImagenProyecto"
+                       class="form-control" accept="image/*" required />
+                <span class="text-danger" data-valmsg-for="ImagenProyecto" data-valmsg-replace="true"></span>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-primary px-4">Crear Proyecto</button>
+                <a href="@Url.Action("ProyectosCRUD", "ProyectosAdmin")" class="btn btn-secondary px-4">Cancelar</a>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        (() => {
+            'use strict';
+            const forms = document.querySelectorAll('.needs-validation');
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+    </script>
+}
+
