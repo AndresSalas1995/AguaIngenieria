@@ -104,5 +104,144 @@ namespace AguaIngenieria.Controllers
             }
         }
 
+        //GET: proyectos Editar
+        //Acción get para editar un proyecto existente
+        public ActionResult EditarProyecto(int id)
+        {
+            try
+            {
+                using (var db = new AguaIngenieriaDB("MyDatabase"))
+                {
+                    var proyecto = db.SpObtenerGaleriaPorId(id).FirstOrDefault();
+                    if (proyecto == null)
+                    {
+                        return HttpNotFound();
+                    }
+                    return View(proyecto);
+                }
+            }
+            catch (Exception ex)
+            {
+                ViewBag.ErrorMessage = "Error al cargar el proyecto: Por favor, inténtalo de nuevo más tarde." + ex;
+                return View("Error");
+            }
+
+        }
+
+        [HttpPost]
+        public ActionResult EditarProyecto(Galeria proyectoEditado, HttpPostedFileBase NuevaImagenProyecto)
+        {
+            try
+            {
+                // Validar modelo
+                if (!ModelState.IsValid)
+                    return View(proyectoEditado);
+
+                //recuperamos el id del admin logueado
+                var idAdmin = Session["IdUsuario"] as int?;
+
+                // Verifica que el IdAdmin exista en la sesión
+                if (idAdmin == null)
+                {
+                    ModelState.AddModelError("", "No se ha encontrado un administrador logueado.");
+                    return View(proyectoEditado);
+                }
+
+                // Asigna el IdAdmin al objeto nuevaNovedad
+                proyectoEditado.IdAdmin = idAdmin.Value;
+
+                // Si se ha subido una nueva imagen, guardarla
+                if (NuevaImagenProyecto != null && NuevaImagenProyecto.ContentLength > 0)
+                {
+                    string carpeta = Server.MapPath("~/Content/Proyectos/");
+                    if (!Directory.Exists(carpeta))
+                        Directory.CreateDirectory(carpeta);
+                    string nombreArchivo = DateTime.Now.Ticks + Path.GetExtension(NuevaImagenProyecto.FileName);
+                    string rutaCompleta = Path.Combine(carpeta, nombreArchivo);
+                    NuevaImagenProyecto.SaveAs(rutaCompleta);
+                    // Actualizar la ruta de la imagen en el objeto
+                    proyectoEditado.ImagenPath = "/Content/Proyectos/" + nombreArchivo;
+                }
+                // Actualizar en la base de datos
+                using (var db = new AguaIngenieriaDB("MyDatabase"))
+                {
+                    db.SpEditarGaleria(
+                        proyectoEditado.Id,
+                        proyectoEditado.Titulo,
+                        proyectoEditado.ImagenPath,
+                        proyectoEditado.IdAdmin
+                    );
+                }
+                TempData["MensajeExito"] = "Proyecto actualizado correctamente";
+                return RedirectToAction("ProyectosCRUD");
+            }
+            catch (Exception ex)
+            {
+                ViewBag.ErrorMessage = "Error al actualizar el proyecto: " + ex.Message;
+                return View("Error");
+            }
+        }
+
+        // GET: ProyectosAdmin/EliminarProyecto
+        public ActionResult EliminarProyecto(int id)
+        {
+            try
+            {
+                using (var db = new AguaIngenieriaDB("MyDatabase"))
+                {
+                    var proyecto = db.SpObtenerGaleriaPorId(id).FirstOrDefault();
+                    if (proyecto == null)
+                    {
+                        return HttpNotFound();
+                    }
+                    return View(proyecto);
+                }
+            } 
+            catch (Exception ex)
+            {
+               ViewBag.ErrorMessage = "Ocurrió un error al cargar el proyecto. Por favor, inténtalo de nuevo más tarde." + ex;
+               return View("Error");
+            }
+        }
+        [HttpPost, ActionName("EliminarProyecto")]
+        public ActionResult EliminarProyectoConfirmado(int id)
+        {
+            try
+            {
+                using (var db = new AguaIngenieriaDB("MyDatabase"))
+                {
+                    // 1. Obtener proyecto actual para obtener ruta física
+                    var proyecto = db.SpObtenerGaleriaPorId(id).FirstOrDefault();
+                    if (proyecto == null)
+                    {
+                        TempData["MensajeError"] = "No se encontró el proyecto.";
+                        return RedirectToAction("ProyectosCRUD");
+                    }
+
+                    // 2. Eliminar archivo físico si existe
+                    if (!string.IsNullOrEmpty(proyecto.ImagenPath))
+                    {
+                        string rutaServidor = Server.MapPath(proyecto.ImagenPath);
+                        if (System.IO.File.Exists(rutaServidor))
+                        {
+                            System.IO.File.Delete(rutaServidor);
+                        }
+                    }
+
+                    // 3. Eliminar de la base de datos
+                    db.SpEliminarGaleria(id);
+                }
+
+                TempData["MensajeExito"] = "Proyecto eliminado correctamente";
+                return RedirectToAction("ProyectosCRUD");
+            }
+            catch (Exception ex)
+            {
+                ViewBag.ErrorMessage =
+                    "Ocurrió un error al eliminar el proyecto. Por favor, inténtalo de nuevo más tarde. " + ex.Message;
+
+                return View("Error");
+            }
+        }
     }
 }

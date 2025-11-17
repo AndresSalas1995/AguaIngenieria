@@ -409,6 +409,8 @@
     <Content Include="Views\NovedadesAdmin\EliminarNovedad.cshtml" />
     <Content Include="Views\ProyectosAdmin\ProyectosCRUD.cshtml" />
     <Content Include="Views\ProyectosAdmin\CrearProyecto.cshtml" />
+    <Content Include="Views\ProyectosAdmin\EditarProyecto.cshtml" />
+    <Content Include="Views\ProyectosAdmin\EliminarProyecto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
