@@ -58,7 +58,7 @@ namespace AguaIngenieria.Controllers
             }
             catch (Exception ex)
             {
-                // Manejo básico de errores (puedes mejorar el log)
+                // Manejo básico de errores
                 ModelState.AddModelError("", "Ocurrió un error al iniciar sesión. Por favor, intente nuevamente.");
                 return View(model);
             }
