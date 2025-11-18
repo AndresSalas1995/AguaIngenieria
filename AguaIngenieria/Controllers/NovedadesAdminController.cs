@@ -75,6 +75,13 @@ namespace AguaIngenieria.Controllers
                 // Opción B - Imagen personalizada
                 if (TipoImagen == "personalizada" && ImagenFile != null && ImagenFile.ContentLength > 0)
                 {
+                    var ext = Path.GetExtension(ImagenFile.FileName).ToLower();
+                    if (ext != ".jpg" && ext != ".jpeg" && ext != ".png")
+                    {
+                        ModelState.AddModelError("", "Formato de imagen no válido. Solo JPG y PNG permitidos.");
+                        return View(nuevaNovedad);
+                    }
+
                     string fileName = Path.GetFileName(ImagenFile.FileName);
                     string path = Path.Combine(Server.MapPath("~/Content/Imagenes/"), fileName);
 
@@ -150,15 +157,34 @@ namespace AguaIngenieria.Controllers
                 // Reasignamos el IdAdmin al registro editado
                 novedadEditada.IdAdmin = idAdmin.Value;
 
+                // Mantener la imagen existente por defecto
+                var imagenActual = novedadEditada.ImagenPath;
+
                 // Opción A - Imagen predefinida
                 if (TipoImagen == "predefinida")
                 {
-                    // ImagenPath ya viene desde el dropdown en la vista
+                    // Solo asignar ImagenPath si el usuario seleccionó una predefinida
+                    if (!string.IsNullOrEmpty(novedadEditada.ImagenPath))
+                    {
+                        // La ruta viene desde el dropdown, se mantiene
+                    }
+                    else
+                    {
+                        // Si no seleccionó nada, mantener la imagen existente
+                        novedadEditada.ImagenPath = imagenActual;
+                    }
                 }
 
                 // Opción B - Imagen personalizada
                 if (TipoImagen == "personalizada" && ImagenFile != null && ImagenFile.ContentLength > 0)
                 {
+                    var ext = Path.GetExtension(ImagenFile.FileName).ToLower();
+                    if (ext != ".jpg" && ext != ".jpeg" && ext != ".png")
+                    {
+                        ModelState.AddModelError("", "Formato de imagen no válido. Solo JPG y PNG permitidos.");
+                        return View(novedadEditada);
+                    }
+
                     string fileName = Path.GetFileName(ImagenFile.FileName);
                     string path = Path.Combine(Server.MapPath("~/Content/Imagenes/"), fileName);
 
@@ -176,8 +202,8 @@ namespace AguaIngenieria.Controllers
                         novedadEditada.Titulo, 
                         novedadEditada.Fuente,
                         novedadEditada.Resumen, 
-                        novedadEditada.ImagenPath, 
                         novedadEditada.UrlNoticia,
+                        novedadEditada.ImagenPath,
                         novedadEditada.IdAdmin, 
                         novedadEditada.Fecha);
                 }

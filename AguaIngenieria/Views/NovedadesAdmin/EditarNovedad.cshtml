@@ -12,7 +12,7 @@
 
 <div class="d-flex justify-content-center">
     <div class="card shadow-sm p-4" style="min-width:350px; max-width:600px; width:100%;">
-        @using (Html.BeginForm("EditarNovedad", "NovedadesAdmin", FormMethod.Post))
+        @using (Html.BeginForm("EditarNovedad", "NovedadesAdmin", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()
             @Html.HiddenFor(model => model.Id)
@@ -52,13 +52,13 @@
 
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="TipoImagen" id="imgPredef" value="predefinida"
-                           @(Model.ImagenPath != null && ( Model.ImagenPath.EndsWith("AYA.jpg") || Model.ImagenPath.EndsWith("minae.jpg") || Model.ImagenPath.EndsWith("Logo-nuevo-office-1-300x128.png") ) ? "checked" : "")>
+                           @(Model.ImagenPath != null && ( Model.ImagenPath.EndsWith("aya.png") || Model.ImagenPath.EndsWith("minae.jpg") || Model.ImagenPath.EndsWith("Logo-nuevo-office-1-300x128.png") ) ? "checked" : "")>
                     <label class="form-check-label" for="imgPredef">Usar imagen predefinida</label>
                 </div>
 
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="TipoImagen" id="imgCustom" value="personalizada"
-                           @(Model.ImagenPath != null && !( Model.ImagenPath.EndsWith("AYA.jpg") || Model.ImagenPath.EndsWith("minae.jpg") || Model.ImagenPath.EndsWith("Logo-nuevo-office-1-300x128.png") ) ? "checked" : "")>
+                           @(Model.ImagenPath != null && !( Model.ImagenPath.EndsWith("aya.png") || Model.ImagenPath.EndsWith("minae.jpg") || Model.ImagenPath.EndsWith("Logo-nuevo-office-1-300x128.png") ) ? "checked" : "")>
                     <label class="form-check-label" for="imgCustom">Subir imagen personalizada</label>
                 </div>
             </div>

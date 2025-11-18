@@ -24,6 +24,14 @@ namespace AguaIngenieria.Controllers
                 using (var db = new AguaIngenieriaDB("MyDatabase"))
                 {
                     var listaNovedades = db.SpObtenerNovedades().ToList();
+                    // Asignar imagen por defecto si no tiene ninguna
+                    foreach (var novedad in listaNovedades)
+                    {
+                        if (string.IsNullOrEmpty(novedad.ImagenPath))
+                        {
+                            novedad.ImagenPath = "/Content/Imagenes/Logo_AguaIngenieria.png";
+                        }
+                    }
                     return View(listaNovedades);
                 }
             }
