@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -43,7 +44,7 @@ namespace AguaIngenieria.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult CrearNovedad(Novedade nuevaNovedad)
+        public ActionResult CrearNovedad(Novedade nuevaNovedad, HttpPostedFileBase ImagenFile, string TipoImagen)
         {
             // Valida que el modelo sea correcto (campos requeridos, formatos, etc.)
             if (!ModelState.IsValid)
@@ -65,10 +66,33 @@ namespace AguaIngenieria.Controllers
                 // Asigna el IdAdmin al objeto nuevaNovedad
                 nuevaNovedad.IdAdmin = idAdmin.Value;
 
+                // Opción A - Imagen predefinida
+                if (TipoImagen == "predefinida")
+                {
+                    // ImagenPath ya viene desde el dropdown
+                }
+
+                // Opción B - Imagen personalizada
+                if (TipoImagen == "personalizada" && ImagenFile != null && ImagenFile.ContentLength > 0)
+                {
+                    string fileName = Path.GetFileName(ImagenFile.FileName);
+                    string path = Path.Combine(Server.MapPath("~/Content/Imagenes/"), fileName);
+
+                    ImagenFile.SaveAs(path);
+
+                    nuevaNovedad.ImagenPath = "/Content/Imagenes/" + fileName;
+                }
+
                 using (var db = new AguaIngenieriaDB("MyDatabase"))
                 {
-                    db.SpCrearNovedad(nuevaNovedad.Titulo, nuevaNovedad.Fuente, nuevaNovedad.Resumen, nuevaNovedad.UrlNoticia,
-                       nuevaNovedad.ImagenPath, nuevaNovedad.IdAdmin, nuevaNovedad.Fecha);
+                    db.SpCrearNovedad(
+                        nuevaNovedad.Titulo, 
+                        nuevaNovedad.Fuente, 
+                        nuevaNovedad.Resumen, 
+                        nuevaNovedad.UrlNoticia,
+                        nuevaNovedad.ImagenPath, 
+                        nuevaNovedad.IdAdmin, 
+                        nuevaNovedad.Fecha);
                 }
                 TempData["MensajeExito"] = "Novedad creada correctamente";
                 return RedirectToAction("NovedadesCRUD", "NovedadesAdmin");
@@ -105,7 +129,7 @@ namespace AguaIngenieria.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditarNovedad(Novedade novedadEditada)
+        public ActionResult EditarNovedad(Novedade novedadEditada, HttpPostedFileBase ImagenFile, string TipoImagen)
         {
             // Valida que el modelo sea correcto (campos requeridos, formatos, etc.)
             if (!ModelState.IsValid)
@@ -114,11 +138,48 @@ namespace AguaIngenieria.Controllers
             }
             try
             {
+                // Recuperamos el id del admin logueado
+                var idAdmin = Session["IdUsuario"] as int?;
+
+                if (idAdmin == null)
+                {
+                    ModelState.AddModelError("", "No se ha encontrado un administrador logueado.");
+                    return View(novedadEditada);
+                }
+
+                // Reasignamos el IdAdmin al registro editado
+                novedadEditada.IdAdmin = idAdmin.Value;
+
+                // Opción A - Imagen predefinida
+                if (TipoImagen == "predefinida")
+                {
+                    // ImagenPath ya viene desde el dropdown en la vista
+                }
+
+                // Opción B - Imagen personalizada
+                if (TipoImagen == "personalizada" && ImagenFile != null && ImagenFile.ContentLength > 0)
+                {
+                    string fileName = Path.GetFileName(ImagenFile.FileName);
+                    string path = Path.Combine(Server.MapPath("~/Content/Imagenes/"), fileName);
+
+                    // Guardar archivo
+                    ImagenFile.SaveAs(path);
+
+                    // Actualizar ruta de imagen
+                    novedadEditada.ImagenPath = "/Content/Imagenes/" + fileName;
+                }
+
                 using (var db = new AguaIngenieriaDB("MyDatabase"))
                 {
-                    db.SpEditarNovedad(novedadEditada.Id, novedadEditada.Titulo, novedadEditada.Fuente,
-                        novedadEditada.Resumen, novedadEditada.ImagenPath, novedadEditada.UrlNoticia,
-                        novedadEditada.IdAdmin, novedadEditada.Fecha);
+                    db.SpEditarNovedad(
+                        novedadEditada.Id, 
+                        novedadEditada.Titulo, 
+                        novedadEditada.Fuente,
+                        novedadEditada.Resumen, 
+                        novedadEditada.ImagenPath, 
+                        novedadEditada.UrlNoticia,
+                        novedadEditada.IdAdmin, 
+                        novedadEditada.Fecha);
                 }
                 TempData["MensajeExito"] = "Novedad actualizada correctamente";
                 return RedirectToAction("NovedadesCRUD", "NovedadesAdmin");
@@ -153,7 +214,7 @@ namespace AguaIngenieria.Controllers
             }
         }
 
-        [HttpPost, ActionName ("Eliminar")]
+        [HttpPost, ActionName ("EliminarNovedad")]
         public ActionResult EliminarNovedadConfirmado(int id)
         {
             try

@@ -24,7 +24,7 @@
             <dt class="col-sm-4 text-end">Resumen</dt>
             <dd class="col-sm-8 text-start">@Model.Resumen</dd>
         </dl>
-        @using (Html.BeginForm("Eliminar", "NovedadesAdmin", FormMethod.Post))
+        @using (Html.BeginForm("EliminarNovedad", "NovedadesAdmin", FormMethod.Post))
         {
             @Html.AntiForgeryToken()
             @Html.HiddenFor(m => m.Id)

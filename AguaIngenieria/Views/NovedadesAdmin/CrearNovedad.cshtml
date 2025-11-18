@@ -49,10 +49,38 @@
             </div>
 
             <div class="mb-3">
-                @Html.LabelFor(m => m.ImagenPath, "Imagen (URL o ruta)", new { @class = "form-label fw-semibold" })
-                @Html.TextBoxFor(m => m.ImagenPath, new { @class = "form-control", placeholder = "URL o ruta de la imagen" })
-                @Html.ValidationMessageFor(m => m.ImagenPath, "", new { @class = "text-danger" })
+                <label class="form-label fw-semibold">Tipo de Imagen</label>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="TipoImagen" id="imgPredef" value="predefinida" checked>
+                    <label class="form-check-label" for="imgPredef">Usar imagen predefinida</label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="TipoImagen" id="imgCustom" value="personalizada">
+                    <label class="form-check-label" for="imgCustom">Subir imagen personalizada</label>
+                </div>
             </div>
+
+            <div id="predefinidasSection" class="mb-3">
+                @Html.LabelFor(m => m.ImagenPath, "Seleccionar Imagen", new { @class = "form-label fw-semibold" })
+                @Html.DropDownListFor(m => m.ImagenPath,
+                    new List<SelectListItem>
+                    {
+                        new SelectListItem { Text = "Logo AYA", Value = "~/Content/Imagenes/aya.png" },
+                        new SelectListItem { Text = "Logo MINAE", Value = "~/Content/Imagenes/minae.jpg" },
+                        new SelectListItem { Text = "Logo SENARA", Value = "~/Content/Imagenes/Logo-nuevo-office-1-300x128.png" }
+                    },
+                    "Seleccione una imagen...",
+                    new { @class = "form-select" })
+            </div>
+
+            <div id="personalizadaSection" class="mb-3 d-none">
+                @Html.Label("ImagenFile", "Subir Imagen Personalizada", new { @class = "form-label fw-semibold" })
+                <input type="file" name="ImagenFile" id="ImagenFile" class="form-control" accept="image/*" />
+                <small class="text-muted">Formatos permitidos: JPG, PNG.</small>
+            </div>
+
 
             <div class="d-flex justify-content-between">
                 <button type="submit" class="btn btn-primary px-4">Crear Novedad</button>
@@ -81,6 +109,26 @@
                 }, false);
             });
         })();
+
+        function actualizarOpciones() {
+            const predef = document.getElementById("imgPredef");
+            const seccionPredef = document.getElementById("predefinidasSection");
+            const seccionPers = document.getElementById("personalizadaSection");
+
+            if (predef.checked) {
+                seccionPredef.classList.remove("d-none");
+                seccionPers.classList.add("d-none");
+            } else {
+                seccionPredef.classList.add("d-none");
+                seccionPers.classList.remove("d-none");
+            }
+        }
+
+        document.getElementById("imgPredef").addEventListener("change", actualizarOpciones);
+        document.getElementById("imgCustom").addEventListener("change", actualizarOpciones);
+
+        // Ejecutar al cargar la página
+        actualizarOpciones();
     </script>
 }
 
