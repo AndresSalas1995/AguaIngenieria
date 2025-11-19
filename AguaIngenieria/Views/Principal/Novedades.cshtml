@@ -2,14 +2,32 @@
 @{
     ViewBag.Title = "Novedades";
 }
+
+@{
+    string urlGota = "";
+
+    if (Session["IdUsuario"] != null)
+    {
+        // Usuario logueado → ir al panel admin
+        urlGota = Url.Action("Admin", "Principal");
+    }
+    else
+    {
+        // No logueado → ir a autenticación
+        urlGota = Url.Action("Index", "Authentication");
+    }
+}
+
 <link href="@Url.Content("~/CSS/Custom/Novedades.css")" rel="stylesheet" />
 
 <div class="container py-5">
     <div class="novedades-container">
         <h1 class="text-center mb-4 text-primary">
             <i class="fas fa-bullhorn"></i> Últimas Novedades
-            <a href="@Url.Action("Index", "Authentication")" class="ms-2 gota-oculta">
-                <img src="@Url.Content("~/Content/Imagenes/gota.jpg")" alt="Login oculto" style="width:32px; height:32px; vertical-align:middle;">
+            <a href="@urlGota" class="ms-2 gota-oculta">
+                <img src="@Url.Content("~/Content/Imagenes/gota.jpg")"
+                     alt="Login oculto"
+                     style="width:32px; height:32px; vertical-align:middle;">
             </a>
         </h1>
     </div>
