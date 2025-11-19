@@ -46,7 +46,7 @@ namespace AguaIngenieria.Controllers
         [HttpPost]
         public ActionResult CrearNovedad(Novedade nuevaNovedad, HttpPostedFileBase ImagenFile, string TipoImagen)
         {
-            // Valida que el modelo sea correcto (campos requeridos, formatos, etc.)
+            //Valida que el modelo sea correcto (campos requeridos, formatos, etc.)
             if (!ModelState.IsValid)
             {
                 return View(nuevaNovedad);
@@ -56,23 +56,23 @@ namespace AguaIngenieria.Controllers
                 //recuperamos el id del admin logueado
                 var idAdmin= Session["IdUsuario"] as int?;
 
-                // Verifica que el IdAdmin exista en la sesión
+                //Verifica que el IdAdmin exista en la sesión
                 if (idAdmin == null)
                 {
                     ModelState.AddModelError("", "No se ha encontrado un administrador logueado.");
                     return View(nuevaNovedad);
                 }
 
-                // Asigna el IdAdmin al objeto nuevaNovedad
+                //Asigna el IdAdmin al objeto nuevaNovedad
                 nuevaNovedad.IdAdmin = idAdmin.Value;
 
-                // Opción A - Imagen predefinida
+                //Opción A Imagen predefinida
                 if (TipoImagen == "predefinida")
                 {
-                    // ImagenPath ya viene desde el dropdown
+                    //ImagenPath ya viene desde el dropdown
                 }
 
-                // Opción B - Imagen personalizada
+                //Opción B Imagen personalizada
                 if (TipoImagen == "personalizada" && ImagenFile != null && ImagenFile.ContentLength > 0)
                 {
                     var ext = Path.GetExtension(ImagenFile.FileName).ToLower();
@@ -83,7 +83,7 @@ namespace AguaIngenieria.Controllers
                     }
 
                     string fileName = Path.GetFileName(ImagenFile.FileName);
-                    string path = Path.Combine(Server.MapPath("~/Content/Imagenes/"), fileName);
+                    string path = Path.Combine(Server.MapPath("/Content/Imagenes/"), fileName);
 
                     ImagenFile.SaveAs(path);
 
@@ -138,14 +138,14 @@ namespace AguaIngenieria.Controllers
         [HttpPost]
         public ActionResult EditarNovedad(Novedade novedadEditada, HttpPostedFileBase ImagenFile, string TipoImagen)
         {
-            // Valida que el modelo sea correcto (campos requeridos, formatos, etc.)
+            //Valida que el modelo sea correcto (campos requeridos, formatos, etc.)
             if (!ModelState.IsValid)
             {
                 return View(novedadEditada);
             }
             try
             {
-                // Recuperamos el id del admin logueado
+                //Recuperamos el id del admin logueado
                 var idAdmin = Session["IdUsuario"] as int?;
 
                 if (idAdmin == null)
@@ -154,45 +154,56 @@ namespace AguaIngenieria.Controllers
                     return View(novedadEditada);
                 }
 
-                // Reasignamos el IdAdmin al registro editado
+                //Reasignamos el IdAdmin al registro editado
                 novedadEditada.IdAdmin = idAdmin.Value;
 
-                // Mantener la imagen existente por defecto
-                var imagenActual = novedadEditada.ImagenPath;
+                //Mantener la imagen existente por defecto
+                string imagenActualBD;
+                using (var db = new AguaIngenieriaDB("MyDatabase"))
+                {
+                    imagenActualBD = db.SpObtenerNovedadPorId(novedadEditada.Id)
+                                       .Select(x => x.ImagenPath)
+                                       .FirstOrDefault();
+                }
 
-                // Opción A - Imagen predefinida
+                //Opción A Imagen predefinida
                 if (TipoImagen == "predefinida")
                 {
-                    // Solo asignar ImagenPath si el usuario seleccionó una predefinida
+                    //Solo asignar ImagenPath si el usuario seleccionó una predefinida
                     if (!string.IsNullOrEmpty(novedadEditada.ImagenPath))
                     {
-                        // La ruta viene desde el dropdown, se mantiene
+                       
                     }
                     else
                     {
-                        // Si no seleccionó nada, mantener la imagen existente
-                        novedadEditada.ImagenPath = imagenActual;
+                        //Si NO seleccionó ninguna, mantener la actual
+                        novedadEditada.ImagenPath = imagenActualBD;
                     }
                 }
 
-                // Opción B - Imagen personalizada
-                if (TipoImagen == "personalizada" && ImagenFile != null && ImagenFile.ContentLength > 0)
+                //Opción B Imagen personalizada
+                if (TipoImagen == "personalizada")
                 {
-                    var ext = Path.GetExtension(ImagenFile.FileName).ToLower();
-                    if (ext != ".jpg" && ext != ".jpeg" && ext != ".png")
+                    if (ImagenFile != null && ImagenFile.ContentLength > 0)
                     {
-                        ModelState.AddModelError("", "Formato de imagen no válido. Solo JPG y PNG permitidos.");
-                        return View(novedadEditada);
+                        var ext = Path.GetExtension(ImagenFile.FileName).ToLower();
+                        if (ext != ".jpg" && ext != ".jpeg" && ext != ".png")
+                        {
+                            ModelState.AddModelError("", "Formato de imagen no válido. Solo JPG y PNG permitidos.");
+                            return View(novedadEditada);
+                        }
+
+                        string fileName = Path.GetFileName(ImagenFile.FileName);
+                        string path = Path.Combine(Server.MapPath("/Content/Imagenes/"), fileName);
+                        ImagenFile.SaveAs(path);
+
+                        novedadEditada.ImagenPath = "/Content/Imagenes/" + fileName;
                     }
-
-                    string fileName = Path.GetFileName(ImagenFile.FileName);
-                    string path = Path.Combine(Server.MapPath("~/Content/Imagenes/"), fileName);
-
-                    // Guardar archivo
-                    ImagenFile.SaveAs(path);
-
-                    // Actualizar ruta de imagen
-                    novedadEditada.ImagenPath = "/Content/Imagenes/" + fileName;
+                    else
+                    {
+                        //Si no subió archivo mantener la imagen actual de BD
+                        novedadEditada.ImagenPath = imagenActualBD;
+                    }
                 }
 
                 using (var db = new AguaIngenieriaDB("MyDatabase"))
