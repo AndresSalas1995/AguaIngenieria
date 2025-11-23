@@ -453,7 +453,7 @@
 }
 
 .flip-card-back {
-    background: url('/Content/Imagenes/fondo-atardecer.jpg') no-repeat center center;
+    background: url('/Content/Imagenes/fondo-cielo-azul-nubes_461160-3434.jpg') no-repeat center center;
     background-size: cover;
     color: #fff;
     /*background: #f4f4f4;*/ /*color fijo*/
@@ -468,4 +468,8 @@
         max-height: 100%;
         overflow-y: auto; /* si el texto aún excede, agrega scroll interno */
         margin: 0;
+    }
+
+    .flip-card-front h3{
+        font-size: 3.8rem !important;
     }
